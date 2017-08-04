@@ -17,9 +17,11 @@ use App\Org\code\Code;
 
 class LoginController extends Controller
 {
+
     // 后台登录界面
     public function index()
     {
+
         return view('admin.login.index');
     }
 
