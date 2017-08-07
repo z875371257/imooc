@@ -76,16 +76,16 @@
 
             <!-- User Photo -->
             <div id="mws-user-photo">
-                <img src="{{$session->uface}}" alt="User Photo">
+                <img src="{{ uface() }}" alt="User Photo">
             </div>
 
             <!-- Username and Functions -->
             <div id="mws-user-functions">
                 <div id="mws-username">
-                    Hello, {{$session->username}}
+                    Hello, {{ username() }}
                 </div>
                 <ul>
-                    <li><a href="#">修改密码</a></li>
+                    <li><a href="/admin/index/edit">修改密码</a></li>
                     <li><a href="/admin/logout">退出</a></li>
                 </ul>
             </div>
@@ -121,15 +121,21 @@
         <!-- Main Navigation -->
         <div id="mws-navigation">
             <ul>
+                {{--<li>--}}
+                    {{--<a href="#"><i class="icon-user"></i>用户管理</a>--}}
+                    {{--<ul class='closed'>--}}
+                        {{--<li><a href="/admin/user/add">用户添加</a></li>--}}
+                        {{--<li><a href="/admin/user/index">用户列表</a></li>--}}
+                    {{--</ul>--}}
+                {{--</li>--}}
+
                 <li>
-                    <a href="#"><i class="icon-user"></i>用户管理</a>
+                    <a href="#"><i class="icon-user"></i>分类管理</a>
                     <ul class='closed'>
-                        <li><a href="/admin/user/add">用户添加</a></li>
-                        <li><a href="/admin/user/index">用户列表</a></li>
+                        <li><a href="/admin/cate/create">添加分类</a></li>
+                        <li><a href="/admin/cate">分类列表</a></li>
                     </ul>
                 </li>
-
-
 
             </ul>
         </div>
@@ -159,6 +165,7 @@
 
 <!-- JavaScript Plugins -->
 <script src="/admins/js/libs/jquery-1.8.3.min.js"></script>
+
 <script src="/admins/js/libs/jquery.mousewheel.min.js"></script>
 <script src="/admins/js/libs/jquery.placeholder.min.js"></script>
 <script src="/admins/custom-plugins/fileinput.js"></script>
@@ -192,10 +199,6 @@
 <!-- Demo Scripts (remove if not needed) -->
 <script src="/admins/js/demo/demo.dashboard.js"></script>
 
-@section('js')
-
-
-@show
 
 </body>
 </html>
