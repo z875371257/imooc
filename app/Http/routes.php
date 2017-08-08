@@ -47,6 +47,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
     //   后台底部模块
     Route::resource('buttom','ButtomController');
 
+    //   订单模块
+    Route::resource('order','OrderController');
 
 });
 
