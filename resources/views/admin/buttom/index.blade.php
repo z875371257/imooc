@@ -5,7 +5,7 @@
 @section('content')
     <div class="mws-panel grid_8">
 
-        <div class="mws-panel-header" style="padding-top:2px  ">
+        <div class="mws-panel-header">
             <span><i class="icon-table"></i>网站底部列表页</span>
         </div>
 
@@ -40,25 +40,20 @@
                        aria-describedby="DataTables_Table_1_info">
                     <thead>
                     <tr role="row">
-                        <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 50px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width: 188px;" aria-label="Rendering engine: activate to sort column descending">
                             ID
                         </th>
-                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 150px;" aria-label="Browser: activate to sort column ascending">
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width: 150px;" aria-label="Browser: activate to sort column ascending">
                             地址
                         </th>
-                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 100px;" aria-label="Platform(s): activate to sort column ascending">
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width: 100px;" aria-label="Platform(s): activate to sort column ascending">
                             标题
                         </th>
-                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width:470px" aria-label="Engine version: activate to sort column ascending">
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width:470px" aria-label="Engine version: activate to sort column ascending">
                             内容
                         </th>
 
-                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
+                        <th  role="columnheader"  rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
                             操作
                         </th>
                     </tr>
@@ -122,6 +117,7 @@
                         text-align: center;
                         text-decoration: none;
                     }
+
                     #page .active{
                         background-color: #88a9eb;
                         background-image: none;
@@ -134,18 +130,15 @@
 
                         color: #fff;
                     }
-
                     #page .disabled{
 
                         color: #666666;
                         cursor: default;
                     }
-
                     #page ul{
 
                         margin:0px;
                     }
-
                     .page_list{
                         padding-top: 0px;
                         height:30px;

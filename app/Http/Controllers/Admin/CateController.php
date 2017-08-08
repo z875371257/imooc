@@ -17,6 +17,12 @@ class CateController extends Controller
      */
     public function index(Request $request)
     {
+//        $res = DB::table('course_cate')->
+//        select(DB::raw("*,concat(path,',',cid) as path"))->
+//        orderBy('path')->
+//        where('cname','like','%'.$request->input('search').'%');
+//            ->paginate($request->input('num',5));
+
         $res = DB::table('course_cate')->
         select(DB::raw("*,concat(path,',',cid) as paths"))->
         orderBy('paths')->
@@ -27,7 +33,8 @@ class CateController extends Controller
             //拆分path
             $data = explode(',',$v->path);
             $count = count($data)-1;
-            $v->name = str_repeat('|---', $count).$v->cname;
+            $v->cname = str_repeat('|---', $count).$v->cname;
+
         }
 
         return view('admin.cate.index',['res'=>$res, 'request'=>$request]);
@@ -82,28 +89,46 @@ class CateController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *  分类修改页面
      */
     public function edit($id)
     {
-        //
+        $res = DB::table('course_cate')->
+        select(DB::raw("*,concat(path,',',cid) as paths"))->
+        orderBy('paths')->
+        get();
+
+        //通过path判断
+        foreach($res as $k => $v){
+
+            //拆分path
+            $data = explode(',',$v->path);
+            $count = count($data)-1;
+            $v->cname = str_repeat('|--', $count).$v->cname;
+        }
+
+
+        $data = DB::table('course_cate')->where('cid', $id)->first();
+
+        return view('admin.cate.edit',['data'=>$data, 'res'=>$res]);
+
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *  处理修改信息
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $res = $request->except('_token','_method');
+        $cate = DB::table('course_cate')->where('cid', $id)->first();
+        $re =  $cate->update($input);
+        if($re){
+            return redirect('admin/cate');
+        }else{
+            return back()->with('msg','修改失败');
+        }
 
+    }
     /**
      * Remove the specified resource from storage.
      *
