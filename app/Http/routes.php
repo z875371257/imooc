@@ -28,28 +28,25 @@ Route::post('/admin/dologin', 'Admin\LoginController@dologin');
 // 处理登录
 Route::get('/admin/logout', 'Admin\LoginController@logout');
 
-<<<<<<< HEAD
+
 // 后台管理组
-Route::group(['prefix' => 'admin', 'middleware' => 'login'],function(){
-    Route::get('index', 'Admin\IndexController@index');     // 网站后台主页
-    Route::get('index/edit', 'Admin\IndexController@edit');  //登录后的用户修改密码页面
-    Route::post('index/update', 'Admin\IndexController@update');  //修改密码处理
-
-
-    Route::resource('cate', 'Admin\CateController');   // 分类管理
-    Route::get('ajaxcate', 'Admin\IndexController@ajaxcate');
-=======
 Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin'],function(){
-    Route::get('index', 'IndexController@index');
-    Route::get('layout', 'IndexController@layout');
+    //   后台主页模块
+    Route::get('index', 'IndexController@index');      // 网站后台主页
+    Route::get('index/edit', 'IndexController@edit');   //登录后的用户修改密码页面
+    Route::post('index/update', 'IndexController@update');   //修改密码处理
 
-//    后台用户模块
-//    后台用户资源路由
-    Route::resource('user', 'UserController');
+    //    后台分类模块
+    Route::resource('cate', 'CateController');   // 分类管理
+    Route::get('ajaxcate', 'IndexController@ajaxcate');  //分类列表的一个ajax请求
 
-//    发送ajax 判断用户是否存在路由
-    Route::post('checkname', 'UserController@checkName');
->>>>>>> origin/airline
+    //    后台用户模块
+    Route::resource('user', 'UserController');  //后台用户资源路由
+    Route::post('checkname', 'UserController@checkName');   //发送ajax 判断用户是否存在路由
+
+    //   后台底部模块
+    Route::resource('buttom','ButtomController');
+
 
 });
 

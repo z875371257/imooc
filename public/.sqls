@@ -168,3 +168,85 @@
 [2017-08-07 14:35:52]select * from `mk_admin_user` where `username` = ? limit 1
 [2017-08-07 14:36:06]select * from `mk_admin_user` where `username` = ? limit 1
 [2017-08-07 14:36:42]select * from `mk_admin_user` where `username` = ? limit 1
+[2017-08-08 11:58:10]select * from `mk_admin_user` where `username` = ? limit 1
+[2017-08-08 12:00:45]select distinct `genera` from `mk_course_cate`
+[2017-08-08 12:00:46]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:00:46]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 0
+[2017-08-08 12:01:10]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:01:10]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 0
+[2017-08-08 12:01:12]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:01:12]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 0
+[2017-08-08 12:01:14]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:01:14]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 5
+[2017-08-08 12:01:14]select * from `mk_course_cate` where `cid` = ? limit 1
+[2017-08-08 12:01:14]select * from `mk_course_cate` where `cid` = ? limit 1
+[2017-08-08 12:01:14]select * from `mk_course_cate` where `cid` = ? limit 1
+[2017-08-08 12:01:18]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:01:18]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 10 offset 0
+[2017-08-08 12:01:18]select * from `mk_course_cate` where `cid` = ? limit 1
+[2017-08-08 12:01:18]select * from `mk_course_cate` where `cid` = ? limit 1
+[2017-08-08 12:01:18]select * from `mk_course_cate` where `cid` = ? limit 1
+[2017-08-08 12:01:23]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:01:23]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 10 offset 10
+[2017-08-08 12:01:23]select * from `mk_course_cate` where `cid` = ? limit 1
+[2017-08-08 12:01:25]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:01:25]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:01:36]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:01:36]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:02:40]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:02:40]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:03:21]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:03:21]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:03:44]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:03:44]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:03:53]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:03:53]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:03:57]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:03:57]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 0
+[2017-08-08 12:03:59]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:03:59]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:04:06]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:04:06]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:04:11]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:04:11]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:04:15]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:04:15]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:04:27]select distinct `genera` from `mk_course_cate`
+[2017-08-08 12:04:28]select distinct `genera` from `mk_course_cate`
+[2017-08-08 12:04:30]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:04:30]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 0
+[2017-08-08 12:04:36]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:04:36]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:04:40]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:04:40]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 0
+[2017-08-08 12:04:44]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:04:44]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:05:11]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:05:11]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 0
+[2017-08-08 12:05:15]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:05:15]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:05:21]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:05:21]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 0
+[2017-08-08 12:05:28]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:05:28]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:05:31]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:05:31]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 0
+[2017-08-08 12:05:50]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:05:50]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 0
+[2017-08-08 12:06:04]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:06:04]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 0
+[2017-08-08 12:06:05]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:06:05]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 0
+[2017-08-08 12:06:09]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:06:09]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:06:33]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:06:33]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:07:01]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:07:01]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 0
+[2017-08-08 12:07:17]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:07:17]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-08 12:07:35]select distinct `genera` from `mk_course_cate`
+[2017-08-08 12:07:36]select count(*) as aggregate from `mk_course_cate` where `cname` like ?
+[2017-08-08 12:07:36]select *,concat(path,',',cid) as paths from `mk_course_cate` where `cname` like ? order by `paths` asc limit 5 offset 0
+[2017-08-08 12:08:36]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-08 12:08:36]select * from `mk_buttom` where `title` like ? limit 5 offset 0

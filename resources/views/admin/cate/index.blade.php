@@ -9,7 +9,7 @@
         <div class="mws-panel-body no-padding">
             <div role="grid" class="dataTables_wrapper" id="DataTables_Table_1_wrapper">
 
-                <form action="/admin/cate/index" method='get'>
+                <form action="/admin/cate" method='get'>
                     <div id="DataTables_Table_1_length" class="dataTables_length">
                         <label>
                             显示
@@ -69,28 +69,30 @@
                             状态
                         </th>
                         <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
+                            rowspan="1" colspan="1" style="width: 160px;" aria-label="CSS grade: activate to sort column ascending">
                             操作
                         </th>
                     </tr>
                     </thead>
                     <tbody role="alert" aria-live="polite" aria-relevant="all">
 
-                        @if(!$res)
+                    @if($res)
+                        @foreach($res as $k => $v)
+                            <tr class="@if ($k % 2 == 1) even @else odd @endif">
+                                <td>{{$v->cid}}</td>
+                                <td> {{genera($v->genera)}}</td>
+                                <td>{{$v->cname}}</td>
+                                <td>{{getCateValue($v->pid)}}</td>
+                                <td>{{$v->path}}</td>
+                                <td>{{status($v->status)}}</td>
+                                <td>
+                                    <a href="/admin/cate/{{$v->cid}}/edit" class='btn btn-success'>修改</a>
+                                    <a href="/admin/cate/delete/{{$v->cid}}" class='btn btn-warning'>删除</a>
+                                </td>
 
-                        <tr class="even">
-                            <td class="  sorting_1"></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <a href="/admin/cate/edit/" class='btn btn-success'>修改</a>
-                                <a href="/admin/cate/delete?id=" class='btn btn-warning'>删除</a>
-                            </td>
-                        </tr>
-                        @endif
+                            </tr>
+                        @endforeach
+                    @endif
 
                     </tbody>
                 </table>
@@ -120,18 +122,14 @@
                         box-shadow: 0 0 4px rgba(0, 0, 0, 0.25) inset;
                         color: #323232;
                     }
-
                     #page a{
-
                         color: #fff;
                     }
-
                     #page .disabled{
 
                         color: #666666;
                         cursor: default;
                     }
-
                     #page ul{
 
                         margin:0px;

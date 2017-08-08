@@ -44,10 +44,10 @@
 <div id="mws-header" class="clearfix">
 
     <!-- Logo Container -->
-    <div id="mws-logo-container">
+    <div id="mws-logo-container" >
 
         <!-- Logo Wrapper, images put within this wrapper will always be vertically centered -->
-        <div id="mws-logo-wrap">
+        <div id="mws-logo-wrap" style="padding-top:2px">
             <span style='font-size:20px;color:white'>   慕课网后台管理 </span>
 
         </div>
@@ -76,21 +76,15 @@
 
             <!-- User Photo -->
             <div id="mws-user-photo">
-<<<<<<< HEAD
                 <img src="{{ uface() }}" alt="User Photo">
-=======
-                {{--<img src="{{$session->uface}}" alt="User Photo">--}}
->>>>>>> origin/airline
             </div>
 
             <!-- Username and Functions -->
             <div id="mws-user-functions">
                 <div id="mws-username">
-<<<<<<< HEAD
+
                     Hello, {{ username() }}
-=======
-                    {{--Hello, {{$session->username}}--}}
->>>>>>> origin/airline
+
                 </div>
                 <ul>
                     <li><a href="/admin/index/edit">修改密码</a></li>
@@ -129,29 +123,30 @@
         <!-- Main Navigation -->
         <div id="mws-navigation">
             <ul>
-                {{--<li>--}}
-                    {{--<a href="#"><i class="icon-user"></i>用户管理</a>--}}
-                    {{--<ul class='closed'>--}}
-                        {{--<li><a href="/admin/user/add">用户添加</a></li>--}}
-                        {{--<li><a href="/admin/user/index">用户列表</a></li>--}}
-                    {{--</ul>--}}
-                {{--</li>--}}
+                <li>
+                    <a href="#"><i class="icon-user"></i>用户管理</a>
+                    <ul class='closed'>
+                        <li><a href="{{url('/admin/user/create')}}">用户添加</a></li>
+                        <li><a href="{{url('/admin/user/')}}">用户列表</a></li>
+                    </ul>
+                </li>
 
                 <li>
                     <a href="#"><i class="icon-user"></i>分类管理</a>
                     <ul class='closed'>
-<<<<<<< HEAD
                         <li><a href="/admin/cate/create">添加分类</a></li>
                         <li><a href="/admin/cate">分类列表</a></li>
                     </ul>
                 </li>
 
-=======
-                        <li><a href="{{url('/admin/user/create')}}">用户添加</a></li>
-                        <li><a href="{{url('/admin/user/')}}">用户列表</a></li>
+                <li>
+                    <a href="#"><i class="icon-user"></i>底部管理</a>
+                    <ul class='closed'>
+                        <li><a href="/admin/buttom/create">内容添加</a></li>
+                        <li><a href="/admin/buttom">内容列表</a></li>
                     </ul>
                 </li>
->>>>>>> origin/airline
+
             </ul>
         </div>
     </div>
