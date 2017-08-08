@@ -33,5 +33,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login'],function(){
     Route::resource('cate', 'Admin\CateController');   // 分类管理
     Route::get('ajaxcate', 'Admin\IndexController@ajaxcate');
 
+    // 订单
+    Route::resource('order','Admin\OrderController');
+
 });
 
