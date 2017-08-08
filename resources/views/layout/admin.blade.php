@@ -44,10 +44,10 @@
 <div id="mws-header" class="clearfix">
 
     <!-- Logo Container -->
-    <div id="mws-logo-container">
+    <div id="mws-logo-container" >
 
         <!-- Logo Wrapper, images put within this wrapper will always be vertically centered -->
-        <div id="mws-logo-wrap">
+        <div id="mws-logo-wrap" style="padding-top:2px">
             <span style='font-size:20px;color:white'>   慕课网后台管理 </span>
 
         </div>
@@ -76,13 +76,13 @@
 
             <!-- User Photo -->
             <div id="mws-user-photo">
-                <img src="{{$session->uface}}" alt="User Photo">
+                <img src="" alt="User Photo">
             </div>
 
             <!-- Username and Functions -->
             <div id="mws-user-functions">
                 <div id="mws-username">
-                    Hello, {{$session->username}}
+                    Hello,
                 </div>
                 <ul>
                     <li><a href="#">修改密码</a></li>
@@ -128,6 +128,14 @@
                         <li><a href="/admin/user/index">用户列表</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#"><i class="icon-user"></i>底部管理</a>
+                    <ul class='closed'>
+                        <li><a href="/admin/buttom/create">内容添加</a></li>
+                        <li><a href="/admin/buttom">内容列表</a></li>
+                    </ul>
+                </li>
+
 
 
 

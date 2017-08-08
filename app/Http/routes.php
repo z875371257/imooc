@@ -24,5 +24,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login'],function(){
     Route::get('index', 'Admin\IndexController@index');
     Route::get('layout', 'Admin\IndexController@layout');
 
+    //底部模块
+    Route::resource('buttom','Admin\ButtomController');
+
+
 });
 
