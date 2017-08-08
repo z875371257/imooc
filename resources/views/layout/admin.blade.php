@@ -76,13 +76,21 @@
 
             <!-- User Photo -->
             <div id="mws-user-photo">
+<<<<<<< HEAD
                 <img src="{{ uface() }}" alt="User Photo">
+=======
+                {{--<img src="{{$session->uface}}" alt="User Photo">--}}
+>>>>>>> origin/airline
             </div>
 
             <!-- Username and Functions -->
             <div id="mws-user-functions">
                 <div id="mws-username">
+<<<<<<< HEAD
                     Hello, {{ username() }}
+=======
+                    {{--Hello, {{$session->username}}--}}
+>>>>>>> origin/airline
                 </div>
                 <ul>
                     <li><a href="/admin/index/edit">修改密码</a></li>
@@ -132,11 +140,18 @@
                 <li>
                     <a href="#"><i class="icon-user"></i>分类管理</a>
                     <ul class='closed'>
+<<<<<<< HEAD
                         <li><a href="/admin/cate/create">添加分类</a></li>
                         <li><a href="/admin/cate">分类列表</a></li>
                     </ul>
                 </li>
 
+=======
+                        <li><a href="{{url('/admin/user/create')}}">用户添加</a></li>
+                        <li><a href="{{url('/admin/user/')}}">用户列表</a></li>
+                    </ul>
+                </li>
+>>>>>>> origin/airline
             </ul>
         </div>
     </div>
