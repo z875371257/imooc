@@ -87,7 +87,7 @@
                                 <td>{{status($v->status)}}</td>
                                 <td>
                                     <a href="/admin/cate/{{$v->cid}}/edit" class='btn btn-success'>修改</a>
-                                    <a href="/admin/cate/delete/{{$v->cid}}" class='btn btn-warning'>删除</a>
+                                    <a href="javascript:void(0)" onclick="delCate({{$v->cid}})" class='btn btn-warning'>删除</a>
                                 </td>
 
                             </tr>
@@ -96,6 +96,34 @@
 
                     </tbody>
                 </table>
+
+                <script>
+
+                    function delCate(id){
+
+                        layer.confirm('确认删除吗？', {
+                            btn: ['确定','取消'] //按钮
+                        }, function(){
+
+                      $.post("{{url('admin/cate/')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}'},function(data){
+
+                                if(data.status == 0){
+                                    location.href = location.href;
+                                    layer.msg(data.msg, {icon: 6});
+                                }else{
+                                    location.href = location.href;
+                                    layer.msg(data.msg, {icon: 5});
+                                }
+
+                            });
+
+                        }, function(){
+
+                        });
+
+                    }
+
+                </script>
 
                 <style type="text/css">
                     #page li{
