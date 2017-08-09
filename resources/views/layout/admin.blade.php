@@ -33,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="/admins/css/mws-theme.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/admins/css/themer.css" media="screen">
     <link rel="stylesheet" href="/admins/css/style.css">
+    <script src="/admins/layer/layer.js"></script>
 
 
     <title>@yield('title')</title>

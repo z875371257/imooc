@@ -34,11 +34,14 @@
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">内容:</label>
-                        <div class="mws-form-item" name='content' value="{{$edit->editorValue}}">
+                        <div class="mws-form-item" name='content' >
                             <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/ueditor.config.js')}}"></script>
                             <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/ueditor.all.min.js')}}"> </script>
                             <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/lang/zh-cn/zh-cn.js')}}"></script>
-                            <script id="editor" type="text/plain" style="width:800px;height:300px;"></script>
+                            <script id="editor" type="text/plain" style="width:800px;height:300px;" >
+                                {!! $edit->editorValue !!}
+                            </script>
+
                             <script type="text/javascript" >
 
                                 //实例化编辑器
@@ -84,7 +87,7 @@
                                     arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
                                     UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
                                     alert(arr.join("\n"));
-                                }
+                                }d
                                 function setDisabled() {
                                     UE.getEditor('editor').setDisabled('fullscreen');
                                     disableBtn("enable");
