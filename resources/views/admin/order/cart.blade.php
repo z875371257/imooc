@@ -1,5 +1,5 @@
 @extends('layout.admin')
-@section('title', '订单详情')
+@section('title', '购物车')
 @section('content')
     <div class="mws-panel grid_8">
         <div class="mws-panel-header">
@@ -9,7 +9,7 @@
         <div class="mws-panel-body no-padding">
             <div role="grid" class="dataTables_wrapper" id="DataTables_Table_1_wrapper">
 
-                <form action="{{url('admin/order')}}" method='get'>
+                <form action="{{url('admin/cart')}}" method='get'>
                     <div id="DataTables_Table_1_length" class="dataTables_length">
                         <label>
                             显示
@@ -46,41 +46,23 @@
                         
                         <th class="" role="columnheader" aria-controls="DataTables_Table_1"
                             rowspan="1" colspan="1" style="width: 188px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
-                            订单编号
+                            下单人
                         </th>
                         <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
                             rowspan="1" colspan="1" style="width: 243px;" aria-label="Browser: activate to sort column ascending">
-                            商品数量
+                            购买商品名称
                         </th>
                         <th class="" role="columnheader" aria-controls="DataTables_Table_1"
                             rowspan="1" colspan="1" style="width: 128px;" aria-label="Platform(s): activate to sort column ascending">
-                            金额
+                            总金额
                         </th>
-                        <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 160px;" aria-label="Engine version: activate to sort column ascending">
-                            收货人
-                        </th>
-
-                        <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 117px;" aria-label="CSS grade: activate to sort column ascending">
-                            收货地址
-                        </th>
-                        <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
-                            联系电话
-                        </th>
-                        <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
-                            状态
-                        </th>
+                        
+                    
                         <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
                             rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
                             下单时间
                         </th>
-                        <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 230px;" aria-label="CSS grade: activate to sort column ascending">
-                            操作
-                        </th>
+                      
                     </tr>
                     </thead>
                     <tbody role="alert" aria-live="polite" aria-relevant="all">
@@ -88,17 +70,11 @@
                         @if($res)
                         @foreach($res as $k => $v)
                         <tr class="even">
-                            <td class="  sorting_1">{{$v->oid}}</td>
-                            <td>{{$v->ocnt}}</td>
-                            <td>{{$v->ormb}}</td>
-                            <td>{{$v->name}}</td>
-                            <td>{{$v->details}}</td>
-                            <td>{{$v->telephone}}</td>
-                            <td>{{$status[$v->status]}}</td>
-                            <td>{{$v->addtime}}</td>
-                            <td>
-                                <a href="{{url('admin/order/'.$v->uid.'/edit')}}" class='btn btn-success'>修改</a>
-                            </td>
+                            <td class="  sorting_1">{{$v->username}}</td>
+                            <td>{{$v->gname}}</td>
+                            <td>{{$v->price}}</td>
+                            <td>{{$v->addtime}</td>
+                            
                         </tr>
                        @endforeach
                        @endif

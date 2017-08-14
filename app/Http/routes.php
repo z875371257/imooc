@@ -50,5 +50,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
     //   订单模块
     Route::resource('order','OrderController');
 
+    //购物车
+    Route::resource('cart','CartController');
 });
 
