@@ -2376,3 +2376,19 @@
 [2017-08-14 03:33:48]select * from `mk_buttom`
 [2017-08-14 03:33:51]select * from `mk_buttom`
 [2017-08-14 03:33:54]select * from `mk_buttom`
+[2017-08-14 03:42:11]select * from `mk_buttom`
+[2017-08-14 03:42:13]select * from `mk_buttom`
+[2017-08-14 03:42:14]select * from `mk_buttom`
+[2017-08-14 03:42:15]select * from `mk_buttom`
+[2017-08-14 03:42:24]select * from `mk_buttom`
+[2017-08-14 03:43:03]select * from `mk_buttom`
+[2017-08-14 03:43:04]select * from `mk_buttom`
+[2017-08-14 03:43:04]select * from mk_course_cate where pid=0 and genera=1
+[2017-08-14 03:43:05]select * from mk_buttom
+[2017-08-14 03:43:08]select * from `mk_buttom`
+[2017-08-14 03:43:18]select * from `mk_buttom`
+[2017-08-14 03:43:19]select * from `mk_buttom`
+[2017-08-14 03:43:20]select * from `mk_buttom`
+[2017-08-14 03:43:20]select * from `mk_buttom`
+[2017-08-14 03:43:23]select * from `mk_buttom`
+[2017-08-14 03:43:27]select * from `mk_buttom`
