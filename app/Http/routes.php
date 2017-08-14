@@ -22,9 +22,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
     Route::resource('cate', 'CateController');   // 分类管理
     Route::get('ajaxcate', 'IndexController@ajaxcate');  //分类列表的一个ajax请求
 
+    Route::resource('label', 'LabelController'); //标签管理
+    Route::post('label/genera','LabelController@generas');  //Ajax 发送获取标签
+
     //    课程模块
     Route::resource('course', 'CourseController');
     Route::get('cates', 'CourseController@cates');
+    Route::post('upload', 'CourseController@fileUpload');
+    Route::post('uploads', 'CourseController@fileUploads');
 
     //    后台用户模块
     Route::resource('user', 'UserController');  //后台用户资源路由
@@ -45,6 +50,7 @@ Route::group(['namespace'=>'Home'],function(){
 
     //   前台主页
     Route::get('/', 'IndexController@index');
+    Route::get('course/list', 'ListController@index');
 
 });
 

@@ -1,12 +1,12 @@
 @extends('layout.admin')
 
-@section('title', '网站底部管理')
+@section('title', '课程管理')
 
 @section('content')
     <div class="mws-panel grid_8">
 
         <div class="mws-panel-header">
-            <span><i class="icon-table"></i>网站底部列表页</span>
+            <span><i class="icon-table"></i>课程列表页</span>
         </div>
 
         <div class="mws-panel-body no-padding" >
@@ -16,10 +16,10 @@
                         <label>
                             显示
                             <select name="num" size="1" aria-controls="DataTables_Table_1">
-                                <option value="5"  @if($num == '5') selected="selected" @endif >
+                                <option value="5"   >
                                     5
                                 </option>
-                                <option value="10" @if($num == '10') selected="selected" @endif>
+                                <option value="10">
                                     10
                                 </option>
 
@@ -40,45 +40,68 @@
                        aria-describedby="DataTables_Table_1_info">
                     <thead>
                     <tr role="row">
-                        <th  role="columnheader" rowspan="1" colspan="1" style="width: 188px;" aria-label="Rendering engine: activate to sort column descending">
-                            ID
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width: 100px;" aria-label="Rendering engine: activate to sort column descending">
+                            课程ID
                         </th>
                         <th  role="columnheader" rowspan="1" colspan="1" style="width: 150px;" aria-label="Browser: activate to sort column ascending">
-                            地址
+                            所属大类
                         </th>
-                        <th  role="columnheader" rowspan="1" colspan="1" style="width: 100px;" aria-label="Platform(s): activate to sort column ascending">
-                            标题
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width: 200px;" aria-label="Platform(s): activate to sort column ascending">
+                            所属分类
                         </th>
-                        <th  role="columnheader" rowspan="1" colspan="1" style="width:470px" aria-label="Engine version: activate to sort column ascending">
-                            内容
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width:200px" aria-label="Engine version: activate to sort column ascending">
+                            课程标题
                         </th>
-
-                        <th  role="columnheader"  rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width:120px" aria-label="Engine version: activate to sort column ascending">
+                            学习人数
+                        </th>
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width:50px" aria-label="Engine version: activate to sort column ascending">
+                            最热
+                        </th>
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width:50px" aria-label="Engine version: activate to sort column ascending">
+                            最新
+                        </th>
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width:50px" aria-label="Engine version: activate to sort column ascending">
+                            banner图推荐
+                        </th>
+                        <th  role="columnheader"  rowspan="1" colspan="1" style="width: 240px;" aria-label="CSS grade: activate to sort column ascending">
                             操作
                         </th>
                     </tr>
                     </thead>
                     <tbody role="alert" aria-live="polite" aria-relevant="all">
-                    @foreach($res as $k=>$v)
+                        @foreach($courses as $k=>$v)
                         <tr class=" ">
                             <td class="  sorting_1">
-                            {{$v->id}}
+                                {{$v->id}}
                             </td>
                             <td class=" ">
-                            {{$v->url}}
+                                {{genera($v->genera)}}
                             </td>
                             <td class=" ">
-                            {{strip_tags($v->title)}}
+                                {{$v->cname}}
                             </td>
                             <td class=" ">
-                            {{$v->editorValue}}
+                                {{$v->title}}
                             </td>
                             <td class=" ">
-                                <a href="/admin/buttom/{{$v->id}}/edit/" class='btn btn-success'>修改</a>
+                                {{$v->NNT}}
+                            </td>
+                            <td class=" ">
+                                {{$v->hot}}
+                            </td>
+                            <td class=" ">
+                                {{$v->new}}
+                            </td>
+                            <td class=" ">
+                                {{$v->banner}}
+                            </td>
+                            <td class=" ">
+                                <a href="/admin/buttom//edit/" class='btn btn-success'>修改</a>
                                 <a href="javascript:void(0)" onclick="delUser({{$v->id}})" class='btn btn-warning'>删除</a>
                             </td>
                         </tr>
-                    @endforeach
+                        @endforeach
                     </tbody>
                 </table>
 
@@ -157,7 +180,7 @@
                 <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_1_paginate">
 
                     <div id='page'>
-                        {!! $res->appends(['search'=>$search,'num'=>$num])->render() !!}
+
 
                     </div>
 

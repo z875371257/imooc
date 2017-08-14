@@ -138,6 +138,8 @@
                     <ul class='closed'>
                         <li><a href="/admin/cate/create">添加分类</a></li>
                         <li><a href="/admin/cate">分类列表</a></li>
+                        <li><a href="/admin/label/create">分类标签添加</a></li>
+                        <li><a href="/admin/label">分类标签列表</a></li>
                     </ul>
                 </li>
 

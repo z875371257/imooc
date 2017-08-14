@@ -25,29 +25,39 @@ class IndexController extends Controller
     // 修改密码处理
     public function update(Request $request)
     {
-        $res = session('user');
-        $id = (int)$res->id;
+        $res = $request->except('_token');
+        $ses = session('user');
+        $arr = DB::table('admin_user')->where('id', $ses->id)->first();
+        $mpasswd = Crypt::decrypt($arr->password);
+        if($res['oldpasswd'] != $mpasswd)
+        {
+            return back()->with('errors', '原密码错误');
+        } else {
+            $this->validate($request, [
+                'oldpasswd' => "required",
+                'password' => 'required|regex:/^\w{6,10}$/',
+                'repassword'=>'same:password',
+            ],[
+                'oldpasswd.required'=>'原密码不能为空',
+                'oldpasswd.exists'=>'原密码错误',
+                'password.required'=>'新密码不能为空',
+                'password.regex'=>'密码格式不正确',
+                'repassword.same'=>'两次密码不一致',
+            ]);
+        }
 
-        $this->validate($request, [
-            'oldpasswd' => "required",
-            'password' => 'required|regex:/^\w{6,10}$/',
-            'repassword'=>'same:password',
-        ],[
-            'oldpasswd.required'=>'原密码不能为空',
+        $data = DB::table('admin_user')
+            ->where('id', $ses->id)
+            ->update(['password' => Crypt::encrypt($res['password'])]);
 
-            'password.required'=>'新密码不能为空',
-            'password.regex'=>'密码格式不正确',
-            'repassword.same'=>'两次密码不一致',
-        ]);
+        if($data) {
+            return redirect('admin/index/edit')->with('success', '修改成功');
+        } else {
+            return back()->with('errors', '修改失败');
+        }
 
-//        $res = $request->except('_token');
-//        $ses = session('user');
-//        $arr = DB::table('admin_user')->where('id', $ses->id)->first();
-//        $mpasswd = Crypt::decrypt($arr->password);
-//        if($res['oldpasswd'] != $mpasswd)
-//        {
-//            return back()->with('msg', '原密码错误');
-//        }
+
+
     }
 
 
@@ -55,7 +65,7 @@ class IndexController extends Controller
     public function ajaxcate(Request $request)
     {
         $res = DB::table('course_cate')->
-        select(DB::raw("*,concat(path,',',cid) as paths"))->
+        select(DB::raw("*,concat(path,cid) as paths"))->
         orderBy('paths')->
         where('genera', $request->input('genera'))->
         get();

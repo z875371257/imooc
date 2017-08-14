@@ -6,15 +6,28 @@
             <span>分类修改页面</span>
         </div>
 
-        @if (count($errors) > 0)
-            <div class="mws-form-message error">
+        <!-- 表单提交后发生错误信息的显示 -->
+        @if (count(session('success')) > 0)
+            <div class="mws-form-message info" style="margin-top:10px">
+                {{session('success')}}
+            </div>
+        @endif
+
+        @if (count($errors) > 0 || session('errors') > 0)
+            <div class="mws-form-message error" style='margin-top:10px;'>
+                修改失败
                 <ul>
-                    @foreach ($errors->all() as $error)
-                        <li style='list-style:none;font-size:17px'>{{ $error }}</li>
-                    @endforeach
+                    @if(is_object($errors))
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    @else
+                        <li>{{session('errors')}}</li>
+                    @endif
                 </ul>
             </div>
         @endif
+
 
         <div class="mws-panel-body no-padding">
             <form action="/admin/cate/{{$data->cid}}" method='post' class="mws-form">

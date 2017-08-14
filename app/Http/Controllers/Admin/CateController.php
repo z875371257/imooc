@@ -17,12 +17,6 @@ class CateController extends Controller
      */
     public function index(Request $request)
     {
-//        $res = DB::table('course_cate')->
-//        select(DB::raw("*,concat(path,',',cid) as path"))->
-//        orderBy('path')->
-//        where('cname','like','%'.$request->input('search').'%');
-//            ->paginate($request->input('num',5));
-
         $res = DB::table('course_cate')->
         select(DB::raw("*,concat(path,',',cid) as paths"))->
         orderBy('paths')->
@@ -56,7 +50,8 @@ class CateController extends Controller
     }
 
     /**
-     *  处理添加过来的数据
+     *
+     *  处理添加过来的类别
      */
     public function store(Request $request)
     {
@@ -69,7 +64,7 @@ class CateController extends Controller
         } else {
             $info = DB::table('course_cate')->where('cid', $res['pid'])->first();
 
-            $res['path'] = $info->path.$info->cid;
+            $res['path'] = $info->path.$info->cid.',';
         }
 
         $data = DB::table('course_cate')->insert($res);

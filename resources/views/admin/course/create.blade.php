@@ -3,13 +3,35 @@
 @section('title', '课程添加')
 
 @section('content')
+    <script src="/admins/js/libs/jquery-1.8.3.min.js"></script>
     <div class="mws-panel grid_8">
         <div class="mws-panel-header" >
             <span>课程添加页面</span>
         </div>
+        <!-- 表单提交后发生错误信息的显示 -->
+        @if (count(session('success')) > 0)
+            <div class="mws-form-message info" style="margin-top:10px">
+                {{session('success')}}
+            </div>
+        @endif
+
+        @if (count($errors) > 0 || session('errors') > 0)
+            <div class="mws-form-message error" style='margin-top:10px;'>
+                修改失败
+                <ul>
+                    @if(is_object($errors))
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    @else
+                        <li>{{session('errors')}}</li>
+                    @endif
+                </ul>
+            </div>
+        @endif
 
         <div class="mws-panel-body no-padding">
-            <form action="/admin/course" method='post' enctype='multipart/form-data' class="mws-form">
+            <form action="/admin/course" method='post' enctype="multipart/form-data" class="mws-form" id="art_form">
                 <div class="mws-form-inline">
 
                     <div class="mws-form-row">
@@ -32,6 +54,15 @@
                         </div>
                     </div>
 
+                    <div class="mws-form-row" id="bigcheck" >
+                        <label class="mws-form-label">课程所属标签</label>
+                        <div class="mws-form-item clearfix">
+                            <ul class="mws-form-list inline" id="checkd">
+
+                            </ul>
+                        </div>
+                    </div>
+
                     <div class="mws-form-row">
                         <label class="mws-form-label">课程名:</label>
                         <div class="mws-form-item">
@@ -46,7 +77,7 @@
                         </div>
                     </div>
 
-                    <div class="mws-form-row">
+                    <div class="mws-form-row" id="description">
                         <label class="mws-form-label">课程详情页简介</label>
                         <div class="mws-form-item">
                             <textarea rows="" cols="" class="large" name="description" value="{{old('description')}}}"></textarea>
@@ -56,25 +87,116 @@
                     <div class="mws-form-row">
                         <label class="mws-form-label">列表页图片:</label>
                         <div class="mws-form-item" >
-                            <input type="file" class="small" name="pic"">
+                            <input type="hidden" name="pic" id="pic">
+                            <input type="file" class="small" name="picc" id="file_upload">
                         </div>
                     </div>
+                    <p><img id="img1" alt="上传后显示图片" style="max-width:350px;max-height:100px;margin-left:180px" /></p>
+                    <script type="text/javascript">
+                        $(function () {
+                            $("#file_upload").change(function () {
+                                uploadImage();
+                            });
+                        });
+                        function uploadImage() {
+//                            判断是否有选择上传文件
+                            var imgPath = $("#file_upload").val();
 
-                    <div class="mws-form-row">
+                            if (imgPath == "") {
+                                alert("请选择上传图片！");
+                                return;
+                            }
+                            //判断上传文件的后缀名
+                            var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
+                            if (strExtension != 'jpg' && strExtension != 'gif'
+                                && strExtension != 'png' && strExtension != 'bmp') {
+                                alert("请选择图片文件");
+                                return;
+                            }
+                            var formData = new FormData($('#art_form')[0]);
+
+                            $.ajax({
+                                type: "POST",
+                                url: "/admin/upload",
+                                data: formData,
+                                async: true,
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                success: function(data) {
+                                    $('#img1').attr('src','/'+data);
+                                    $('#pic').val(data);
+                                },
+                                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                    alert("上传失败，请检查网络后重试");
+                                }
+                            });
+                        }
+
+                    </script>
+
+
+
+                    <div class="mws-form-row" id="banner">
                         <label class="mws-form-label">详情页大图 or Banner图:</label>
                         <div class="mws-form-item">
-                            <input type="file"  value="" name="bigpic"">
+                            <input type="hidden" name="bigpic" id="bigpic">
+                            <input type="file"  name="bigpicc" id="file_uploads">
                         </div>
                     </div>
+                    <p><img id="img2" alt="上传后显示图片" style="max-width:350px;max-height:100px;margin-left:180px" /></p>
 
-                    <div class="mws-form-row">
+                    <script type="text/javascript">
+                        $(function () {
+                            $("#file_uploads").change(function () {
+                                uploadImages();
+                            });
+                        });
+                        function uploadImages() {
+//                            判断是否有选择上传文件
+                            var imgPath = $("#file_uploads").val();
+
+                            if (imgPath == "") {
+                                alert("请选择上传图片！");
+                                return;
+                            }
+                            //判断上传文件的后缀名
+                            var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
+                            if (strExtension != 'jpg' && strExtension != 'gif'
+                                && strExtension != 'png' && strExtension != 'bmp') {
+                                alert("请选择图片文件");
+                                return;
+                            }
+                            var formData = new FormData($('#art_form')[0]);
+
+                            $.ajax({
+                                type: "POST",
+                                url: "/admin/uploads",
+                                data: formData,
+                                async: true,
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                success: function(data) {
+                                    $('#img2').attr('src','/'+data);
+                                    $('#bigpic').val(data);
+                                },
+                                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                    alert("上传失败，请检查网络后重试");
+                                }
+                            });
+                        }
+
+                    </script>
+
+                    <div class="mws-form-row" id="price">
                         <label class="mws-form-label">价格 :</label>
                         <div class="mws-form-item">
                             <input type="text" class="small" value="{{old('price')}}" name="price">
                         </div>
                     </div>
 
-                    <div class="mws-form-row">
+                    <div class="mws-form-row" id="difficulty">
                         <label class="mws-form-label">难度:</label>
                         <div class="mws-form-item clearfix">
                             <ul class="mws-form-list">
@@ -125,7 +247,7 @@
 
 
 
-                    <div class="mws-form-row">
+                    <div class="mws-form-row" id="content">
                         <label class="mws-form-label">列表内容:</label>
                         <div class="mws-form-item" name='content'>
                             <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/ueditor.config.js')}}"></script>
@@ -260,19 +382,59 @@
                     <input type="submit" class="btn btn-danger" value="添加">
                     {{csrf_field()}}
                 </div>
+
                 <script>
+                    $(function(){
+                        $('#bigcheck').hide();
+                    });
+
                     //  点击单选框触发onchang事件 对应着这个方法 然后将大类拿过来
                     function daChange(obj)
                     {
+                        // 将一些类不需要的给隐藏了
+                        if(obj == 1){
+                            $('#description').show();
+                            $('#price').hide();
+                            $('#content').hide();
+                            $('#banner').hide();
+                            $('#bigcheck').show();
+                            $('#img2').hide();
+                            $('#difficulty').show();
+                        }
+                        if(obj == 2){
+                            $('#description').hide();
+                            $('#difficulty').hide();
+                            $('#price').show();
+                            $('#content').show();
+                            $('#banner').show();
+                            $('#bigcheck').hide();
+                            $('#img2').show();
+                        }
+                        if(obj == 3){
+                            $('#description').hide();
+                            $('#bigcheck').show();
+                            $('#difficulty').show();
+
+                        }
                         //发送ajax 然后将遍历出来的数据插入到下拉框里面
                         $.get('/admin/cates',{'genera':obj},function(data){
                             var arr = '';
-                            arr += "<option value='0'>根类</option>";
                             $.each(data, function(i,item){
                                 arr += "<option value="+item.cid+">"+item.cname+"</option>";
                                 $('#pcate').html(arr);
-                            })
+
+                           })
                         })
+
+                        $.post('/admin/label/genera', {'_token':'{{ csrf_token() }}', 'genera':obj}, function(data) {
+                                var arr = '';
+                                $.each(data, function(i,item){
+                                     arr += '<li><input type="checkbox" name="lid[]" value='+item.id+'> <label>'+item.title+'</label></li>';
+                                     $('#checkd').html(arr);
+                                 });
+                        } );
+
+
                     }
                 </script>
             </form>
