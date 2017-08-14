@@ -13,6 +13,7 @@ class IndexController extends Controller
 {
     public function index()
     {
+<<<<<<< HEAD
         // 左部遍历
         $res = DB::select("select cid,cname from mk_course_cate where pid=0 and genera=1");
         // 前端开发
@@ -86,6 +87,12 @@ class IndexController extends Controller
         $banner = DB::select("select id,bigpic from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and genera = 3 limit 0,7");
 
         return view('home.index',compact('res','qd','qdkc','qdsz','qdtj','hd','hdkc1','hdkc2','hdsz','hdtj','yd','ydkc1','ydkc2','ydsz','ydtj','sjk','sjksz','sjktj','yjs','yjssz','yjstj','yw','ywsz','ywtj','yj','yjsz','yjtj','banner'));
+=======
+        $res = DB::select("select * from mk_course_cate where pid=0 and genera=1");
+        $buttom = DB::select('select * from mk_buttom');
+
+        return view('home.index',['res'=>$res,'buttom'=>$buttom]);
+>>>>>>> origin/cc
     }
 
 }

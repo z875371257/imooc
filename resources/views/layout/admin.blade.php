@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="/admins/css/mws-theme.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/admins/css/themer.css" media="screen">
     <link rel="stylesheet" href="/admins/css/style.css">
+    <script src="/admins/layer/layer.js"></script>
 
 
     <title>@yield('title')</title>
@@ -164,6 +165,15 @@
                     <ul class='closed'>
                         <li><a href="/admin/buttom/create">内容添加</a></li>
                         <li><a href="/admin/buttom">内容列表</a></li>
+                        <li><a href="/admin/link/create">友情链接添加</a></li>
+                        <li><a href="/admin/link">友情链接列表</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="icon-user"></i>网站配置</a>
+                    <ul class='closed'>
+                        <li><a href="">内容添加</a></li>
+                        <li><a href="">内容列表</a></li>
                     </ul>
                 </li>
 

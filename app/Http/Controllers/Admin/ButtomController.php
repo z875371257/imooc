@@ -119,6 +119,21 @@ class ButtomController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //删除一条记录
+       $res = Buttom::where('id',$id)->delete();
+       //判断删除状态
+        if($res){
+            $data = [
+                'status' => 0,
+                'msg' => '删除成功',
+            ];
+        } else {
+            $data = [
+                'status' => 1,
+                'msg' => '删除失败',
+            ];
+        }
+
+        return $data;
     }
 }

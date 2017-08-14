@@ -36,6 +36,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
 
     //   后台底部模块
     Route::resource('buttom','ButtomController');
+    Route::resource('link','LinkController');
 
 
 
@@ -52,6 +53,18 @@ Route::group(['namespace'=>'Home'],function(){
     //   前台主页
     Route::get('/', 'IndexController@index');
     Route::get('course/list', 'ListController@index');
+
+    Route::group(['prefix' => 'about'], function () {
+        //底部链接
+        Route::get('cooperate','AboutController@cooperate');
+        Route::get('/job','AboutController@job');
+        Route::get('/contact','AboutController@contact');
+        Route::get('/recruit','AboutController@recruit');
+        Route::get('/us','AboutController@us');
+        Route::get('/group','AboutController@group');
+        Route::get('/friendly','AboutController@friendly');
+    });
+
 
 });
 

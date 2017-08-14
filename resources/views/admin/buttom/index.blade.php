@@ -37,7 +37,7 @@
                 </form>
 
                 <table class="mws-datatable-fn mws-table dataTable" id="DataTables_Table_1"
-                       aria-describedby="DataTables_Table_1_info">
+                       aria-describedby="DataTables_Table_1_info" >
                     <thead>
                     <tr role="row">
                         <th  role="columnheader" rowspan="1" colspan="1" style="width: 188px;" aria-label="Rendering engine: activate to sort column descending">
@@ -49,7 +49,7 @@
                         <th  role="columnheader" rowspan="1" colspan="1" style="width: 100px;" aria-label="Platform(s): activate to sort column ascending">
                             标题
                         </th>
-                        <th  role="columnheader" rowspan="1" colspan="1" style="width:470px" aria-label="Engine version: activate to sort column ascending">
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width:470px;" aria-label="Engine version: activate to sort column ascending">
                             内容
                         </th>
 
@@ -58,20 +58,23 @@
                         </th>
                     </tr>
                     </thead>
-                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                    <tbody role="alert" aria-live="polite" aria-relevant="all" style="height:200px;">
                     @foreach($res as $k=>$v)
                         <tr class=" ">
                             <td class="  sorting_1">
-                            {{$v->id}}
+                            {!!$v->id!!}
                             </td>
                             <td class=" ">
-                            {{$v->url}}
+                            {!!$v->url!!}
                             </td>
                             <td class=" ">
-                            {{strip_tags($v->title)}}
+                            {!!$v->title!!}
                             </td>
-                            <td class=" ">
-                            {{$v->editorValue}}
+                            <td class=" " >
+                            {{--{!!$v->editorValue !!}--}}
+                                {{--{!! html_entity_decode($v->editorValue) !!}--}}
+                                {!! substr($v->editorValue,0,200).'...' !!}
+
                             </td>
                             <td class=" ">
                                 <a href="/admin/buttom/{{$v->id}}/edit/" class='btn btn-success'>修改</a>
@@ -82,22 +85,32 @@
                     </tbody>
                 </table>
 
+                <script src="/admins/js/libs/jquery-1.8.3.min.js"></script>
+                <script src="/admins/layer/layer.js"></script>
+
                 <script>
-                    function delUser($id)
+
+                    function delUser(id)
                     {
-                        layer.confirm('确认删除？', {
-                            btn: ['确认','取消'] //按钮
+                        //询问框
+                        layer.confirm('确定删除？', {
+                            btn: ['确定','取消'] //按钮
                         }, function(){
-                            layer.msg('的确很重要', {icon: 1});
+                            $.post("{{url('admin/buttom')}}/"+id,{'_method':'delete','_token':'{{csrf_token()}}'},function(data){
+                                if(data.status == 0){
+                                    location.href=location.href;
+                                    layer.msg('删除成功',{icon:5});
+                                } else {
+                                    layer.msg('删除失败',{icon:6});
+                                    location.href=location.href;
+                                }
+                            })
                         }, function(){
-                            layer.msg('也可以这样', {
-                                time: 20000, //20s后自动关闭
-                                btn: ['明白了', '知道了']
-                            });
+
                         });
                     }
-                </script>
 
+                </script>
 
                 <style type="text/css">
                     #page li{
