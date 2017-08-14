@@ -39,7 +39,7 @@
                     <div class="mws-form-row">
                         <label class="mws-form-label">分类名:</label>
                         <div class="mws-form-item">
-                            <input type="text" class="small" name='name' value="{{$data->cname}}">
+                            <input type="text" class="small" name='cname' value="{{$data->cname}}">
                         </div>
                     </div>
 
@@ -47,18 +47,16 @@
                         <label class="mws-form-label">状态:</label>
                         <div class="mws-form-item clearfix">
                             <ul class="mws-form-list inline">
-                                <li><label><input type="radio" name='status' value='1'>启用</label></li>
-                                <li><label><input type="radio" name='status' value='0'>禁用</label></li>
+                                <li><label><input type="radio" name='status' value='1' @if($data->status == 1) checked="checked" @endif>启用</label></li>
+                                <li><label><input type="radio" name='status' value='0' @if($data->status == 0) checked="checked" @endif>禁用</label></li>
 
                             </ul>
                         </div>
                     </div>
                 </div>
+                <input type="hidden" name='cid' value='{{$data->cid}}'>
                 <div class="mws-button-row">
                     <input type="submit" class="btn btn-danger" value="修改">
-                    <input type="hidden" name='id' value='{{$data->cid}}'>
-
-
                 </div>
             </form>
         </div>

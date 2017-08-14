@@ -25,9 +25,10 @@
                     <label class="mws-form-label">所属大类:</label>
                     <div class="mws-form-item clearfix">
                         <ul class="mws-form-list inline">
-                            @foreach($data as $k=>$v)
-                            <li><input type="radio" value="{{$v}}" name="genera" onchange="daChange({{$v}})"> <label>{{  genera($v) }}</label></li>
-                            @endforeach
+                                @foreach($arr as $k=>$v)
+                                <li><input type="radio" value="{{$k}}" name="genera" onchange="daChange({{$k}})"> <label>{{ genera($k) }}</label></li>
+                                @endforeach
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -66,6 +67,7 @@
             </form>
         </div>
     </div>
+
     <script>
 
         //  点击单选框触发onchang事件 对应着这个方法 然后将大类拿过来

@@ -46,13 +46,17 @@ class CateController extends Controller
     public function create()
     {
         // 将大类的值拿出来
+        $arr = [
+            '1' => '课程',
+            '2' => '职业路径',
+            '3' => '实战'
+        ];
         $data = DB::table('course_cate')->distinct()->lists('genera');
-        return view('admin.cate.add', ['data'=>$data]);
+        return view('admin.cate.add', ['data'=>$data,'arr'=>$arr]);
     }
 
     /**
-     *
-     *  处理添加过来的类别
+     *  处理添加过来的数据
      */
     public function store(Request $request)
     {
@@ -65,7 +69,7 @@ class CateController extends Controller
         } else {
             $info = DB::table('course_cate')->where('cid', $res['pid'])->first();
 
-            $res['path'] = $info->path.','.$info->cid;
+            $res['path'] = $info->path.$info->cid;
         }
 
         $data = DB::table('course_cate')->insert($res);
@@ -120,9 +124,8 @@ class CateController extends Controller
     public function update(Request $request, $id)
     {
         $res = $request->except('_token','_method');
-        $cate = DB::table('course_cate')->where('cid', $id)->first();
-        $re =  $cate->update($input);
-        if($re){
+        $cate = DB::table('course_cate')->where('cid', $id)->update($res);
+        if($cate){
             return redirect('admin/cate');
         }else{
             return back()->with('msg','修改失败');
@@ -130,13 +133,31 @@ class CateController extends Controller
 
     }
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *  删除分类
      */
     public function destroy($id)
     {
-        //
-    }
+        //根据id查询有没有子类
+        $cate = DB::table('course_cate')->where('cid', $id)->first();
+
+        $path = $cate->path.$cate->cid.',';
+
+        DB::table('course_cate')->where('path', 'like', $path.'%')->delete();
+        $row = DB::table('course_cate')->where('cid', $id)->delete();
+
+        if($row){
+            $data = [
+                'status'=>0,
+                'msg'=>'删除成功'
+            ];
+        }else{
+            $data = [
+                'status'=>1,
+                'msg'=>'删除失败'
+            ];
+        }
+        return $data;
+
+     }
+
 }

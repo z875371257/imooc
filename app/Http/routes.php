@@ -1,24 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-//
-// 记录 sql 语句
-//Event::listen('illuminate.query',function($query){
-//    var_dump($query);
-//});
 
-Route::get('/', function () {
-    return view('welcome');
-});
 // 登录页面
 Route::get('/admin/login', 'Admin\LoginController@index');
 // 获取验证码
@@ -36,9 +18,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
     Route::get('index/edit', 'IndexController@edit');   //登录后的用户修改密码页面
     Route::post('index/update', 'IndexController@update');   //修改密码处理
 
-    //    后台分类模块
+    //    后台课程分类模块
     Route::resource('cate', 'CateController');   // 分类管理
     Route::get('ajaxcate', 'IndexController@ajaxcate');  //分类列表的一个ajax请求
+
+    //    课程模块
+    Route::resource('course', 'CourseController');
+    Route::get('cates', 'CourseController@cates');
 
     //    后台用户模块
     Route::resource('user', 'UserController');  //后台用户资源路由
@@ -46,9 +32,32 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
 
     //   后台底部模块
     Route::resource('buttom','ButtomController');
+    Route::resource('link','LinkController');
+
+
 
     //   订单模块
     Route::resource('order','OrderController');
+
+});
+
+// 前台管理组
+Route::group(['namespace'=>'Home'],function(){
+
+    //   前台主页
+    Route::get('/', 'IndexController@index');
+
+    Route::group(['prefix' => 'about'], function () {
+        //底部链接
+        Route::get('cooperate','AboutController@cooperate');
+        Route::get('/job','AboutController@job');
+        Route::get('/contact','AboutController@contact');
+        Route::get('/recruit','AboutController@recruit');
+        Route::get('/us','AboutController@us');
+        Route::get('/group','AboutController@group');
+        Route::get('/friendly','AboutController@friendly');
+    });
+
 
 });
 

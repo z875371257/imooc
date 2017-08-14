@@ -38,7 +38,7 @@
                             <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/ueditor.config.js')}}"></script>
                             <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/ueditor.all.min.js')}}"> </script>
                             <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/lang/zh-cn/zh-cn.js')}}"></script>
-                            <script id="editor" type="text/plain" style="width:800px;height:300px;" >
+                            <script id="editor" type="text/plain" style="width:700px;height:300px;" >
                                 {!! $edit->editorValue !!}
                             </script>
 

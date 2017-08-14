@@ -12,6 +12,8 @@
     <!-- Plugin Stylesheets first to ease overrides -->
     <link rel="stylesheet" type="text/css" href="/admins/plugins/colorpicker/colorpicker.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/admins/custom-plugins/wizard/wizard.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/admins/css/layer.css" media="screen">
+
 
     <!-- Required Stylesheets -->
     <link rel="stylesheet" type="text/css" href="/admins/bootstrap/css/bootstrap.min.css" media="screen">
@@ -139,6 +141,15 @@
                         <li><a href="/admin/cate">分类列表</a></li>
                     </ul>
                 </li>
+
+                <li>
+                    <a href="#"><i class="icon-user"></i>课程管理</a>
+                    <ul class='closed'>
+                        <li><a href="/admin/course/create">课程添加</a></li>
+                        <li><a href="/admin/course">课程列表</a></li>
+                    </ul>
+                </li>
+
                 <li>
                     <a href="#"><i class="icon-user"></i>订单管理</a>
                     <ul class='closed'>
@@ -152,8 +163,19 @@
                     <ul class='closed'>
                         <li><a href="/admin/buttom/create">内容添加</a></li>
                         <li><a href="/admin/buttom">内容列表</a></li>
+                        <li><a href="/admin/link/create">友情链接添加</a></li>
+                        <li><a href="/admin/link">友情链接列表</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#"><i class="icon-user"></i>网站配置</a>
+                    <ul class='closed'>
+                        <li><a href="">内容添加</a></li>
+                        <li><a href="">内容列表</a></li>
+                    </ul>
+                </li>
+
+
 
             </ul>
         </div>
@@ -183,6 +205,7 @@
 
 <!-- JavaScript Plugins -->
 <script src="/admins/js/libs/jquery-1.8.3.min.js"></script>
+<script src="/admins/js/libs/layer.js"></script>
 
 <script src="/admins/js/libs/jquery.mousewheel.min.js"></script>
 <script src="/admins/js/libs/jquery.placeholder.min.js"></script>
