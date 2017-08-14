@@ -29,10 +29,10 @@ class ListController extends Controller
         $requ = $request;
         $courses = DB::table('course_cate')
               ->join('course', 'course_cate.cid', '=', 'course.pid')
-              ->where('path','REGEXP','0,.,.')
+              ->where('cname','like','%'.$requ->input('fx').'%')
               ->orwhere(function ($query){
                   $query->where('generas',1)
-                        ->where('cname','like','%'.$requ->input('fx').'%');
+                        ->where('path','REGEXP','0,.,.');
               })
               ->paginate(1);
 #              ->get();
