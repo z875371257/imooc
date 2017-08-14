@@ -2351,3 +2351,28 @@
 [2017-08-14 01:39:43]select * from `mk_buttom`
 [2017-08-14 01:40:08]select * from `mk_admin_user` where `username` = ? limit 1
 [2017-08-14 01:40:16]select * from `mk_links`
+[2017-08-14 03:30:57]select * from `mk_admin_user` where `username` = ? limit 1
+[2017-08-14 03:33:04]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-14 03:33:05]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-14 03:33:10]select * from `mk_links`
+[2017-08-14 03:33:13]select count(*) as aggregate from `mk_buttom` where `title` like ?
+[2017-08-14 03:33:13]select * from `mk_buttom` where `title` like ? limit 5 offset 0
+[2017-08-14 03:33:18]select * from mk_course_cate where pid=0 and genera=1
+[2017-08-14 03:33:18]select * from mk_buttom
+[2017-08-14 03:33:22]select * from `mk_buttom`
+[2017-08-14 03:33:26]select * from `mk_buttom`
+[2017-08-14 03:33:27]select * from `mk_buttom`
+[2017-08-14 03:33:32]select * from `mk_buttom`
+[2017-08-14 03:33:34]select * from `mk_buttom`
+[2017-08-14 03:33:35]select * from `mk_buttom`
+[2017-08-14 03:33:35]select * from `mk_buttom`
+[2017-08-14 03:33:40]select * from `mk_buttom`
+[2017-08-14 03:33:42]select * from `mk_buttom`
+[2017-08-14 03:33:43]select * from `mk_buttom`
+[2017-08-14 03:33:44]select * from `mk_buttom`
+[2017-08-14 03:33:45]select * from `mk_buttom`
+[2017-08-14 03:33:46]select * from `mk_buttom`
+[2017-08-14 03:33:47]select * from `mk_buttom`
+[2017-08-14 03:33:48]select * from `mk_buttom`
+[2017-08-14 03:33:51]select * from `mk_buttom`
+[2017-08-14 03:33:54]select * from `mk_buttom`
