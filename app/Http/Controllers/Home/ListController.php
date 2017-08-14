@@ -25,22 +25,15 @@ class ListController extends Controller
 
         // 所有课程
 
-        global $requ;
-        $requ = $request;
+
         $courses = DB::table('course_cate')
               ->join('course', 'course_cate.cid', '=', 'course.pid')
-              ->where('cname','like','%'.$requ->input('fx').'%')
+              ->where('cname','like','%'.$request->input('fx').'%')
               ->orwhere(function ($query){
-                  $query->where('generas',1)
+                  $query->where('generas','1')
                         ->where('path','REGEXP','0,.,.');
               })
-              ->paginate(1);
-#              ->get();
-#         echo '<pre>';
-#        var_dump($users);
-
-#        $courses = DB::select("select * from `mk_course_cate` inner join `mk_course` on
-#        `mk_course_cate`.`cid` = `mk_course`.`pid` and generas = 1  and path REGEXP  '0,.,.'");
+              ->paginate(20);
 
         return view('home.list', compact('direction','classify','type','courses','request'));
     }
