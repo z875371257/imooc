@@ -71,7 +71,7 @@ Route::group(['namespace'=>'Home'],function(){
         Route::get('/recruit','AboutController@recruit');
         Route::get('/us','AboutController@us');
         Route::get('/group','AboutController@group');
-        Route::get('/friendly','AboutController@friendly');
+        Route::get('/friendly','FriendlyController@index');
     });
 
 });
@@ -84,7 +84,7 @@ Route::group(['namespace'=>'Home'],function(){
     Route::post('register', 'Home\RegisterController@register');
 
    //        登录页面
-    Route::get('home/login', 'Home\LoginController@login');
+    Route::get('login', 'Home\LoginController@login');
 
     //    处理登录数据
     Route::post('login', 'Home\LoginController@doLogin');
