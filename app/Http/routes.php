@@ -46,5 +46,19 @@ Route::group(['namespace'=>'Home'],function(){
     //   前台主页
     Route::get('/', 'IndexController@index');
 
+
 });
+
+    //    显示注册页面
+    Route::get('register', 'Home\RegisterController@index');
+
+    //    处理注册页面的数据
+
+    Route::post('register', 'Home\RegisterController@register');
+
+   //        登录页面
+    Route::get('home/login', 'Home\LoginController@login');
+
+//    处理登录数据
+    Route::post('login', 'Home\LoginController@doLogin');
 
