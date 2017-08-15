@@ -8,6 +8,27 @@
         <div class="mws-panel-header">
             <span><i class="icon-table"></i>网站底部列表页</span>
         </div>
+        <!-- 表单提交后发生错误信息的显示 -->
+        @if (count(session('success')) > 0)
+            <div class="mws-form-message info" style="margin-top:10px">
+                {{session('success')}}
+            </div>
+        @endif
+
+        @if (count($errors) > 0 || session('errors') > 0)
+            <div class="mws-form-message error" style='margin-top:10px;'>
+                修改失败
+                <ul>
+                    @if(is_object($errors))
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    @else
+                        <li>{{session('msg')}}</li>
+                    @endif
+                </ul>
+            </div>
+        @endif
 
         <div class="mws-panel-body no-padding" >
             <div role="grid" class="dataTables_wrapper" id="DataTables_Table_1_wrapper">
@@ -37,7 +58,7 @@
                 </form>
 
                 <table class="mws-datatable-fn mws-table dataTable" id="DataTables_Table_1"
-                       aria-describedby="DataTables_Table_1_info">
+                       aria-describedby="DataTables_Table_1_info" >
                     <thead>
                     <tr role="row">
                         <th  role="columnheader" rowspan="1" colspan="1" style="width: 188px;" aria-label="Rendering engine: activate to sort column descending">
@@ -49,7 +70,7 @@
                         <th  role="columnheader" rowspan="1" colspan="1" style="width: 100px;" aria-label="Platform(s): activate to sort column ascending">
                             标题
                         </th>
-                        <th  role="columnheader" rowspan="1" colspan="1" style="width:470px" aria-label="Engine version: activate to sort column ascending">
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width:470px;" aria-label="Engine version: activate to sort column ascending">
                             内容
                         </th>
 
@@ -58,7 +79,7 @@
                         </th>
                     </tr>
                     </thead>
-                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                    <tbody role="alert" aria-live="polite" aria-relevant="all" style="height:200px;">
                     @foreach($res as $k=>$v)
                         <tr class=" ">
                             <td class="  sorting_1">
@@ -70,8 +91,11 @@
                             <td class=" ">
                             {!!$v->title!!}
                             </td>
-                            <td class=" ">
-                            {{$v->editorValue}}
+                            <td class=" " >
+                            {{--{!!$v->editorValue !!}--}}
+                                {{--{!! html_entity_decode($v->editorValue) !!}--}}
+                                {!! substr($v->editorValue,0,200).'...' !!}
+
                             </td>
                             <td class=" ">
                                 <a href="/admin/buttom/{{$v->id}}/edit/" class='btn btn-success'>修改</a>

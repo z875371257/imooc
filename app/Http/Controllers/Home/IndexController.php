@@ -85,7 +85,10 @@ class IndexController extends Controller
         // 前台Banner图
         $banner = DB::select("select id,bigpic from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and genera = 3 limit 0,7");
 
-        return view('home.index',compact('res','qd','qdkc','qdsz','qdtj','hd','hdkc1','hdkc2','hdsz','hdtj','yd','ydkc1','ydkc2','ydsz','ydtj','sjk','sjksz','sjktj','yjs','yjssz','yjstj','yw','ywsz','ywtj','yj','yjsz','yjtj','banner'));
+        // 底部
+        $buttom = DB::select('select * from mk_buttom');
+
+        return view('home.index',compact('res','buttom','qd','qdkc','qdsz','qdtj','hd','hdkc1','hdkc2','hdsz','hdtj','yd','ydkc1','ydkc2','ydsz','ydtj','sjk','sjksz','sjktj','yjs','yjssz','yjstj','yw','ywsz','ywtj','yj','yjsz','yjtj','banner'));
     }
 
 }

@@ -156,7 +156,7 @@
                     <a href="#"><i class="icon-user"></i>订单管理</a>
                     <ul class='closed'>
                         <li><a href="{{url('admin/order')}}">订单列表</a></li>
-                        <li><a href="/admin/cate">购买记录</a></li>
+                        <li><a href="{{url('admin/cart')}}">购物车</a></li>
                     </ul>
                 </li>
 
@@ -165,6 +165,15 @@
                     <ul class='closed'>
                         <li><a href="/admin/buttom/create">内容添加</a></li>
                         <li><a href="/admin/buttom">内容列表</a></li>
+                        <li><a href="/admin/link/create">友情链接添加</a></li>
+                        <li><a href="/admin/link">友情链接列表</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="icon-user"></i>网站配置</a>
+                    <ul class='closed'>
+                        <li><a href="">内容添加</a></li>
+                        <li><a href="">内容列表</a></li>
                     </ul>
                 </li>
 

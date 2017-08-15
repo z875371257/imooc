@@ -3,13 +3,13 @@
 @section('content')
     <div class="mws-panel grid_8">
         <div class="mws-panel-header">
-            <span><i class="icon-table"></i>分类列表页</span>
+            <span><i class="icon-table"></i>订单详情</span>
         </div>
 
         <div class="mws-panel-body no-padding">
             <div role="grid" class="dataTables_wrapper" id="DataTables_Table_1_wrapper">
 
-                <form action="/admin/cate/index" method='get'>
+                <form action="{{url('admin/order')}}" method='get'>
                     <div id="DataTables_Table_1_length" class="dataTables_length">
                         <label>
                             显示
@@ -43,55 +43,65 @@
                        aria-describedby="DataTables_Table_1_info">
                     <thead>
                     <tr role="row">
+                        
                         <th class="" role="columnheader" aria-controls="DataTables_Table_1"
                             rowspan="1" colspan="1" style="width: 188px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
-                            ID
-                        </th>
-                        <th class="" role="columnheader" aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 188px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
-                            所属大类
+                            订单编号
                         </th>
                         <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
                             rowspan="1" colspan="1" style="width: 243px;" aria-label="Browser: activate to sort column ascending">
-                            分类名
+                            商品数量
                         </th>
                         <th class="" role="columnheader" aria-controls="DataTables_Table_1"
                             rowspan="1" colspan="1" style="width: 128px;" aria-label="Platform(s): activate to sort column ascending">
-                            父类
+                            金额
                         </th>
                         <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
                             rowspan="1" colspan="1" style="width: 160px;" aria-label="Engine version: activate to sort column ascending">
-                            路径
+                            收货人
                         </th>
 
                         <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
                             rowspan="1" colspan="1" style="width: 117px;" aria-label="CSS grade: activate to sort column ascending">
+                            收货地址
+                        </th>
+                        <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
+                            rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
+                            联系电话
+                        </th>
+                        <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
+                            rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
                             状态
                         </th>
                         <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
                             rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
+                            下单时间
+                        </th>
+                        <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
+                            rowspan="1" colspan="1" style="width: 230px;" aria-label="CSS grade: activate to sort column ascending">
                             操作
                         </th>
                     </tr>
                     </thead>
                     <tbody role="alert" aria-live="polite" aria-relevant="all">
-
-                        @if(!$res)
-
+                    
+                        @if($res)
+                        @foreach($res as $k => $v)
                         <tr class="even">
-                            <td class="  sorting_1"></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td class="  sorting_1">{{$v->oid}}</td>
+                            <td>{{$v->ocnt}}</td>
+                            <td>{{$v->ormb}}</td>
+                            <td>{{$v->name}}</td>
+                            <td>{{$v->details}}</td>
+                            <td>{{$v->telephone}}</td>
+                            <td>{{$status[$v->status]}}</td>
+                            <td>{{$v->addtime}}</td>
                             <td>
-                                <a href="/admin/cate/edit/" class='btn btn-success'>修改</a>
-                                <a href="/admin/cate/delete?id=" class='btn btn-warning'>删除</a>
+                                <a href="{{url('admin/order/'.$v->uid.'/edit')}}" class='btn btn-success'>修改</a>
                             </td>
                         </tr>
-                        @endif
-
+                       @endforeach
+                       @endif
                     </tbody>
                 </table>
 

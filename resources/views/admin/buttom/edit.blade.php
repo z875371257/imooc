@@ -53,7 +53,11 @@
                             <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/ueditor.config.js')}}"></script>
                             <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/ueditor.all.min.js')}}"> </script>
                             <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/lang/zh-cn/zh-cn.js')}}"></script>
+<<<<<<< HEAD
                             <script id="editor" type="text/plain" style="width:800px;height:300px;" >
+=======
+                            <script id="editor" type="text/plain" style="width:700px;height:300px;" >
+>>>>>>> d20bd435e1de16b72abc81ff7abaa9b146d4d561
                                 {!! $edit->editorValue !!}
                             </script>
 

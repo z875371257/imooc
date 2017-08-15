@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
+use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -14,11 +14,15 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        
+        $res = DB::table('orders')
+            ->leftjoin('address', 'orders.uid', '=', 'address.uid')
+            ->where('name','like','%'.$request->input('search').'%')
+            ->paginate($request->input('num',1));
 
-        return view('admin.order.index');
+        $status = ['1'=>'已付款','已发货','已收货','订单完成'];
+        return view('admin.order.index',['res'=>$res,'request'=>$request,'status'=>$status]);
     }
 
     /**
@@ -61,7 +65,12 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        //
+       $res = DB::table('orders')
+       ->leftjoin('address','orders.uid','=','address.uid')
+       ->where('orders.uid','=',$id)
+       ->get();
+       
+       return view('admin.order.edit',['res'=>$res]);
     }
 
     /**
@@ -73,7 +82,24 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $res = $request->except('_method','_token');
+
+        $res1 = DB::table('address')
+                ->where('uid','=',$id)
+                ->update(['name'=>$request->name,'telephone'=>$request->telephone,'details'=>$request->details]);
+
+        $res2 = DB::table('orders')
+                ->where('uid','=',$id)
+                ->update(['status'=>$request->status]);
+
+
+        if($res1 || $res2)
+        {
+            return redirect('admin/order');
+        }else{
+
+            return back()->with('errors','您没有做任何修改');
+        }              
     }
 
     /**
