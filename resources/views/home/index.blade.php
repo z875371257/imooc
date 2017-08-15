@@ -81,7 +81,7 @@
                     <a href="{{ url('login') }}" id="js-signin-btn">登录</a>
                 </li>
                 <li class="header-signup">
-                    <a href="{{ url('register') }}" id="js-signup-btn">注册</a>
+                    <a href="{{ url('register') }}" id="js-signup-btn" target="_blank">注册</a>
                 </li>
             </ul>
         </div>

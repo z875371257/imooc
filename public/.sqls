@@ -1415,3 +1415,17 @@
 [2017-08-15 11:26:47]insert into `mk_home_user` (`username`, `password`) values (?, ?)
 [2017-08-15 11:26:59]select * from `mk_home_user` where `username` = ? limit 1
 [2017-08-15 11:26:59]select * from mk_course_cate where pid=0 and genera=1
+[2017-08-15 12:46:28]insert into `mk_home_user` (`username`, `password`) values (?, ?)
+[2017-08-15 12:46:47]select * from `mk_home_user` where `username` = ? limit 1
+[2017-08-15 12:46:47]select * from mk_course_cate where pid=0 and genera=1
+[2017-08-15 12:47:23]insert into `mk_home_user` (`username`, `password`) values (?, ?)
+[2017-08-15 12:47:30]select * from `mk_home_user` where `username` = ? limit 1
+[2017-08-15 12:47:30]select * from mk_course_cate where pid=0 and genera=1
+[2017-08-15 12:47:55]insert into `mk_home_user` (`username`, `password`) values (?, ?)
+[2017-08-15 12:48:59]select * from mk_course_cate where pid=0 and genera=1
+[2017-08-15 12:49:17]insert into `mk_home_user` (`username`, `password`) values (?, ?)
+[2017-08-15 12:49:30]select * from `mk_home_user` where `username` = ? limit 1
+[2017-08-15 12:49:30]select * from mk_course_cate where pid=0 and genera=1
+[2017-08-15 13:52:03]select * from mk_course_cate where pid=0 and genera=1
+[2017-08-15 13:52:09]select * from mk_course_cate where pid=0 and genera=1
+[2017-08-15 13:57:08]select * from mk_course_cate where pid=0 and genera=1
