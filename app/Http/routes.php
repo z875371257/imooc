@@ -54,6 +54,9 @@ Route::group(['namespace'=>'Home'],function(){
     Route::get('/', 'IndexController@index');
     Route::get('course/list', 'ListController@index');
 
+    //购物车
+    Route::get('cart','CartController@index');
+
     Route::group(['prefix' => 'about'], function () {
         //底部链接
         Route::get('cooperate','AboutController@cooperate');
