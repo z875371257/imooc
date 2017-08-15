@@ -20,8 +20,13 @@
     <meta name="Description" content="慕课网精品课程，为您提供专业的IT实战开发课程，包含前端开发、后端开发、移动端开发、数据处理、图像处理等各方面IT技能，课程全面、制作精良、讲解通俗易懂。"
     />
     <link rel="stylesheet" href="/homes/css/moco.min_1.css" type="text/css" />
+<<<<<<< HEAD
     <link rel="stylesheet" href="/homes/css/index-less.css" type="text/css"/>
 
+=======
+    <link rel="stylesheet" href="/homes/css/0aa178d80ba044de83db95986c61bede.css" type="text/css" />
+    <link rel="stylesheet" href="/homes/css/0b9cb28d416b48c58157f6d1a364a7b5.css" type="text/css" />
+>>>>>>> origin/yuanqiusheng
     <script type="text/javascript">
         eval(function(p, a, c, k, e, d) {
             e = function(c) {
@@ -112,7 +117,7 @@
         <div id="login-area">
             <ul class="header-unlogin clearfix">
                 <li class="shop-cart" id="shop-cart">
-                    <a href="http://order.imooc.com/pay/cart" class="shop-cart-icon" target="_blank">
+                    <a href="{{url('home.cart')}}" class="shop-cart-icon" target="_blank">
                                 <span class="js-endcart">
                                     <img width='16px' height="16px" src="/homes/images/shopping.png" alt="">
                                 </span>
@@ -120,9 +125,9 @@
                               style='display: none'>
                                     0
                                 </span>
-                        <span>
+                          <span>
                                     购物车
-                                </span>
+                          </span>
                     </a>
                     <div class="my-cart" id="js-my-cart">
                     </div>

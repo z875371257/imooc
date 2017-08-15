@@ -52,8 +52,13 @@
         <div id="login-area">
             <ul class="header-unlogin clearfix">
                 <li class="shop-cart" id="shop-cart">
+<<<<<<< HEAD
                     <a href="http://order.imooc.com/pay/cart" class="shop-cart-icon" target="_blank">
                         <img width='16px' height="16px" src="/homes/images/shopping.png" alt="">
+=======
+                    <a href="http://www.yuan007.com/cart" class="shop-cart-icon" target="_blank">
+                        <span class="icon-shopping-cart js-endcart"></span>
+>>>>>>> origin/yuanqiusheng
                         <span class="shopping_icon js-cart-num" data-ordernum="0"  data-cartnum="0" style='display: none'>0</span>
                         <span>购物车</span>
                     </a>

@@ -59,7 +59,13 @@ Route::group(['namespace'=>'Home'],function(){
     // 实战列表页
     Route::get('course/coding', 'CodingController@index');
 
+<<<<<<< HEAD
     // 底部
+=======
+    //购物车
+    Route::get('cart','CartController@index');
+
+>>>>>>> origin/yuanqiusheng
     Route::group(['prefix' => 'about'], function () {
         //底部链接
         Route::get('cooperate','AboutController@cooperate');
