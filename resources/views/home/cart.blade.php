@@ -28,12 +28,9 @@
 	</div>
 </div>
 
-
 <div id="cartBody" class="cart-body">
 		<p class="notdata">购物车内空空如也</p>
 	</div>
-
-
 
 
 </div>

@@ -91,7 +91,6 @@ class IndexController extends Controller
         // 免费好课
         $mfhk = DB::select("select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 1 and banner = 1 and new = 1");
 
-
         // 底部
         $buttom = DB::select('select * from mk_buttom');
 

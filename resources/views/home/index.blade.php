@@ -15,7 +15,9 @@
     <meta name="360-site-verification" content="efec9ca9c0c2bf49b8f54f8ea4626ea8" /><meta name="baidu-site-verification" content="f81e4a13096b3a7cab15fe1d39773a4e"/>
     <link rel="stylesheet" href="/homes/css/big.css">
     <link rel="stylesheet" href="/homes/css/moco.min.css" type="text/css" />
+
     <script type="text/javascript" src="/homes/banner/bootstrap/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="/layer/layer.js"></script>
     <script type="text/javascript" src="/homes/banner/bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="/homes/banner/bootstrap/js/my.js"></script>
     <link rel="stylesheet" href="/homes/banner/bootstrap/css/bootstrap.css" type="text/css" />
@@ -52,23 +54,20 @@
         <div id="login-area">
             <ul class="header-unlogin clearfix">
                 <li class="shop-cart" id="shop-cart">
-<<<<<<< HEAD
-                    <a href="http://order.imooc.com/pay/cart" class="shop-cart-icon" target="_blank">
+                    <a href="/cart" class="shop-cart-icon" target="_blank">
                         <img width='16px' height="16px" src="/homes/images/shopping.png" alt="">
-=======
-                    <a href="http://www.yuan007.com/cart" class="shop-cart-icon" target="_blank">
-                        <span class="icon-shopping-cart js-endcart"></span>
->>>>>>> origin/yuanqiusheng
                         <span class="shopping_icon js-cart-num" data-ordernum="0"  data-cartnum="0" style='display: none'>0</span>
                         <span>购物车</span>
                     </a>
+
                     <div class="my-cart" id="js-my-cart"></div>
                 </li>
+
                 <li class="header-signin">
-                    <a href="#" id="js-signin-btn">登录</a>
+                    <a href="{{ url('login') }}" id="js-signin-btn">登录</a>
                 </li>
                 <li class="header-signup">
-                    <a href="#" id="js-signup-btn">注册</a>
+                    <a href="{{ url('register') }}" id="js-signup-btn">注册</a>
                 </li>
             </ul>
         </div>

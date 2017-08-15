@@ -59,13 +59,10 @@ Route::group(['namespace'=>'Home'],function(){
     // 实战列表页
     Route::get('course/coding', 'CodingController@index');
 
-<<<<<<< HEAD
-    // 底部
-=======
     //购物车
     Route::get('cart','CartController@index');
 
->>>>>>> origin/yuanqiusheng
+    // 底部
     Route::group(['prefix' => 'about'], function () {
         //底部链接
         Route::get('cooperate','AboutController@cooperate');
@@ -77,6 +74,18 @@ Route::group(['namespace'=>'Home'],function(){
         Route::get('/friendly','AboutController@friendly');
     });
 
-
 });
+
+    //    显示注册页面
+    Route::get('register', 'Home\RegisterController@index');
+
+    //    处理注册页面的数据
+
+    Route::post('register', 'Home\RegisterController@register');
+
+   //        登录页面
+    Route::get('home/login', 'Home\LoginController@login');
+
+    //    处理登录数据
+    Route::post('login', 'Home\LoginController@doLogin');
 
