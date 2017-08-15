@@ -49,7 +49,7 @@
                 <div class="mws-form-row">
                     <label class="mws-form-label">标签名称:</label>
                     <div class="mws-form-item">
-                        <input type="text" class="small" name='title'>
+                        <input type="text" class="small" name='titles'>
                     </div>
                 </div>
 

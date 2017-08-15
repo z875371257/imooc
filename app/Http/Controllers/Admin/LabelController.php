@@ -17,9 +17,9 @@ class LabelController extends Controller
      */
     public function index(Request $request)
     {
-        //底部管理列表页
+        //标签管理列表页
         //搜索分页
-        $res = Label::where('title','like','%'.$request['search'].'%')->paginate($request->input('num',5));
+        $res = Label::where('titles','like','%'.$request['search'].'%')->paginate($request->input('num',5));
 
         return view('admin.label.index',compact('res','request'));
     }
@@ -52,7 +52,7 @@ class LabelController extends Controller
         $input = $request->except('_token');
         $re = DB::table('label')->where('genera', $input['genera'])->get();
         foreach ($re as $k=>$v){
-            if($v->title == $input['title']){
+            if($v->titles == $input['titles']){
                 return back()->with('errors','添加失败,该标签已存在');
             }
         }

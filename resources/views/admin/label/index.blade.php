@@ -70,7 +70,7 @@
                             <tr class="@if ($k % 2 == 1) even @else odd @endif">
                                 <td>{{$v->id}}</td>
 
-                                <td>{{$v->title}}</td>
+                                <td>{{$v->titles}}</td>
 
                                 <td>{{genera($v->genera)}}</td>
 

@@ -41,9 +41,9 @@
             <li>
                 <a href="/course/list"  target="_self">课程</a>
             </li>
-            <li><a href="http://class.imooc.com" class="program-nav " target="_self">职业路径<i class="icn-new"></i></a></li>
+            <li><a href="/course/class" class="program-nav " target="_self">职业路径<i class="icn-new"></i></a></li>
             <li>
-                <a href="http://coding.imooc.com" target="_self">实战</a>
+                <a href="/course/coding" target="_self">实战</a>
             </li>
             <li><a href="/wenda"  target="_self">猿问</a></li>
             <li><a href="/article"  target="_self">手记</a></li>
@@ -53,7 +53,7 @@
             <ul class="header-unlogin clearfix">
                 <li class="shop-cart" id="shop-cart">
                     <a href="http://order.imooc.com/pay/cart" class="shop-cart-icon" target="_blank">
-                        <span class="icon-shopping-cart js-endcart"></span>
+                        <img width='16px' height="16px" src="/homes/images/shopping.png" alt="">
                         <span class="shopping_icon js-cart-num" data-ordernum="0"  data-cartnum="0" style='display: none'>0</span>
                         <span>购物车</span>
                     </a>
@@ -79,7 +79,7 @@
                 <ul class="search-area-result" data-suggest-result="suggest-result">
                 </ul>
             </div>
-            <div class='showhide-search' data-show='no'><i class='icon-search'></i></div>
+            <div class='showhide-search' data-show='no'><a href="/"><img src="/homes/images/search.png" alt=""></a></div>
         </div>
     </div>
 </div>
@@ -356,7 +356,7 @@
         <div class="menuContent">
             @foreach($res as $k=>$v)
             <div class="item item{{$k}}" data-id="a">
-                <a href="/course/list/{{$v->cid}}" target="_blank">
+                <a href="/course/list?c={{$v->cname}}" target="_blank">
                     <span class="group">{{$v->cname}}</span>
                     <i style="margin-top:-20px"><img width="20" height="20" src="/homes/images/more.png" alt=""></i>
                 </a>
@@ -383,429 +383,93 @@
 
             <div class="carousel-inner">
                 @foreach($banner as $k=>$v)
-                <div class="item">
-                    <a href="/"><img width="100%" height="500px" src="{{$v->bigpic}}" alt=""></a>
-                </div>
+                    <div class="item">
+                        <a href="/"><img width="100%" height="500px" src="{{$v->bigpic}}" alt=""></a>
+                    </div>
                 @endforeach
             </div>
-            <div class="item" data-id="a">
-                <a href="/course/list?c=fe" target="_blank">
-                    <span class="group">前端开发</span>
-                    <i class='icon-chevron-right'></i>
-                </a>
-            </div>
 
-            <div class="item" data-id="b">
-                <a href="/course/list?c=be" target="_blank">
-                    <span class="group">后端开发</span>
-                    <i class='icon-right2'></i>
-                </a>
-            </div>
-            <div class="item" data-id="c">
-                <a href="/course/list?c=mobile" target="_blank">
-                    <span class="group">移动开发</span>
-                    <i class='icon-right2'></i>
-                </a>
-            </div>
-            <div class="item" data-id="d">
-                <a href="/course/list?c=data" target="_blank">
-                    <span class="group">数据库</span>
-                    <i class='icon-right2'></i>
-                </a>
-            </div>
-            <div class="item" data-id="e">
-                <a href="/course/list?c=cb" target="_blank">
-                    <span class="group">云计算&大数据</span>
-                    <i class='icon-right2'></i>
-                </a>
-            </div>
-            <div class="item" data-id="f">
-                <a href="/course/list?c=op" target="_blank">
-                    <span class="group">运维&测试</span>
-                    <i class='icon-right2'></i>
-                </a>
-            </div>
-            <div class="item" data-id="g">
-                <a class="bbn" href="/course/list?c=photo" target="_blank">
-                    <span class="group">UI设计</span>
-                    <i class='icon-right2'></i>
-                </a>
-            </div>
+            <a class="left banner-anchor prev" href="#box" data-slide="prev">&lsaquo;</a>
+            <a class="right banner-anchor next" href="#box" data-slide="next">&rsaquo;</a>
         </div>
 
-        <div class="g-banner-content">
 
-            <a target="_blank" href="
-											http://coding.imooc.com/class/107.html?mc_marking=7a72c833ff9ae725588c7c13fe7d2f96&mc_channel=banner
-					"
-               data-track="banner-1-1" class="click-help">
-                <div class="banner-slide" style="background-image: url(/homes/images/593f5c810001219e12000460.jpg);">
-                    <div class="inner"></div>
-                </div>
-            </a>
-            <a target="_blank" href="
-											http://coding.imooc.com/class/114.html?mc_marking=b3234769655ccf7ebe21fc3eb54d21ec&mc_channel=banner
-					"
-               data-track="banner-1-2" class="click-help">
-                <div class="banner-slide" style="background-image: url(/homes/images/594b9b23000100d612000460.jpg);">
-                    <div class="inner"></div>
-                </div>
-            </a>
-            <a target="_blank" href="
-											http://coding.imooc.com/class/109.html?mc_marking=02b8e60903043e419983b80f9c2ecc5a&mc_channel=banner
-					"
-               data-track="banner-1-3" class="click-help">
-                <div class="banner-slide" style="background-image: url(/homes/images/594a0e410001acdb12000460.jpg);">
-                    <div class="inner"></div>
-                </div>
-            </a>
-            <a target="_blank" href="
-											http://coding.imooc.com/class/113.html?mc_marking=e152091611f6371d866c1a50fb9d5ab6&mc_channel=banner
-					"
-               data-track="banner-1-4" class="click-help">
-                <div class="banner-slide" style="background-image: url(/homes/images/59477c140001131212000460.jpg);">
-                    <div class="inner"></div>
-                </div>
-            </a>
-            <a target="_blank" href="
-											http://coding.imooc.com/class/96.html?mc_marking=d7163aeee9a5eab550a14cc2b699c976&mc_channel=banner
-					"
-               data-track="banner-1-5" class="click-help">
-                <div class="banner-slide" style="background-image: url(/homes/images/594b9ab20001d07212000460.jpg);">
-                    <div class="inner"></div>
-                </div>
-            </a>
-            <a target="_blank" href="
-											http://coding.imooc.com/class/101.html?mc_marking=ec8960914117f267a1bb43ada4fd4321&mc_channel=banner
-					"
-               data-track="banner-1-6" class="click-help">
-                <div class="banner-slide" style="background-image: url(/homes/images/594b9b6f0001722112000460.jpg);">
-                    <div class="inner"></div>
-                </div>
-            </a>
->>>>>>> origin/cc
-
-        </div>
-        <div class="banner-dots"></div>
-        <a href="javascript:;" class="banner-anchor prev" style="display: none">上一张</a>
-        <a href="javascript:;" class="banner-anchor next" style="display: none">下一张</a>
         <div class="cb"></div>
-    </div><div class='path-banner clearfix'>	<a href='http://class.imooc.com/?c=fe' target="_blank" data-track='sysdtj-1-1'>		<img src='/homes/picture/path_1.png' />	</a>	<a href='http://class.imooc.com/?c=php' target="_blank" data-track='sysdtj-1-2'>		<img src='/homes/picture/path_2.png' />	</a>	<a href='http://class.imooc.com/?c=android' target="_blank" data-track='sysdtj-1-3'>		<img src='/homes/picture/path_3.png' />	</a>	<a href='http://class.imooc.com/?c=java' target="_blank" data-track='sysdtj-1-4'>		<img src='/homes/picture/path_4.png' />	</a>	<a href='http://class.imooc.com/?c=ios' target="_blank" data-track='sysdtj-1-4'>		<img src='/homes/picture/path_5.png' />	</a></div><div class='container-types clearfix'>	<h3 class='types-title'>		实战推荐						<a href='http://coding.imooc.com' class='types-title-more' target="_blank">			<span>更多</span>			<i class='imv2-arrow2_r'></i>		</a>			</h3>	<div class='clearfix types-content'>												<div class='index-card-container course-card-container container coding'>
+    </div><div class='path-banner clearfix'>
+        <a href='http://class.imooc.com/?c=fe' target="_blank" data-track='sysdtj-1-1'><img src='/homes/picture/path_1.png' />	</a>
+        <a href='http://class.imooc.com/?c=php' target="_blank" data-track='sysdtj-1-2'><img src='/homes/picture/path_2.png' />	</a>
+        <a href='http://class.imooc.com/?c=android' target="_blank" data-track='sysdtj-1-3'><img src='/homes/picture/path_3.png' />	</a>
+        <a href='http://class.imooc.com/?c=java' target="_blank" data-track='sysdtj-1-4'><img src='/homes/picture/path_4.png' />	</a>
+        <a href='http://class.imooc.com/?c=ios' target="_blank" data-track='sysdtj-1-4'><img src='/homes/picture/path_5.png' />	</a>
+    </div>
+    <div class='container-types clearfix'>	<h3 class='types-title'>		实战推荐
+            <a href='/course/coding' class='types-title-more' target="_blank">
+                <span>更多</span>
+                <img width="20" height="20" src="/homes/images/youjian.png" alt="">
+            </a>			</h3>	<div class='clearfix types-content'>
 
-                <a target="_blank" class='course-card'
-                   href='http://coding.imooc.com/class/75.html'
-                   data-track="sztj-1-1"
-                >
+            <!--  实战推荐  -->
+            @foreach($sztj as $k=>$v)
+            <div class='index-card-container course-card-container container coding'>
 
+                <a target="_blank" class='course-card' href='/coding?c={{$v->id}}' data-track="sztj-1-1">
                     <div class='course-card-top cart-color purple'>
-                        <i class='imv2-war'></i>
-                        <span>JavaScript</span>
-                        <span>Html5</span>
-                    </div>
 
+                        <span>{{$v->titles}}</span>
+
+                    </div>
                     <div class='course-card-content'>
-                        <h3 class='course-card-name'>微信小程序入门与实战  常用组件 API 开发技巧 项目实战</h3>
-                        <p title='[官方同步]学会小程序开发，一个集阅读与电影于一体的小程序实战'>[官方同步]学会小程序开发，一个集阅读与电影于一体的小程序实战</p>
+                        <h3 class='course-card-name'>{{$v->title}}</h3>
+                        <p title='{{$v->referral}}'>{{$v->referral}}</p>
                         <div class='clearfix course-card-bottom'>
                             <div class='course-card-info'>
-                                5857人在学
+                                {{$v->NNT}}人在学
                             </div>
 
-                            <div class='course-card-price'>￥149.00</div>
+                            <div class='course-card-price'>￥{{$v->price}}0</div>
                         </div>
                     </div>
                 </a>
                 <img src='/homes/picture/new.png' class='course-cart-new'/>
 
+                <div class='course-card-bk' style='background-image: url(/{{$v->pic}})'></div>
 
-                <div class='course-card-bk' style='background-image: url(/homes/images/583e42fb0001e04f05400300-360-202.jpg)';></div>
             </div>
+                @endforeach
+        </div>
+    </div>
+    <div class='container-types clearfix'>	<h3 class='types-title'>		免费好课
+            <a href='/course/list' class='types-title-more' target="_blank">
+                <span>更多</span>
+                <img width="20" height="20" src="/homes/images/youjian.png" alt="">
+            </a>
+        </h3>	<div class='clearfix types-content'>
+            @foreach($mfhk as $k=>$v)
+            <div class='index-card-container course-card-container container  new'>
 
-            <div class='index-card-container course-card-container container coding'>
-
-                <a target="_blank" class='course-card'
-                   href='http://coding.imooc.com/class/99.html'
-                   data-track="sztj-1-2"
-                >
-
-                    <div class='course-card-top cart-color red'>
-                        <i class='imv2-war'></i>
-                        <span>React.JS</span>
-                    </div>
-
-                    <div class='course-card-content'>
-                        <h3 class='course-card-name'>React高级实战 - 打造大众点评 WebApp</h3>
-                        <p title='不只是针对一门技术，而是整个React技术栈 '>不只是针对一门技术，而是整个React技术栈 </p>
-                        <div class='clearfix course-card-bottom'>
-                            <div class='course-card-info'>
-                                513人在学
-                            </div>
-
-                            <div class='course-card-price'>￥248.00</div>
-                        </div>
-                    </div>
-                </a>
-                <img src='/homes/picture/new.png' class='course-cart-new'/>
-
-
-                <div class='course-card-bk' style='background-image: url(/homes/images/59006d090001508305400300-360-202.jpg)';></div>
-            </div>
-
-            <div class='index-card-container course-card-container container coding'>
-
-                <a target="_blank" class='course-card'
-                   href='http://coding.imooc.com/class/74.html'
-                   data-track="sztj-1-3"
-                >
-
+                <a target="_blank" class='course-card' href="/learn/{{$v->id}}" data-track="mfhk-1-1">
                     <div class='course-card-top cart-color orange'>
                         <i class='imv2-war'></i>
-                        <span>WebApp</span>
-                        <span>Vue.js</span>
+                        <span>{{$v->titles}}</span>
                     </div>
 
                     <div class='course-card-content'>
-                        <h3 class='course-card-name'>Vue.js高仿饿了么外卖App 前端框架Vue.js 1.0升级2.0</h3>
-                        <p title='vue.js兼具angular.js和react.js优点，并剔除它们的缺点'>vue.js兼具angular.js和react.js优点，并剔除它们的缺点</p>
+                        <h3 class='course-card-name'>{{$v->title}}</h3>
+                        <p title='{{$v->referral}}'>{{$v->referral}}</p>
                         <div class='clearfix course-card-bottom'>
                             <div class='course-card-info'>
-                                3869人在学
+                                {{difficulty($v->difficulty)}}<span>·</span>
+                                {{$v->NNT}}人在学
                             </div>
-
-                            <div class='course-card-price'>￥198.00</div>
                         </div>
                     </div>
                 </a>
-                <img src='/homes/picture/new.png' class='course-cart-new'/>
-
-
-                <div class='course-card-bk' style='background-image: url(/homes/images/582ac41a0001d3c705400300-360-202.jpg)';></div>
-            </div>
-
-            <div class='index-card-container course-card-container container coding new'>
-
-                <a target="_blank" class='course-card'
-                   href='http://coding.imooc.com/class/112.html'
-                   data-track="sztj-1-4"
-                >
-
-                    <div class='course-card-top cart-color red'>
-                        <i class='imv2-war'></i>
-                        <span>Java</span>
-                        <span>Python</span>
-                        <span>大数据</span>
-                    </div>
-
-                    <div class='course-card-content'>
-                        <h3 class='course-card-name'>大数据Spark SQL慕课网日志分析</h3>
-                        <p title='轻松转型大数据：Hadoop，Hive，SparkSQL步步为赢'>轻松转型大数据：Hadoop，Hive，SparkSQL步步为赢</p>
-                        <div class='clearfix course-card-bottom'>
-                            <div class='course-card-info'>
-                                38人在学
-                            </div>
-
-                            <div class='course-card-price'>￥366.00</div>
-                        </div>
-                    </div>
-                </a>
-                <img src='/homes/picture/new.png' class='course-cart-new'/>
-
-
-                <div class='course-card-bk' style='background-image: url(/homes/images/5940e2a20001045a05400300-360-202.jpg)';></div>
-            </div>
-
-            <div class='index-card-container course-card-container container coding'>
-
-                <a target="_blank" class='course-card'
-                   href='http://coding.imooc.com/class/92.html'
-                   data-track="sztj-1-5"
-                >
-
-                    <div class='course-card-top cart-color blue'>
-                        <i class='imv2-war'></i>
-                        <span>Python</span>
-                    </div>
-
-                    <div class='course-card-content'>
-                        <h3 class='course-card-name'>Python分布式爬虫打造搜索引擎 Scrapy精讲</h3>
-                        <p title='彻底掌握Scrapy原理，Django+Elasticsearch搭建搜索引擎'>彻底掌握Scrapy原理，Django+Elasticsearch搭建搜索引擎</p>
-                        <div class='clearfix course-card-bottom'>
-                            <div class='course-card-info'>
-                                699人在学
-                            </div>
-
-                            <div class='course-card-price'>￥388.00</div>
-                        </div>
-                    </div>
-                </a>
-                <img src='/homes/picture/new.png' class='course-cart-new'/>
-
-
-                <div class='course-card-bk' style='background-image: url(/homes/images/58d21b90000135a105400300-360-202.jpg)';></div>
-            </div>
-
-        </div></div><div class='container-types clearfix'>	<h3 class='types-title'>		免费好课		<a href='/course/list' class='types-title-more' target="_blank">			<span>更多</span>			<i class='imv2-arrow2_r'></i>		</a>	</h3>	<div class='clearfix types-content'>								<div class='index-card-container course-card-container container  new'>
-
-                <a target="_blank" class='course-card'
-                   href="/learn/848"
-                   data-track="mfhk-1-1"
-                >
-
-                    <div class='course-card-top cart-color orange'>
-                        <i class='imv2-war'></i>
-                        <span>HTML/CSS</span>
-                        <span>JavaScript</span>
-                        <span>jQuery</span>
-                    </div>
-
-                    <div class='course-card-content'>
-                        <h3 class='course-card-name'>星级评分原理和实现（下）</h3>
-                        <p title='本课程主要讲解如何使用不同的方式来实现星级评分的效果。'>本课程主要讲解如何使用不同的方式来实现星级评分的效果。</p>
-                        <div class='clearfix course-card-bottom'>
-                            <div class='course-card-info'>
-                                中级<span>·</span>
-                                800人在学
-                            </div>
-
-                        </div>
-                    </div>
-                </a>
-                <img src='/homes/picture/new.png' class='course-cart-new'/>
-
 
                 <div class='course-card-bk'>
-                    <img src='/homes/picture/cover005_s.jpg' />
+                    <img src='/{{$v->pic}}' />
                 </div>
             </div>
-
-            <div class='index-card-container course-card-container container  new'>
-
-                <a target="_blank" class='course-card'
-                   href="/learn/851"
-                   data-track="mfhk-1-2"
-                >
-
-                    <div class='course-card-top cart-color red'>
-                        <i class='imv2-war'></i>
-                        <span>AngularJS</span>
-                    </div>
-
-                    <div class='course-card-content'>
-                        <h3 class='course-card-name'>Angular-cli基础</h3>
-                        <p title='介绍Angular CLI命令使用，通过Angular CLI构建一个简单的Angular2的应用'>介绍Angular CLI命令使用，通过Angular CLI构建一个简单的Angular2的应用</p>
-                        <div class='clearfix course-card-bottom'>
-                            <div class='course-card-info'>
-                                初级<span>·</span>
-                                944人在学
-                            </div>
-
-                        </div>
-                    </div>
-                </a>
-                <img src='/homes/picture/new.png' class='course-cart-new'/>
-
-
-                <div class='course-card-bk'>
-                    <img src='/homes/picture/cover030_s.jpg' />
-                </div>
-            </div>
-
-            <div class='index-card-container course-card-container container  new'>
-
-                <a target="_blank" class='course-card'
-                   href="/learn/846"
-                   data-track="mfhk-1-3"
-                >
-
-                    <div class='course-card-top cart-color red'>
-                        <i class='imv2-war'></i>
-                        <span>Java</span>
-                    </div>
-
-                    <div class='course-card-content'>
-                        <h3 class='course-card-name'>Java定时任务调度工具详解之Quartz篇</h3>
-                        <p title='Java定时任务调度工具详解之Quartz篇'>Java定时任务调度工具详解之Quartz篇</p>
-                        <div class='clearfix course-card-bottom'>
-                            <div class='course-card-info'>
-                                中级<span>·</span>
-                                1427人在学
-                            </div>
-
-                        </div>
-                    </div>
-                </a>
-                <img src='/homes/picture/new.png' class='course-cart-new'/>
-
-
-                <div class='course-card-bk'>
-                    <img src='/homes/picture/cover041_s.jpg' />
-                </div>
-            </div>
-
-            <div class='index-card-container course-card-container container  new'>
-
-                <a target="_blank" class='course-card'
-                   href="/learn/849"
-                   data-track="mfhk-1-4"
-                >
-
-                    <div class='course-card-top cart-color cyan'>
-                        <i class='imv2-war'></i>
-                        <span>iOS</span>
-                    </div>
-
-                    <div class='course-card-content'>
-                        <h3 class='course-card-name'>iOS推送通知</h3>
-                        <p title='本课程教你该如何实现iOS推送消息！'>本课程教你该如何实现iOS推送消息！</p>
-                        <div class='clearfix course-card-bottom'>
-                            <div class='course-card-info'>
-                                中级<span>·</span>
-                                1708人在学
-                            </div>
-
-                        </div>
-                    </div>
-                </a>
-                <img src='/homes/picture/new.png' class='course-cart-new'/>
-
-
-                <div class='course-card-bk'>
-                    <img src='/homes/picture/cover018_s.jpg' />
-                </div>
-            </div>
-
-            <div class='index-card-container course-card-container container  new'>
-
-                <a target="_blank" class='course-card'
-                   href="/learn/850"
-                   data-track="mfhk-1-5"
-                >
-
-                    <div class='course-card-top cart-color purple'>
-                        <i class='imv2-war'></i>
-                        <span>JavaScript</span>
-                        <span>Html5</span>
-                    </div>
-
-                    <div class='course-card-content'>
-                        <h3 class='course-card-name'>Hybrid设计</h3>
-                        <p title='畅谈Hybrid开发的种种'>畅谈Hybrid开发的种种</p>
-                        <div class='clearfix course-card-bottom'>
-                            <div class='course-card-info'>
-                                中级<span>·</span>
-                                3866人在学
-                            </div>
-
-                        </div>
-                    </div>
-                </a>
-                <img src='/homes/picture/new.png' class='course-cart-new'/>
-
-
-                <div class='course-card-bk'>
-                    <img src='/homes/picture/cover050_s.jpg' />
-                </div>
-            </div>
+            @endforeach
 
         </div></div>
     <div class='container-types clearfix'>
@@ -813,7 +477,7 @@
             前端开发工程师
             <a href="http://www.imooc.com/course/list?c=fe" class="types-title-more" target="_blank">
                 <span>更多</span>
-                <i class="imv2-arrow2_r"></i>
+                <img width="20" height="20" src="/homes/images/youjian.png" alt="">
             </a>
         </h3>
 
@@ -1001,7 +665,7 @@
             PHP开发工程师
             <a href="http://www.imooc.com/course/list?c=php" class="types-title-more" target="_blank">
                 <span>更多</span>
-                <i class="imv2-arrow2_r"></i>
+                <img width="20" height="20" src="/homes/images/youjian.png" alt="">
             </a>
         </h3>
 
@@ -1186,7 +850,7 @@
             Android开发工程师
             <a href="http://www.imooc.com/course/list?c=android" class="types-title-more" target="_blank">
                 <span>更多</span>
-                <i class="imv2-arrow2_r"></i>
+                <img width="20" height="20" src="/homes/images/youjian.png" alt="">
             </a>
         </h3>
 
@@ -1375,7 +1039,7 @@
             iOS开发工程师
             <a href="http://www.imooc.com/course/list?c=ios" class="types-title-more" target="_blank">
                 <span>更多</span>
-                <i class="imv2-arrow2_r"></i>
+                <img width="20" height="20" src="/homes/images/youjian.png" alt="">
             </a>
         </h3>
 
@@ -1560,7 +1224,7 @@
             JAVA开发工程师
             <a href="http://www.imooc.com/course/list?c=java" class="types-title-more" target="_blank">
                 <span>更多</span>
-                <i class="imv2-arrow2_r"></i>
+                <img width="20" height="20" src="/homes/images/youjian.png" alt="">
             </a>
         </h3>
 
@@ -1736,7 +1400,7 @@
             Python开发工程师
             <a href="http://www.imooc.com/course/list?c=python" class="types-title-more" target="_blank">
                 <span>更多</span>
-                <i class="imv2-arrow2_r"></i>
+                <img width="20" height="20" src="/homes/images/youjian.png" alt="">
             </a>
         </h3>
 
@@ -1893,7 +1557,7 @@
             Linux系统工程师
             <a href="http://www.imooc.com/course/list?c=linux" class="types-title-more" target="_blank">
                 <span>更多</span>
-                <i class="imv2-arrow2_r"></i>
+                <img width="20" height="20" src="/homes/images/youjian.png" alt="">
             </a>
         </h3>
 
@@ -2076,7 +1740,10 @@
             </div>
         </div>
     </div>
-    <div class='container-types clearfix'>		<div class='l article'>		<h3 class='types-title'>热门手记</h3>		<div class='article-content'>						<a target="_blank" href='http://www.imooc.com/article/18250' class='hot-content' style='background-image: url(/homes/images/592e8e0c00010e8005900100.jpg);' data-track="syrmsj-1-1">使用Laravel5做权限管理 </a>									<ul>													<li class='clearfix'>						<a class='label' href='/article/tag/18'>							Python						</a>						<i>•</i>						<a target="_blank" href='/article/18537' title='Python虚拟环境，你有使用过吗？分分钟教你使用虚拟环境搭建一个小网站' data-track="syrmsj-1-2" class='content'>Python虚拟环境，你有使用过吗？分分钟教你使用虚拟环境...</a>					</li>																	<li class='clearfix'>						<a class='label' href='/article/tag/8'>							MongoDB						</a>						<i>•</i>						<a target="_blank" href='/article/18438' title='windows32位系统 安装MongoDB' data-track="syrmsj-1-3" class='content'>windows32位系统 安装MongoDB</a>					</li>																	<li class='clearfix'>						<a class='label' href='/article/tag/35'>							大数据						</a>						<i>•</i>						<a target="_blank" href='/article/18419' title='基于CentOS6.4环境编译Spark-2.1.0源码' data-track="syrmsj-1-4" class='content'>基于CentOS6.4环境编译Spark-2.1.0源码</a>					</li>																	<li class='clearfix'>						<a class='label' href='/article/tag/8'>							MongoDB						</a>						<i>•</i>						<a target="_blank" href='/article/18439' title='MongoDB给数据库创建用户' data-track="syrmsj-1-5" class='content'>MongoDB给数据库创建用户</a>					</li>																	<li class='clearfix'>						<a class='label' href='/article/tag/2'>							PHP						</a>						<i>•</i>						<a target="_blank" href='/article/18250' title='使用Laravel5做权限管理' data-track="syrmsj-1-6" class='content'>使用Laravel5做权限管理</a>					</li>																	<li class='clearfix'>						<a class='label' href='/article/tag/3'>							JAVA						</a>						<i>•</i>						<a target="_blank" href='/article/18307' title='热修复与插件化你准备好了吗' data-track="syrmsj-1-7" class='content'>热修复与插件化你准备好了吗</a>					</li>											</ul>						<div class='content-more'>								<a target="_blank" class='clearfix' href='http://www.imooc.com/article' data-track="syrmsj-1-8">					<span>进入手记获取更多</span>					<i class='imv2-arrow3_r'></i>				</a>							</div>		</div>	</div>				<div class='r question'>		<h3 class='types-title'>推荐猿问</h3>		<div class='question-content'>						<a target="_blank" href='http://www.imooc.com/wenda/detail/348941' class='hot-content' style='background-image: url(/homes/images/58ac14f10001f87f05900100.jpg);' data-track='sytjyw-1-1'>如果用python找工作需要哪些必备技能？</a>						<ul>														<li class='clearfix'>						<a class='label' href='/wenda/26'>							前端工具						</a>						<i>•</i>						<a target="_blank" href='/wenda/detail/320982' title='刷分零容忍！关于刷分用户的处罚公告' class='content'  data-track="sytjyw-1-7">							刷分零容忍！关于刷分用户的处罚公告						</a>					</li>																			<li class='clearfix'>						<a class='label' href='/wenda/12'>							Android						</a>						<i>•</i>						<a target="_blank" href='/wenda/detail/352353' title='问个愚蠢的问题，培训公司的可怕之处在哪？' class='content'  data-track="sytjyw-1-7">							问个愚蠢的问题，培训公司的可怕之处在哪？						</a>					</li>																			<li class='clearfix'>						<a class='label' href='/wenda/17'>							JavaScript						</a>						<i>•</i>						<a target="_blank" href='/wenda/detail/352428' title='自学路上处处踩坑，一个小问题要卡几个小时 怎办?' class='content'  data-track="sytjyw-1-7">							自学路上处处踩坑，一个小问题要卡几个小时 怎办?						</a>					</li>																			<li class='clearfix'>						<a class='label' href='/wenda/12'>							Android						</a>						<i>•</i>						<a target="_blank" href='/wenda/detail/352450' title='怎样成为一名测试人员' class='content'  data-track="sytjyw-1-7">							怎样成为一名测试人员						</a>					</li>																			<li class='clearfix'>						<a class='label' href='/wenda/17'>							JavaScript						</a>						<i>•</i>						<a target="_blank" href='/wenda/detail/352467' title='如何获取数组里对象的某个值？' class='content'  data-track="sytjyw-1-7">							如何获取数组里对象的某个值？						</a>					</li>																			<li class='clearfix'>						<a class='label' href='/wenda/51'>							测试						</a>						<i>•</i>						<a target="_blank" href='/wenda/detail/352471' title='关于电脑的WIFI设置的问题' class='content'  data-track="sytjyw-1-7">							关于电脑的WIFI设置的问题						</a>					</li>												</ul>									<div class='content-more clearfix'>				<a target="_blank" class='clearfix' href='http://www.imooc.com/wenda' data-track='sytjyw-1-8'>					<span>进入猿问获取更多</span>					<i class='imv2-arrow3_r'></i>				</a>			</div>					</div>	</div>	</div><div class='container-types clearfix'>	<h3 class='types-title'>		慕课精英名师推荐				<a href="http://coding.imooc.com" class="types-title-more" target="_blank">						<span>更多</span>			<i class="imv2-arrow2_r"></i>				</a>			</h3>	<div class='lecturer-list clearfix'>				<a target="_blank" href='http://www.imooc.com/u/2155343' class='lecturer-item' data-track="syjstj-1-1">			<img class='lecturer-uimg' src='/homes/picture/545850bb0001979202200220-200-200.jpg' />			<span class='lecturer-name'>扬帆远航_</span>			<span class='lecturer-title'>数据科学家</span>			<span class='lecturer-p' title='拥有多年带领华为数据挖掘团队给全世界范围内著名运营商提供大数据解决方案的经验，工作中所带领的团队主要负责处理、挖掘和分析每天数以TB计的数据。作为一个带领拥有20人团队成功完成多个全球项目的leader,非常了解当今用途最广泛的数据挖掘、机器学习和数理统计方法,同时有着多年熟练应用各种数据挖掘平台工具和数理统计包(例如R,python和Spark)经验。'>拥有多年带领华为数据挖掘团队给全世界范围内著名运营商提供大数据解决方案的经验，工作中所带领的团队主要负责处理、挖掘和分析每天数以TB计的数据。作为一个带领拥有20人团队成功完成多个全球项目的leader,非常了解当今用途最广泛的数据挖掘、机器学习和数理统计方法,同时有着多年熟练应用各种数据挖掘平台工具和数理统计包(例如R,python和Spark)经验。</span>		</a>				<a target="_blank" href='http://www.imooc.com/u/4379042' class='lecturer-item' data-track="syjstj-1-2">			<img class='lecturer-uimg' src='/homes/picture/583e9afa000166c410240770-200-200.jpg' />			<span class='lecturer-name'>编_程_浪_子</span>			<span class='lecturer-title'>PHP开发工程师</span>			<span class='lecturer-p' title='互联网搬砖小王子，从事互联网web 开发6年，热爱搬砖行业，有代码洁癖，对PHP，Python，Java都有涉猎， 实践经验丰富，富有激情，热爱分享，乐观开朗，喜欢专研新技术'>互联网搬砖小王子，从事互联网web 开发6年，热爱搬砖行业，有代码洁癖，对PHP，Python，Java都有涉猎， 实践经验丰富，富有激情，热爱分享，乐观开朗，喜欢专研新技术</span>		</a>				<a target="_blank" href='http://www.imooc.com/u/5245191' class='lecturer-item' data-track="syjstj-1-3">			<img class='lecturer-uimg' src='/homes/picture/590b09de0001503904000400-200-200.jpg' />			<span class='lecturer-name'>DocMike</span>			<span class='lecturer-title'>移动开发工程师</span>			<span class='lecturer-p' title='安卓工程师  多年开发和带团队经验，曾在BAT等多家一线互联网公司就职，P大硕士毕业，应届生导师、校招、社招面试官，主导与开发过多款知名的互联网金融、免费国际电话、外卖等项目的架构与开发'>安卓工程师  多年开发和带团队经验，曾在BAT等多家一线互联网公司就职，P大硕士毕业，应届生导师、校招、社招面试官，主导与开发过多款知名的互联网金融、免费国际电话、外卖等项目的架构与开发</span>		</a>				<a target="_blank" href='http://www.imooc.com/u/3017249' class='lecturer-item' data-track="syjstj-1-4">			<img class='lecturer-uimg' src='/homes/picture/577baef700019c4501400140-200-200.jpg' />			<span class='lecturer-name'>ustbhuangyi</span>			<span class='lecturer-title'>滴滴前端技术专家</span>			<span class='lecturer-p' title='北京科技大学计算机专业硕士。曾任职百度，现就职滴滴，前端技术专家。对Vue.js有很深的理解，是《Vue.js权威指南》一书的主要作者。他有着教科书式的代码写作习惯，对代码有洁癖，追求高质量的代码。强化提升编写高可扩展，通用性强的代码的能力'>北京科技大学计算机专业硕士。曾任职百度，现就职滴滴，前端技术专家。对Vue.js有很深的理解，是《Vue.js权威指南》一书的主要作者。他有着教科书式的代码写作习惯，对代码有洁癖，追求高质量的代码。强化提升编写高可扩展，通用性强的代码的能力</span>		</a>				<a target="_blank" href='http://www.imooc.com/u/5027812' class='lecturer-item' data-track="syjstj-1-5">			<img class='lecturer-uimg' src='/homes/picture/54584cb50001e5b302200220-200-200.jpg' />			<span class='lecturer-name'>快乐动起来呀</span>			<span class='lecturer-title'>Web前端工程师</span>			<span class='lecturer-p' title='先后在360、去哪儿网、今日头条任资深前端工程师，在业务开发和工程架构方面有较多实战经验。'>先后在360、去哪儿网、今日头条任资深前端工程师，在业务开发和工程架构方面有较多实战经验。</span>		</a>			</div></div></div>
+    <div class='container-types clearfix'>
+        <div class='l article'>		<h3 class='types-title'>热门手记</h3>
+            <div class='article-content'>
+                <a target="_blank" href='http://www.imooc.com/article/18250' class='hot-content' style='background-image: url(/homes/images/592e8e0c00010e8005900100.jpg);' data-track="syrmsj-1-1">使用Laravel5做权限管理 </a>									<ul>													<li class='clearfix'>						<a class='label' href='/article/tag/18'>							Python						</a>						<i>•</i>						<a target="_blank" href='/article/18537' title='Python虚拟环境，你有使用过吗？分分钟教你使用虚拟环境搭建一个小网站' data-track="syrmsj-1-2" class='content'>Python虚拟环境，你有使用过吗？分分钟教你使用虚拟环境...</a>					</li>																	<li class='clearfix'>						<a class='label' href='/article/tag/8'>							MongoDB						</a>						<i>•</i>						<a target="_blank" href='/article/18438' title='windows32位系统 安装MongoDB' data-track="syrmsj-1-3" class='content'>windows32位系统 安装MongoDB</a>					</li>																	<li class='clearfix'>						<a class='label' href='/article/tag/35'>							大数据						</a>						<i>•</i>						<a target="_blank" href='/article/18419' title='基于CentOS6.4环境编译Spark-2.1.0源码' data-track="syrmsj-1-4" class='content'>基于CentOS6.4环境编译Spark-2.1.0源码</a>					</li>																	<li class='clearfix'>						<a class='label' href='/article/tag/8'>							MongoDB						</a>						<i>•</i>						<a target="_blank" href='/article/18439' title='MongoDB给数据库创建用户' data-track="syrmsj-1-5" class='content'>MongoDB给数据库创建用户</a>					</li>																	<li class='clearfix'>						<a class='label' href='/article/tag/2'>							PHP						</a>						<i>•</i>						<a target="_blank" href='/article/18250' title='使用Laravel5做权限管理' data-track="syrmsj-1-6" class='content'>使用Laravel5做权限管理</a>					</li>																	<li class='clearfix'>						<a class='label' href='/article/tag/3'>							JAVA						</a>						<i>•</i>						<a target="_blank" href='/article/18307' title='热修复与插件化你准备好了吗' data-track="syrmsj-1-7" class='content'>热修复与插件化你准备好了吗</a>					</li>											</ul>						<div class='content-more'>								<a target="_blank" class='clearfix' href='http://www.imooc.com/article' data-track="syrmsj-1-8">					<span>进入手记获取更多</span>					<i class='imv2-arrow3_r'></i>				</a>							</div>		</div>	</div>				<div class='r question'>		<h3 class='types-title'>推荐猿问</h3>		<div class='question-content'>						<a target="_blank" href='http://www.imooc.com/wenda/detail/348941' class='hot-content' style='background-image: url(/homes/images/58ac14f10001f87f05900100.jpg);' data-track='sytjyw-1-1'>如果用python找工作需要哪些必备技能？</a>						<ul>														<li class='clearfix'>						<a class='label' href='/wenda/26'>							前端工具						</a>						<i>•</i>						<a target="_blank" href='/wenda/detail/320982' title='刷分零容忍！关于刷分用户的处罚公告' class='content'  data-track="sytjyw-1-7">							刷分零容忍！关于刷分用户的处罚公告						</a>					</li>																			<li class='clearfix'>						<a class='label' href='/wenda/12'>							Android						</a>						<i>•</i>						<a target="_blank" href='/wenda/detail/352353' title='问个愚蠢的问题，培训公司的可怕之处在哪？' class='content'  data-track="sytjyw-1-7">							问个愚蠢的问题，培训公司的可怕之处在哪？						</a>					</li>																			<li class='clearfix'>						<a class='label' href='/wenda/17'>							JavaScript						</a>						<i>•</i>						<a target="_blank" href='/wenda/detail/352428' title='自学路上处处踩坑，一个小问题要卡几个小时 怎办?' class='content'  data-track="sytjyw-1-7">							自学路上处处踩坑，一个小问题要卡几个小时 怎办?						</a>					</li>																			<li class='clearfix'>						<a class='label' href='/wenda/12'>							Android						</a>						<i>•</i>						<a target="_blank" href='/wenda/detail/352450' title='怎样成为一名测试人员' class='content'  data-track="sytjyw-1-7">							怎样成为一名测试人员						</a>					</li>																			<li class='clearfix'>						<a class='label' href='/wenda/17'>							JavaScript						</a>						<i>•</i>						<a target="_blank" href='/wenda/detail/352467' title='如何获取数组里对象的某个值？' class='content'  data-track="sytjyw-1-7">							如何获取数组里对象的某个值？						</a>					</li>																			<li class='clearfix'>						<a class='label' href='/wenda/51'>							测试						</a>						<i>•</i>						<a target="_blank" href='/wenda/detail/352471' title='关于电脑的WIFI设置的问题' class='content'  data-track="sytjyw-1-7">							关于电脑的WIFI设置的问题						</a>					</li>												</ul>									<div class='content-more clearfix'>				<a target="_blank" class='clearfix' href='http://www.imooc.com/wenda' data-track='sytjyw-1-8'>					<span>进入猿问获取更多</span>					<i class='imv2-arrow3_r'></i>				</a>			</div>					</div>	</div>	</div><div class='container-types clearfix'>	<h3 class='types-title'>		慕课精英名师推荐				<a href="http://coding.imooc.com" class="types-title-more" target="_blank">						<span>更多</span>			<i class="imv2-arrow2_r"></i>				</a>			</h3>	<div class='lecturer-list clearfix'>				<a target="_blank" href='http://www.imooc.com/u/2155343' class='lecturer-item' data-track="syjstj-1-1">			<img class='lecturer-uimg' src='/homes/picture/545850bb0001979202200220-200-200.jpg' />			<span class='lecturer-name'>扬帆远航_</span>			<span class='lecturer-title'>数据科学家</span>			<span class='lecturer-p' title='拥有多年带领华为数据挖掘团队给全世界范围内著名运营商提供大数据解决方案的经验，工作中所带领的团队主要负责处理、挖掘和分析每天数以TB计的数据。作为一个带领拥有20人团队成功完成多个全球项目的leader,非常了解当今用途最广泛的数据挖掘、机器学习和数理统计方法,同时有着多年熟练应用各种数据挖掘平台工具和数理统计包(例如R,python和Spark)经验。'>拥有多年带领华为数据挖掘团队给全世界范围内著名运营商提供大数据解决方案的经验，工作中所带领的团队主要负责处理、挖掘和分析每天数以TB计的数据。作为一个带领拥有20人团队成功完成多个全球项目的leader,非常了解当今用途最广泛的数据挖掘、机器学习和数理统计方法,同时有着多年熟练应用各种数据挖掘平台工具和数理统计包(例如R,python和Spark)经验。</span>		</a>				<a target="_blank" href='http://www.imooc.com/u/4379042' class='lecturer-item' data-track="syjstj-1-2">			<img class='lecturer-uimg' src='/homes/picture/583e9afa000166c410240770-200-200.jpg' />			<span class='lecturer-name'>编_程_浪_子</span>			<span class='lecturer-title'>PHP开发工程师</span>			<span class='lecturer-p' title='互联网搬砖小王子，从事互联网web 开发6年，热爱搬砖行业，有代码洁癖，对PHP，Python，Java都有涉猎， 实践经验丰富，富有激情，热爱分享，乐观开朗，喜欢专研新技术'>互联网搬砖小王子，从事互联网web 开发6年，热爱搬砖行业，有代码洁癖，对PHP，Python，Java都有涉猎， 实践经验丰富，富有激情，热爱分享，乐观开朗，喜欢专研新技术</span>		</a>				<a target="_blank" href='http://www.imooc.com/u/5245191' class='lecturer-item' data-track="syjstj-1-3">			<img class='lecturer-uimg' src='/homes/picture/590b09de0001503904000400-200-200.jpg' />			<span class='lecturer-name'>DocMike</span>			<span class='lecturer-title'>移动开发工程师</span>			<span class='lecturer-p' title='安卓工程师  多年开发和带团队经验，曾在BAT等多家一线互联网公司就职，P大硕士毕业，应届生导师、校招、社招面试官，主导与开发过多款知名的互联网金融、免费国际电话、外卖等项目的架构与开发'>安卓工程师  多年开发和带团队经验，曾在BAT等多家一线互联网公司就职，P大硕士毕业，应届生导师、校招、社招面试官，主导与开发过多款知名的互联网金融、免费国际电话、外卖等项目的架构与开发</span>		</a>				<a target="_blank" href='http://www.imooc.com/u/3017249' class='lecturer-item' data-track="syjstj-1-4">			<img class='lecturer-uimg' src='/homes/picture/577baef700019c4501400140-200-200.jpg' />			<span class='lecturer-name'>ustbhuangyi</span>			<span class='lecturer-title'>滴滴前端技术专家</span>			<span class='lecturer-p' title='北京科技大学计算机专业硕士。曾任职百度，现就职滴滴，前端技术专家。对Vue.js有很深的理解，是《Vue.js权威指南》一书的主要作者。他有着教科书式的代码写作习惯，对代码有洁癖，追求高质量的代码。强化提升编写高可扩展，通用性强的代码的能力'>北京科技大学计算机专业硕士。曾任职百度，现就职滴滴，前端技术专家。对Vue.js有很深的理解，是《Vue.js权威指南》一书的主要作者。他有着教科书式的代码写作习惯，对代码有洁癖，追求高质量的代码。强化提升编写高可扩展，通用性强的代码的能力</span>		</a>				<a target="_blank" href='http://www.imooc.com/u/5027812' class='lecturer-item' data-track="syjstj-1-5">			<img class='lecturer-uimg' src='/homes/picture/54584cb50001e5b302200220-200-200.jpg' />			<span class='lecturer-name'>快乐动起来呀</span>			<span class='lecturer-title'>Web前端工程师</span>			<span class='lecturer-p' title='先后在360、去哪儿网、今日头条任资深前端工程师，在业务开发和工程架构方面有较多实战经验。'>先后在360、去哪儿网、今日头条任资深前端工程师，在业务开发和工程架构方面有较多实战经验。</span>		</a>			</div></div></div>
 <div class="footer bg-white idx-minwidth">  <div class="container">    <div class="footer-wrap idx-width">      <div class="footer-sns">        <a href="http://weibo.com/u/3306361973" class="footer-sns-weibo hide-text" target="_blank" title="新浪微博">新浪微博</a>        <a href="javascript:void(0);" class="footer-sns-weixin" target="_blank" title="微信">          <i class="footer-sns-weixin-expand"></i>        </a>        <a href="http://t.qq.com/mukewang999" class="footer-sns-qqweibo hide-text" target="_blank" title="腾讯微博">腾讯微博</a>        <a href="http://user.qzone.qq.com/1059809142/" class="footer-sns-qzone hide-text" target="_blank" title="QQ空间">QQ空间</a>      </div>    </div>
         <div class="footer-link">
             @foreach($buttom as $k=>$v)
@@ -2086,7 +1753,23 @@
             @endforeach
 
         </div>
-        <div class="footer-copyright">     <p>©&nbsp2017&nbspimooc.com&nbsp&nbsp京ICP备 13046642号-2</p>    </div>  </div></div><div id="J_GotoTop" class="elevator">    <a href="/user/feedback" class="elevator-msg" target="_blank">        <i class="icon-feedback"></i>        <span class="">意见反馈</span>    </a>    <a href="/about/faq" class="elevator-faq" target="_blank">        <i class="icon-ques"></i>        <span class="">常见问题</span>    </a>    <a href="http://www.imooc.com/mobile/app" target="_blank" class="elevator-app" >        <i class="icon-appdownload"></i>        <span class="">APP下载</span>        <div class="elevator-app-box"></div>    </a>    <a href="javascript:void(0)" class="elevator-weixin no-goto" id="js-elevator-weixin" >        <i class="icon-wxgzh"></i>        <span class="">官方微信</span>        <div class="elevator-weixin-box"></div>    </a>    <a href="javascript:void(0)" class="elevator-top no-goto" style="display:none" id="backTop">        <i class="icon-up2"></i>        <span class="">返回顶部</span>    </a></div>
+        <div class="footer-copyright">     <p>©&nbsp2017&nbspimooc.com&nbsp&nbsp京ICP备 13046642号-2</p>    </div>  </div></div><div id="J_GotoTop" class="elevator">
+    <a href="/user/feedback" class="elevator-msg" target="_blank">
+        <i class="icon-feedback"></i>        <span class="">意见反馈</span>
+    </a>
+    <a href="/about/faq" class="elevator-faq" target="_blank">
+        <i class="icon-ques"></i>        <span class="">常见问题</span>
+    </a>
+    <a href="http://www.imooc.com/mobile/app" target="_blank" class="elevator-app" >
+        <i class="icon-appdownload"></i>        <span class="">APP下载</span>
+        <div class="elevator-app-box"></div>
+    </a>
+    <a href="javascript:void(0)" class="elevator-weixin no-goto" id="js-elevator-weixin" >
+        <i class="icon-wxgzh"></i>        <span class="">官方微信</span>
+        <div class="elevator-weixin-box"></div>
+    </a>
+    <a href="javascript:void(0)" class="elevator-top no-goto" style="display:none" id="backTop">
+        <i class="icon-up2"></i>        <span class="">返回顶部</span>    </a></div>
 
 
 <!--script-->

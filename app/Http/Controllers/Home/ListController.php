@@ -21,19 +21,10 @@ class ListController extends Controller
         $classify = DB::select('select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1');
 
         // 三级分类
-        $type = DB::select('SELECT distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1');
-
+        $type = DB::select('select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1');
+    +
         // 所有课程
-
-
-        $courses = DB::table('course_cate')
-              ->join('course', 'course_cate.cid', '=', 'course.pid')
-              ->where('cname','like','%'.$request->input('fx').'%')
-              ->orwhere(function ($query){
-                  $query->where('generas','1')
-                        ->where('path','REGEXP','0,.,.');
-              })
-              ->paginate(20);
+        $courses = DB::select("select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1");
 
         return view('home.list', compact('direction','classify','type','courses','request'));
     }

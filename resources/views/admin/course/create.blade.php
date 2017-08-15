@@ -429,7 +429,7 @@
                         $.post('/admin/label/genera', {'_token':'{{ csrf_token() }}', 'genera':obj}, function(data) {
                                 var arr = '';
                                 $.each(data, function(i,item){
-                                     arr += '<li><input type="checkbox" name="lid[]" value='+item.id+'> <label>'+item.title+'</label></li>';
+                                     arr += '<li><input type="checkbox" name="lid[]" value='+item.id+'> <label>'+item.titles+'</label></li>';
                                      $('#checkd').html(arr);
                                  });
                         } );

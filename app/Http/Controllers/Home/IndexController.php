@@ -85,10 +85,17 @@ class IndexController extends Controller
         // 前台Banner图
         $banner = DB::select("select id,bigpic from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and genera = 3 limit 0,7");
 
+        // 实战推荐
+        $sztj = DB::select("select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and banner = 1 and hot = 1");
+
+        // 免费好课
+        $mfhk = DB::select("select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 1 and banner = 1 and new = 1");
+
+
         // 底部
         $buttom = DB::select('select * from mk_buttom');
 
-        return view('home.index',compact('res','buttom','qd','qdkc','qdsz','qdtj','hd','hdkc1','hdkc2','hdsz','hdtj','yd','ydkc1','ydkc2','ydsz','ydtj','sjk','sjksz','sjktj','yjs','yjssz','yjstj','yw','ywsz','ywtj','yj','yjsz','yjtj','banner'));
+        return view('home.index',compact('sztj','mfhk','res','buttom','qd','qdkc','qdsz','qdtj','hd','hdkc1','hdkc2','hdsz','hdtj','yd','ydkc1','ydkc2','ydsz','ydtj','sjk','sjksz','sjktj','yjs','yjssz','yjstj','yw','ywsz','ywtj','yj','yjsz','yjtj','banner'));
     }
 
 }

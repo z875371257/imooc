@@ -52,8 +52,14 @@ Route::group(['namespace'=>'Home'],function(){
 
     //   前台主页
     Route::get('/', 'IndexController@index');
+    // 课程列表页
     Route::get('course/list', 'ListController@index');
+    // 职业路径列表页
+    Route::get('course/class', 'ClassController@index');
+    // 实战列表页
+    Route::get('course/coding', 'CodingController@index');
 
+    // 底部
     Route::group(['prefix' => 'about'], function () {
         //底部链接
         Route::get('cooperate','AboutController@cooperate');

@@ -22,7 +22,7 @@
                                     @foreach($direction as $k=>$v)
                                     <li class="course-nav-item
                                         ">
-                                        <a href="/course/list?fx={{$v->cname}}" data-ct="photo">
+                                        <a href="/course/list?fx={{$v->cid}}" data-ct="photo">
                                             {{$v->cname}}
                                         </a>
                                     </li>
@@ -46,7 +46,7 @@
                                     </li>
                                     @foreach($classify as $k=>$v)
                                     <li class="course-nav-item">
-                                        <a href="/course/list?c={{$v->cname}}" data-id=7 data-ct=html>
+                                        <a href="/course/list?c={{$v->cid}}" data-id=7 data-ct=html>
                                             {{$v->cname}}
                                         </a>
                                     </li>
@@ -224,7 +224,7 @@
                                     </div>
                                     <div class='szcourse-cart-o'>
                                     </div>
-                                    <div class='shizhanpic' style='background-image: url(/homes/images/58d8c6da0001ff8505400300-360-202.jpg);'>
+                                    <div class='shizhanpic' style='background-image: url();'>
                                     </div>
                                 </div>
                                 <div class='szcourse-cart-B'>
@@ -330,7 +330,7 @@
                     </ul>
                 </div>
                 <div class="page">
-                    {!! $courses->appends($request->all())->render() !!}
+                    {{--{!! $courses->appends($request->all())->render() !!}--}}
                 </div>
                 <style>
                     .page li{
