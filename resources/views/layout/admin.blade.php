@@ -153,6 +153,14 @@
                 </li>
 
                 <li>
+                    <a href="#"><i class="icon-user"></i>课程章节管理</a>
+                    <ul class='closed'>
+                        <li><a href="/admin/section/create">课程章节添加</a></li>
+                        <li><a href="/admin/section">课程章节列表</a></li>
+                    </ul>
+                </li>
+
+                <li>
                     <a href="#"><i class="icon-user"></i>订单管理</a>
                     <ul class='closed'>
                         <li><a href="{{url('admin/order')}}">订单列表</a></li>

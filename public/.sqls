@@ -15669,3 +15669,590 @@
 [2017-08-15 21:43:44]select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and banner = 1 and hot = 1
 [2017-08-15 21:43:44]select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 1 and banner = 1 and new = 1
 [2017-08-15 21:43:44]select * from mk_buttom
+[2017-08-15 21:52:41]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-15 21:52:41]select cid,cname from mk_course_cate where genera = 1 and pid = 1
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Web前端攻城狮' limit 0,2
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '前端开发' limit 0,2 
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,1,.' limit 0,2
+[2017-08-15 21:52:41]select cid,cname from mk_course_cate where genera = 1 and pid = 2
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'PHP攻城狮' limit 0,1
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Java攻城狮' limit 0,1
+[2017-08-15 21:52:41]select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '后端开发' limit 0,2 
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,2,.' limit 0,2
+[2017-08-15 21:52:41]select cid,cname from mk_course_cate where genera = 1 and pid = 3
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Android攻城狮' limit 0,1
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'IOS攻城狮' limit 0,1
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '移动开发' limit 0,2 
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,3,.' limit 0,2
+[2017-08-15 21:52:41]select cid,cname from mk_course_cate where genera = 1 and pid = 4
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '数据库' limit 0,2 
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,4,.' limit 0,3
+[2017-08-15 21:52:41]select cid,cname from mk_course_cate where genera = 1 and pid = 5
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '云计算&大数据' limit 0,2 
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,5,.' limit 0,3
+[2017-08-15 21:52:41]select cid,cname from mk_course_cate where genera = 1 and pid = 6
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '运维&测试' limit 0,2 
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,6,.' limit 0,3
+[2017-08-15 21:52:41]select cid,cname from mk_course_cate where genera = 1 and pid = 7
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = 'UI设计' limit 0,2 
+[2017-08-15 21:52:41]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,7,.' limit 0,3
+[2017-08-15 21:52:41]select id,bigpic from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and genera = 3 limit 0,7
+[2017-08-15 21:52:42]select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and banner = 1 and hot = 1
+[2017-08-15 21:52:42]select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 1 and banner = 1 and new = 1
+[2017-08-15 21:52:42]select * from mk_buttom
+[2017-08-15 21:52:46]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-15 21:52:46]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-15 21:52:46]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-15 21:52:46]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-15 21:53:40]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-15 21:53:40]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-15 21:53:40]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-15 21:53:40]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-15 21:53:42]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-15 21:53:42]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-15 21:53:42]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-15 21:53:42]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-15 21:54:10]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-15 21:54:10]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-15 21:54:10]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-15 21:54:10]select * from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-15 21:54:23]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-15 21:54:23]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-15 21:54:23]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-15 21:54:23]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-15 21:54:24]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-15 21:54:24]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-15 21:54:24]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-15 21:54:24]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-15 21:55:12]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-15 21:55:12]select cid,cname from mk_course_cate where genera = 1 and pid = 1
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Web前端攻城狮' limit 0,2
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '前端开发' limit 0,2 
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,1,.' limit 0,2
+[2017-08-15 21:55:12]select cid,cname from mk_course_cate where genera = 1 and pid = 2
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'PHP攻城狮' limit 0,1
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Java攻城狮' limit 0,1
+[2017-08-15 21:55:12]select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '后端开发' limit 0,2 
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,2,.' limit 0,2
+[2017-08-15 21:55:12]select cid,cname from mk_course_cate where genera = 1 and pid = 3
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Android攻城狮' limit 0,1
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'IOS攻城狮' limit 0,1
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '移动开发' limit 0,2 
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,3,.' limit 0,2
+[2017-08-15 21:55:12]select cid,cname from mk_course_cate where genera = 1 and pid = 4
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '数据库' limit 0,2 
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,4,.' limit 0,3
+[2017-08-15 21:55:12]select cid,cname from mk_course_cate where genera = 1 and pid = 5
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '云计算&大数据' limit 0,2 
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,5,.' limit 0,3
+[2017-08-15 21:55:12]select cid,cname from mk_course_cate where genera = 1 and pid = 6
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '运维&测试' limit 0,2 
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,6,.' limit 0,3
+[2017-08-15 21:55:12]select cid,cname from mk_course_cate where genera = 1 and pid = 7
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = 'UI设计' limit 0,2 
+[2017-08-15 21:55:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,7,.' limit 0,3
+[2017-08-15 21:55:12]select id,bigpic from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and genera = 3 limit 0,7
+[2017-08-15 21:55:12]select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and banner = 1 and hot = 1
+[2017-08-15 21:55:12]select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 1 and banner = 1 and new = 1
+[2017-08-15 21:55:12]select * from mk_buttom
+[2017-08-15 22:10:14]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-15 22:10:14]select cid,cname from mk_course_cate where genera = 1 and pid = 1
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Web前端攻城狮' limit 0,2
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '前端开发' limit 0,2 
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,1,.' limit 0,2
+[2017-08-15 22:10:14]select cid,cname from mk_course_cate where genera = 1 and pid = 2
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'PHP攻城狮' limit 0,1
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Java攻城狮' limit 0,1
+[2017-08-15 22:10:14]select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '后端开发' limit 0,2 
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,2,.' limit 0,2
+[2017-08-15 22:10:14]select cid,cname from mk_course_cate where genera = 1 and pid = 3
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Android攻城狮' limit 0,1
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'IOS攻城狮' limit 0,1
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '移动开发' limit 0,2 
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,3,.' limit 0,2
+[2017-08-15 22:10:14]select cid,cname from mk_course_cate where genera = 1 and pid = 4
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '数据库' limit 0,2 
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,4,.' limit 0,3
+[2017-08-15 22:10:14]select cid,cname from mk_course_cate where genera = 1 and pid = 5
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '云计算&大数据' limit 0,2 
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,5,.' limit 0,3
+[2017-08-15 22:10:14]select cid,cname from mk_course_cate where genera = 1 and pid = 6
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '运维&测试' limit 0,2 
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,6,.' limit 0,3
+[2017-08-15 22:10:14]select cid,cname from mk_course_cate where genera = 1 and pid = 7
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = 'UI设计' limit 0,2 
+[2017-08-15 22:10:14]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,7,.' limit 0,3
+[2017-08-15 22:10:14]select id,bigpic from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and genera = 3 limit 0,7
+[2017-08-15 22:10:14]select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and banner = 1 and hot = 1
+[2017-08-15 22:10:14]select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 1 and banner = 1 and new = 1
+[2017-08-15 22:10:14]select * from mk_buttom
+[2017-08-15 22:10:26]select * from `mk_course_cate` where `genera` = ?
+[2017-08-15 22:10:26]select count(*) as aggregate from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `genera` = ?
+[2017-08-15 22:10:27]select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `genera` = ? limit 20 offset 0
+[2017-08-15 22:10:55]select * from `mk_course_cate` where `genera` = ?
+[2017-08-15 22:10:55]select count(*) as aggregate from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `genera` = ?
+[2017-08-15 22:10:56]select * from `mk_course_cate` where `genera` = ?
+[2017-08-15 22:10:56]select count(*) as aggregate from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `genera` = ?
+[2017-08-15 22:10:57]select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `genera` = ? limit 20 offset 0
+[2017-08-15 22:10:58]select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `genera` = ? limit 20 offset 0
+[2017-08-15 22:24:26]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:24:43]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:25:08]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:25:14]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:25:28]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:25:34]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:25:42]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:25:55]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:25:58]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:26:17]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:26:27]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:26:54]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:27:07]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:27:31]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:27:41]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:28:41]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:29:59]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:30:09]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:30:15]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:31:09]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:31:22]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:32:05]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:32:11]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:32:27]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:32:39]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:32:47]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:33:52]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:34:01]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:34:38]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:35:03]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:36:15]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:36:17]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:36:24]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:36:24]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:37:13]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:37:15]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:37:17]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:37:18]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:37:20]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:37:47]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:37:48]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:37:50]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:38:07]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:38:39]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:38:48]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:39:12]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:39:52]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:39:54]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:40:14]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:40:24]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:40:37]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:40:43]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:41:01]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:41:06]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:42:44]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:42:50]select * from `mk_course_cate` where `genera` = ?
+[2017-08-15 22:42:50]select count(*) as aggregate from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `genera` = ?
+[2017-08-15 22:42:51]select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `genera` = ? limit 20 offset 0
+[2017-08-15 22:42:54]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:43:03]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:43:33]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:43:54]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:49:13]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 22:49:54]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 23:01:00]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 23:01:03]select * from `mk_course_cate` where `genera` = ?
+[2017-08-15 23:01:03]select count(*) as aggregate from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `genera` = ?
+[2017-08-15 23:01:04]select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `genera` = ? limit 20 offset 0
+[2017-08-15 23:01:06]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 23:01:12]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 23:01:55]select * from `mk_course` where `id` = ? limit 1
+[2017-08-15 23:02:12]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:21:12]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:21:12]select cid,cname from mk_course_cate where genera = 1 and pid = 1
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Web前端攻城狮' limit 0,2
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '前端开发' limit 0,2 
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,1,.' limit 0,2
+[2017-08-16 09:21:12]select cid,cname from mk_course_cate where genera = 1 and pid = 2
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'PHP攻城狮' limit 0,1
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Java攻城狮' limit 0,1
+[2017-08-16 09:21:12]select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '后端开发' limit 0,2 
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,2,.' limit 0,2
+[2017-08-16 09:21:12]select cid,cname from mk_course_cate where genera = 1 and pid = 3
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Android攻城狮' limit 0,1
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'IOS攻城狮' limit 0,1
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '移动开发' limit 0,2 
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,3,.' limit 0,2
+[2017-08-16 09:21:12]select cid,cname from mk_course_cate where genera = 1 and pid = 4
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '数据库' limit 0,2 
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,4,.' limit 0,3
+[2017-08-16 09:21:12]select cid,cname from mk_course_cate where genera = 1 and pid = 5
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '云计算&大数据' limit 0,2 
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,5,.' limit 0,3
+[2017-08-16 09:21:12]select cid,cname from mk_course_cate where genera = 1 and pid = 6
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '运维&测试' limit 0,2 
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,6,.' limit 0,3
+[2017-08-16 09:21:12]select cid,cname from mk_course_cate where genera = 1 and pid = 7
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = 'UI设计' limit 0,2 
+[2017-08-16 09:21:12]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,7,.' limit 0,3
+[2017-08-16 09:21:12]select id,bigpic from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and genera = 3 limit 0,7
+[2017-08-16 09:21:12]select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and banner = 1 and hot = 1
+[2017-08-16 09:21:12]select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 1 and banner = 1 and new = 1
+[2017-08-16 09:21:12]select * from mk_buttom
+[2017-08-16 09:21:17]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:21:17]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:21:17]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:21:17]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:21:18]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:21:18]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:21:18]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:21:18]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:21:29]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:21:29]select count(*) as aggregate from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `genera` = ?
+[2017-08-16 09:21:30]select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `genera` = ? limit 20 offset 0
+[2017-08-16 09:21:33]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:21:33]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:21:34]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = ?
+[2017-08-16 09:21:37]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:21:37]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:21:37]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:21:37]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:21:37]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:21:37]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:21:37]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:21:37]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:22:50]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:22:51]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:22:51]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:22:51]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:22:52]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:22:52]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:22:52]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:22:52]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:23:33]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:23:33]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:23:33]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:23:33]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:23:34]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:23:34]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:23:34]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:23:34]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:23:51]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:23:51]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:23:51]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:23:51]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:23:51]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:23:51]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:23:51]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:23:51]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:24:15]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:24:15]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:24:15]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:24:15]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:24:15]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:24:15]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:24:15]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:24:15]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:24:20]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:24:20]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:24:20]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:24:20]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:24:21]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:24:21]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:24:21]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:24:21]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:24:51]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:24:51]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:24:51]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:24:51]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:24:52]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:24:52]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:24:52]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:24:52]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:25:02]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:25:02]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:25:02]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:25:02]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:25:02]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:25:02]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:25:02]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:25:02]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:25:23]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:25:23]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:25:23]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:25:23]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:25:23]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:25:23]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:25:23]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:25:23]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:25:33]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:25:33]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:25:33]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:25:33]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:25:33]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:25:33]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:25:33]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:25:33]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:25:38]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:25:38]select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1
+[2017-08-16 09:25:38]select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1
+[2017-08-16 09:25:38]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1
+[2017-08-16 09:25:40]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:25:40]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:25:40]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = ?
+[2017-08-16 09:25:46]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:25:46]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:25:46]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and cid = ?
+[2017-08-16 09:25:49]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:25:49]select cid,cname from mk_course_cate where genera = 1 and pid = 1
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Web前端攻城狮' limit 0,2
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '前端开发' limit 0,2 
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,1,.' limit 0,2
+[2017-08-16 09:25:49]select cid,cname from mk_course_cate where genera = 1 and pid = 2
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'PHP攻城狮' limit 0,1
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Java攻城狮' limit 0,1
+[2017-08-16 09:25:49]select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '后端开发' limit 0,2 
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,2,.' limit 0,2
+[2017-08-16 09:25:49]select cid,cname from mk_course_cate where genera = 1 and pid = 3
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Android攻城狮' limit 0,1
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'IOS攻城狮' limit 0,1
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '移动开发' limit 0,2 
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,3,.' limit 0,2
+[2017-08-16 09:25:49]select cid,cname from mk_course_cate where genera = 1 and pid = 4
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '数据库' limit 0,2 
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,4,.' limit 0,3
+[2017-08-16 09:25:49]select cid,cname from mk_course_cate where genera = 1 and pid = 5
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '云计算&大数据' limit 0,2 
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,5,.' limit 0,3
+[2017-08-16 09:25:49]select cid,cname from mk_course_cate where genera = 1 and pid = 6
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '运维&测试' limit 0,2 
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,6,.' limit 0,3
+[2017-08-16 09:25:49]select cid,cname from mk_course_cate where genera = 1 and pid = 7
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = 'UI设计' limit 0,2 
+[2017-08-16 09:25:49]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,7,.' limit 0,3
+[2017-08-16 09:25:49]select id,bigpic from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and genera = 3 limit 0,7
+[2017-08-16 09:25:49]select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and banner = 1 and hot = 1
+[2017-08-16 09:25:49]select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 1 and banner = 1 and new = 1
+[2017-08-16 09:25:49]select * from mk_buttom
+[2017-08-16 09:25:54]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:25:54]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:25:54]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = ?
+[2017-08-16 09:26:21]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:26:21]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:26:21]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = ?
+[2017-08-16 09:26:24]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:26:24]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:26:24]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = ?
+[2017-08-16 09:26:27]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:26:27]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:26:27]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and cid = ?
+[2017-08-16 09:26:29]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:26:29]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:26:29]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and cid = ?
+[2017-08-16 09:26:35]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:26:35]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:26:35]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and cid = ?
+[2017-08-16 09:26:37]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:26:37]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:26:37]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and cid = ?
+[2017-08-16 09:26:38]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:26:39]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:26:39]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and cid = ?
+[2017-08-16 09:26:40]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:26:40]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:26:40]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and cid = ?
+[2017-08-16 09:26:44]select cid,cname from mk_course_cate where pid=0 and genera=1
+[2017-08-16 09:26:44]select cid,cname from mk_course_cate where genera = 1 and pid = 1
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Web前端攻城狮' limit 0,2
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '前端开发' limit 0,2 
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,1,.' limit 0,2
+[2017-08-16 09:26:44]select cid,cname from mk_course_cate where genera = 1 and pid = 2
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'PHP攻城狮' limit 0,1
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Java攻城狮' limit 0,1
+[2017-08-16 09:26:44]select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '后端开发' limit 0,2 
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,2,.' limit 0,2
+[2017-08-16 09:26:44]select cid,cname from mk_course_cate where genera = 1 and pid = 3
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'Android攻城狮' limit 0,1
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =2 and cname = 'IOS攻城狮' limit 0,1
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas =3 and cname = '移动开发' limit 0,2 
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,3,.' limit 0,2
+[2017-08-16 09:26:44]select cid,cname from mk_course_cate where genera = 1 and pid = 4
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '数据库' limit 0,2 
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,4,.' limit 0,3
+[2017-08-16 09:26:44]select cid,cname from mk_course_cate where genera = 1 and pid = 5
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '云计算&大数据' limit 0,2 
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,5,.' limit 0,3
+[2017-08-16 09:26:44]select cid,cname from mk_course_cate where genera = 1 and pid = 6
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = '运维&测试' limit 0,2 
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,6,.' limit 0,3
+[2017-08-16 09:26:44]select cid,cname from mk_course_cate where genera = 1 and pid = 7
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 3 and cname = 'UI设计' limit 0,2 
+[2017-08-16 09:26:44]select id,title from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,7,.' limit 0,3
+[2017-08-16 09:26:44]select id,bigpic from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and genera = 3 limit 0,7
+[2017-08-16 09:26:45]select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and banner = 1 and hot = 1
+[2017-08-16 09:26:45]select * from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 1 and banner = 1 and new = 1
+[2017-08-16 09:26:45]select * from mk_buttom
+[2017-08-16 09:27:11]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:27:11]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:27:11]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and cid = ?
+[2017-08-16 09:27:14]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:27:14]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:27:14]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = ?
+[2017-08-16 09:27:21]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:27:21]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:27:21]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = ?
+[2017-08-16 09:27:23]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:27:23]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:28:04]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:28:04]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:28:04]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = ?
+[2017-08-16 09:28:06]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:28:06]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:28:06]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 3 and l.titles = ? 
+[2017-08-16 09:28:07]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:28:07]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:28:07]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 3 and l.titles = ? 
+[2017-08-16 09:28:09]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:28:09]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:28:09]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 3 and l.titles = ? 
+[2017-08-16 09:28:11]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:28:11]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:28:11]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 3 and l.titles = ? 
+[2017-08-16 09:28:12]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:28:12]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:28:12]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 3 and l.titles = ? 
+[2017-08-16 09:28:13]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:28:13]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:28:13]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 3 and l.titles = ? 
+[2017-08-16 09:28:14]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:28:14]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:28:14]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 3 and l.titles = ? 
+[2017-08-16 09:28:15]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:28:15]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:28:15]select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 3 and l.titles = ? 
+[2017-08-16 09:28:21]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:28:21]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:28:21]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and cid = ?
+[2017-08-16 09:29:46]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:29:46]select count(*) as aggregate from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `genera` = ?
+[2017-08-16 09:29:47]select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `genera` = ? limit 20 offset 0
+[2017-08-16 09:29:50]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:30:19]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:30:19]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:30:19]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and cid = ?
+[2017-08-16 09:35:06]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:45:12]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:45:27]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:46:46]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:46:48]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:47:12]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:47:34]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:47:39]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:47:49]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:48:32]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 09:48:32]select * from `mk_label` where `genera` = ?
+[2017-08-16 09:48:32]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = ?
+[2017-08-16 09:48:34]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:48:58]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:49:02]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:49:17]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:49:32]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:49:42]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:50:04]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:52:05]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:52:29]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:52:42]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:52:48]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:53:44]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:54:23]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:54:30]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:54:40]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:54:57]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:55:41]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:55:54]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:56:20]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:56:21]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:57:07]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:57:08]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:57:21]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:58:35]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:58:36]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:58:59]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:59:00]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:59:17]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:59:18]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:59:34]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 09:59:35]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:02:30]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:02:30]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:02:35]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:02:35]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:02:42]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:02:43]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:02:44]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:02:45]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:02:58]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:02:59]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:03:50]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:03:50]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:04:14]select * from `mk_course_cate` where `genera` = ?
+[2017-08-16 10:04:14]select * from `mk_label` where `genera` = ?
+[2017-08-16 10:04:14]select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = ?
+[2017-08-16 10:04:17]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:06:25]select * from `mk_course` where `id` = ? limit 1
+[2017-08-16 10:08:47]select * from `mk_admin_user` where `username` = ? limit 1
+[2017-08-16 10:08:51]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:08:53]select count(*) as aggregate from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `title` like ?
+[2017-08-16 10:08:54]select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` where `title` like ? limit 20 offset 0
+[2017-08-16 10:16:12]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:17:03]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:17:05]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:17:16]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:17:17]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:17:50]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:19:13]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:20:08]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:20:11]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:20:17]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:20:20]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:20:23]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:22:49]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:22:51]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:26:47]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:26:56]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:27:16]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:27:20]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:28:06]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:28:08]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:31:00]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:31:02]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:31:06]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:31:27]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:31:47]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:31:49]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:31:53]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:31:57]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:32:58]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:33:02]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:34:03]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:34:11]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:34:55]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:34:58]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:35:02]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:35:04]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:40:43]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:40:46]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:40:58]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:41:31]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:41:32]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:41:41]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:41:49]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:42:14]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:42:16]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:42:24]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:42:36]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:42:40]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:53:00]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:53:04]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:53:14]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc
+[2017-08-16 10:53:45]select distinct `genera` from `mk_course_cate`
+[2017-08-16 10:53:48]select *,concat(path,cid) as paths from `mk_course_cate` where `genera` = ? order by `paths` asc

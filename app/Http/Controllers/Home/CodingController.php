@@ -19,7 +19,7 @@ class CodingController extends Controller
 
         if($request->input('c') || $request->input('f')){
              if($request->input('c')){
-                $coding = DB::select("select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 3 and l.title = ? ", [$request->input('c')]);
+                $coding = DB::select("select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 3 and l.titles = ? ", [$request->input('c')]);
              }
 
              if($request->input('f')){
@@ -30,6 +30,19 @@ class CodingController extends Controller
         }
 
         return view('home.coding',compact('class','res','label','coding'));
+    }
+
+    public function detail(Request $request)
+    {
+        $id = $request->input('c');
+        $res = DB::table('course')->where('id', $id)->first();
+
+        return view('home.codingDetail',compact('res'));
+    }
+
+    public function chapter(Request $request)
+    {
+        
     }
 
 }

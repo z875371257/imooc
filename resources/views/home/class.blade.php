@@ -73,7 +73,7 @@
 <div class='program-list'>
 <div class='program-list-wrap clearfix'>
 		@foreach($class as $k=>$v)
-		<a href='/sc/{{$v->id}}' class='program-item'>
+		<a href='/class/detail?id={{$v->id}}' class='program-item'>
 			<div class='shadow'>
 			<div class='program-list-head'>
 				<div class='' style='background-image: url(/{{$v->pic}});'></div>

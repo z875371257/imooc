@@ -31,4 +31,12 @@ class ClassController extends Controller
         return view('home.class',compact('class','res'));
     }
 
+    public function detail(Request $request)
+    {
+        $id = $request->input('id');
+        $res = DB::table('course')->where('id', $id)->first();
+
+        return view('home.classDetail', compact('res'));
+    }
+
 }

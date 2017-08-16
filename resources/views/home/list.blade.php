@@ -79,7 +79,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" style="height:100%;">
             <div class="course-tool-bar clearfix">
                 <div class="tool-left l">
                     <a href="/course/list?sort=last" class="sort-item">
@@ -332,17 +332,17 @@
                 <div class="page">
                     {{--{!! $courses->appends($request->all())->render() !!}--}}
                 </div>
-                <style>
-                    .page li{
-                        padding: 0 4px;
-                        min-width: 24px;
-                        line-height: 32px;
-                        font-size: 14px;
-                        display: inline-block;
-                        text-align: center;
-                    }
+                {{--<style>--}}
+                    {{--.page li{--}}
+                        {{--padding: 0 4px;--}}
+                        {{--min-width: 24px;--}}
+                        {{--line-height: 32px;--}}
+                        {{--font-size: 14px;--}}
+                        {{--display: inline-block;--}}
+                        {{--text-align: center;--}}
+                    {{--}--}}
 
-                </style>
+                {{--</style>--}}
             </div>
         </div>
     </div>
