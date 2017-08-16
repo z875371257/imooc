@@ -70,14 +70,18 @@
                     <div class="my-cart" id="js-my-cart"></div>
                 </li>
 
+
+
+
                 <nav class="main_nav">
                     <li class="header-signin">
-                        <a href="#0" class="cd-signin" id="js-signin-btn">登录</a>
+                        <a href="#0" class="cd-signin" id="js-signin-btn">{{ isset( session()->get('user')->username )? "登录": "退出" }}</a>
                     </li>
                     <li class="header-signup">
                         <a href="#0" class="cd-signup" id="js-signup-btn">注册</a>
                     </li>
                 </nav>
+
 
             </ul>
         </div>
@@ -1820,15 +1824,16 @@
             </ul>
 
             <div id="cd-login"> <!-- 登录表单 -->
-                <form class="cd-form">
+                <form class="cd-form" action="{{ url('login') }}" method="post">
+                    {{ csrf_field() }}
                     <p class="fieldset">
                         <label class="image-replace cd-username" for="signin-username">用户名</label>
-                        <input class="full-width has-padding has-border" id="signin-username" type="text" placeholder="输入用户名">
+                        <input class="full-width has-padding has-border" id="signin-username" type="text" placeholder="输入用户名" name="username" required>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="signin-password">密码</label>
-                        <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="输入密码">
+                        <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="输入密码" name="password" required>
                     </p>
 
                     <p class="fieldset">
@@ -1843,24 +1848,25 @@
             </div>
 
             <div id="cd-signup"> <!-- 注册表单 -->
-                <form class="cd-form">
+                <form class="cd-form" action="{{ url('register') }}" method="post">
+                    {{ csrf_field() }}
                     <p class="fieldset">
                         <label class="image-replace cd-username" for="signup-username">用户名</label>
-                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="输入用户名">
+                        <input class="full-width has-padding has-border" id="signup-username" type="text" name="username" placeholder="输入用户名" required>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-email" for="signup-email">邮箱</label>
-                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="输入mail">
+                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="输入mail" name="email" required>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="signup-password">密码</label>
-                        <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="输入密码">
+                        <input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="输入密码" name="password" required>
                     </p>
 
                     <p class="fieldset">
-                        <input type="checkbox" id="accept-terms">
+                        <input type="checkbox" id="accept-terms" required>
                         <label for="accept-terms">我已阅读并同意 <a href="#0">用户协议</a></label>
                     </p>
 
@@ -1872,6 +1878,8 @@
             <a href="#0" class="cd-close-form">关闭</a>
         </div>
     </div>
+
+  
 
 </div>
 </body>
