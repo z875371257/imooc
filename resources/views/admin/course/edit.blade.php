@@ -7,13 +7,28 @@
         <div class="mws-panel-header" style="padding-top:2px  ">
             <span>修改页面</span>
         </div>
-        @if(session('msg'))
-            <div class="mark">
+        <!-- 表单提交后发生错误信息的显示 -->
+        @if (count(session('success')) > 0)
+            <div class="mws-form-message info" style="margin-top:10px">
+                {{session('success')}}
+            </div>
+        @endif
+
+        @if (count($errors) > 0 || session('errors') > 0)
+            <div class="mws-form-message error" style='margin-top:10px;'>
+                修改失败
                 <ul>
-                    <li>{{ session('msg') }}</li>
+                    @if(is_object($errors))
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    @else
+                        <li>{{session('errors')}}</li>
+                    @endif
                 </ul>
             </div>
         @endif
+
 
         <div class="mws-panel-body no-padding">
             <form action="{{url('admin/buttom/'.$edit->id)}}" method='post' enctype='multipart/form-data' class="mws-form">

@@ -28,7 +28,7 @@
                                 @foreach($arr as $k=>$v)
                                 <li><input type="radio" value="{{$k}}" name="genera" onchange="daChange({{$k}})"> <label>{{ genera($k) }}</label></li>
                                 @endforeach
-                            @endif
+
                         </ul>
                     </div>
                 </div>

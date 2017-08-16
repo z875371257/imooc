@@ -7,13 +7,28 @@
         <div class="mws-panel-header" style="padding-top:2px  ">
             <span>修改页面</span>
         </div>
-        @if(session('msg'))
-            <div class="mark">
+        <!-- 表单提交后发生错误信息的显示 -->
+        @if (count(session('success')) > 0)
+            <div class="mws-form-message info" style="margin-top:10px">
+                {{session('success')}}
+            </div>
+        @endif
+
+        @if (count($errors) > 0 || session('errors') > 0)
+            <div class="mws-form-message error" style='margin-top:10px;'>
+                修改失败
                 <ul>
-                    <li>{{ session('msg') }}</li>
+                    @if(is_object($errors))
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    @else
+                        <li>{{session('msg')}}</li>
+                    @endif
                 </ul>
             </div>
         @endif
+
 
         <div class="mws-panel-body no-padding">
             <form action="{{url('admin/buttom/'.$edit->id)}}" method='post' enctype='multipart/form-data' class="mws-form">
@@ -34,11 +49,18 @@
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">内容:</label>
-                        <div class="mws-form-item" name='content' value="{{$edit->editorValue}}">
+                        <div class="mws-form-item" name='content' >
                             <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/ueditor.config.js')}}"></script>
                             <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/ueditor.all.min.js')}}"> </script>
                             <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/lang/zh-cn/zh-cn.js')}}"></script>
-                            <script id="editor" type="text/plain" style="width:800px;height:300px;"></script>
+<<<<<<< HEAD
+                            <script id="editor" type="text/plain" style="width:800px;height:300px;" >
+=======
+                            <script id="editor" type="text/plain" style="width:700px;height:300px;" >
+>>>>>>> d20bd435e1de16b72abc81ff7abaa9b146d4d561
+                                {!! $edit->editorValue !!}
+                            </script>
+
                             <script type="text/javascript" >
 
                                 //实例化编辑器
@@ -84,7 +106,7 @@
                                     arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
                                     UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
                                     alert(arr.join("\n"));
-                                }
+                                }d
                                 function setDisabled() {
                                     UE.getEditor('editor').setDisabled('fullscreen');
                                     disableBtn("enable");

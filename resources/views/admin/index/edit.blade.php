@@ -6,15 +6,25 @@
             <span>修改密码</span>
         </div>
         <!-- 表单提交后发生错误信息的显示 -->
+        @if (count(session('success')) > 0)
+            <div class="mws-form-message info" style="margin-top:10px">
+                {{session('success')}}
+            </div>
+        @endif
+
         @if (count($errors) > 0)
-                <div class="mws-form-message error" style='margin-top:10px;'>
-                    修改失败
-                    <ul>
+            <div class="mws-form-message error" style='margin-top:10px;'>
+                修改失败
+                <ul>
+                    @if(is_object($errors))
                         @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                            <li>{{ $error }}</li>
                         @endforeach
-                    </ul>
-                </div>
+                    @else
+                        <li>{{session('errors')}}</li>
+                    @endif
+                </ul>
+            </div>
         @endif
 
         <div class="mws-panel-body no-padding">
