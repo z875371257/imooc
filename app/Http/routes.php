@@ -46,6 +46,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
     Route::resource('buttom','ButtomController');
     Route::resource('link','LinkController');
 
+    //   后台网站配置模块
+    Route::resource('conf','ConfController');
+    Route::post('conf/changeContent','ConfController@changeContent');
+
+    Route::get('putfile', 'ConfController@putFile');
 
 
     //   订单模块
@@ -54,6 +59,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
     //购物车
     Route::resource('cart','CartController');
 });
+
+
 
 // 前台管理组
 Route::group(['namespace'=>'Home'],function(){
