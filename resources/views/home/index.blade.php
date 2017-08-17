@@ -96,8 +96,17 @@
                 </li>
 
                 <nav class="main_nav">
+<<<<<<< HEAD
                     <li class="header-signin" style="margin-left: 20px;">
                         <a href="#0" class="cd-signin" id="js-signin-btn">登录</a>
+=======
+                    <li class="header-signin">
+                        @if(!session()->get('user'))
+                        <a href="#0" class="cd-signin" id="js-signin-btn">登录</a>
+                            @else
+                            <a href="#0" class="cd-signin" id="js-signin-btn">{{session()->get('user')->username}}</a>
+                            @endif
+>>>>>>> origin/yuanqiusheng
                     </li>
                     <li class="header-signup">
                         <a href="#0" class="cd-signup" id="js-signup-btn">注册</a>

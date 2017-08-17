@@ -80,8 +80,9 @@ Route::group(['namespace'=>'Home'],function(){
     Route::get('coding/chapter', 'CodingController@chapter');
 
     //购物车
-    Route::get('cart','CartController@index');
-
+    Route::get('cart','CartController@index')->name('cart');
+    Route::get('addCart/{id}','CartController@addCart');
+    Route::get('delCart/{id}','CartController@delCart');
     // 底部
     Route::group(['prefix' => 'about'], function () {
         //底部链接
