@@ -23,7 +23,7 @@
 	        <div class="cato-nav-row">
 	            <ul class="">
 	                <li class="cato-nav-item on">
-	                    <a href="/" id="cato">全部</a>
+	                    <a href="/course/coding" id="cato">全部</a>
 	                </li>
 					@foreach($res as $k=>$v)
 					<li class="cato-nav-item ">
@@ -51,9 +51,9 @@
 	<div class="screening-box clearfix">
 		<div class="screening-time l">
 						<span><a href="/" class="on">默认排序</a></span>
-			<span><a href="/?sort=2" >最新</a></span>
-			<span><a href="/?sort=1" >销量</a></span>
-			<span><a href="/?sort=3" >评价数</a></span>
+			<span><a href="" >最新</a></span>
+			<span><a href="" >销量</a></span>
+			<span><a href="" >评价数</a></span>
 					</div>
 		<!-- 判断登录 && 并且购买过实战课程 -->
 			</div>
@@ -63,7 +63,7 @@
 		<div class="shizhan-course-list clearfix">
 				@foreach($coding as $k=>$v)
 				<div class="shizhan-course-wrap l">
-					<a href="/coding?c={{$v->id}}">
+					<a href="/coding/detail?c={{$v->id}}">
 	                    <div class="shizhan-course-box">
 	                    	<!-- 学习进度 -->
 							<div class="box">

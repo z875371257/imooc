@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>慕课网-程序员的梦工厂</title>
+    <title>{{config('web.web_title')}}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
     <meta property="qc:admins" content="77103107776157736375" />
@@ -10,8 +10,8 @@
     <meta http-equiv="Access-Control-Allow-Origin" content="*" />
     <meta http-equiv="Cache-Control" content="no-transform " />
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' *.imooc.com *.mukewang.com *.baidu.com *.sina.com.cn *.bootcss.com">
-    <meta name="Keywords" content="" />
-    <meta name="Description" content="慕课网（IMOOC）是IT技能学习平台。慕课网(IMOOC)提供了丰富的移动端开发、php开发、web前端、android开发以及html5等视频教程资源公开课。并且富有交互性及趣味性，你还可以和朋友一起编程。" />
+    <meta name="Keywords" content="{{config('web.keywords')}}" />
+    <meta name="Description" content="{{config('web.description')}}" />
     <meta name="360-site-verification" content="efec9ca9c0c2bf49b8f54f8ea4626ea8" /><meta name="baidu-site-verification" content="f81e4a13096b3a7cab15fe1d39773a4e"/>
     <link rel="stylesheet" href="/homes/css/big.css">
     <link rel="stylesheet" href="/homes/css/moco.min.css" type="text/css" />
@@ -63,7 +63,8 @@
 
 {{--  session 判断显示 session 判断显示session 判断显示session 判断显示session 判断显示session 判断显示session 判断显示session 判断显示 --}}
 
-        @if ( !session()->get('user' ))
+        @if ( !session()->get('users'))
+
         <div id="login-area">
             <ul class="header-unlogin clearfix">
                 <li class="shop-cart" id="shop-cart">
@@ -96,8 +97,9 @@
                 </li>
 
                 <nav class="main_nav">
-                    <li class="header-signin" style="margin-left: 20px;">
-                        <a href="#0" class="cd-signin" id="js-signin-btn">登录</a>
+
+                    <li class="header-signin">
+                            <a href="#0" class="cd-signin" id="js-signin-btn">登录</a>
                     </li>
                     <li class="header-signup">
                         <a href="#0" class="cd-signup" id="js-signup-btn">注册</a>
@@ -150,7 +152,8 @@
                     </li>
                     <li class="set_btn user-card-box" id="header-user-card">
                         <a id="header-avator" class="user-card-item js-header-avator" action-type="my_menu" href="/u/5601964" target="_self">
-                            <img width="40" height="40" src="http://img.mukewang.com/597b0ff300016efc06950694-100-100.jpg">
+                            <img src="@if(!session('details')) http://img.mukewang.com/597b0ff300016efc06950694-100-100.jpg
+                                                    @else {{ session('details')->profile  }} @endif " alt="">
                             <i class="myspace_remind" style="display: none;"></i>
                             <span style="display: none;">动态提醒 </span>
                         </a>
@@ -158,13 +161,15 @@
                             <div class="card-inner">
                                 <div class="card-top clearfix">
                                     <a href="/u/5601964" class="l" class="user-card-item js-header-avator hover" action-type="my_menu" id="header-avator" target="_self">
-                                        @if(session()->get('user')->profile)
-                                        <img src="{{ url('session()->get("user")->profile') }}" alt="weixin_赵世强_0">
-                                        @else
-                                        <img src="http://img.mukewang.com/597b0ff300016efc06950694-100-100.jpg" alt="weixin_赵世强_0">
+
+
+                                        <img src="@if(!session('details')) http://img.mukewang.com/597b0ff300016efc06950694-100-100.jpg
+                                                    @else {{ session('details')->profile  }} @endif " alt="">
+
+
+
                                             <i class="myspace_remind" style="display: none;"></i>
                                             <span style="display: none;">动态提醒</span>
-                                            @endif
                                     </a>
                                     <div class="card-top-right-box l">
                                         <a href="/u/5601964"><span class="name text-ellipsis"> weixin_赵世强_0</span></a>
@@ -1899,23 +1904,11 @@
             @endforeach
 
         </div>
-        <div class="footer-copyright">     <p>©&nbsp2017&nbspimooc.com&nbsp&nbsp京ICP备 13046642号-2</p>    </div>  </div></div><div id="J_GotoTop" class="elevator">
-    <a href="/user/feedback" class="elevator-msg" target="_blank">
-        <i class="icon-feedback"></i>        <span class="">意见反馈</span>
-    </a>
-    <a href="/about/faq" class="elevator-faq" target="_blank">
-        <i class="icon-ques"></i>        <span class="">常见问题</span>
-    </a>
-    <a href="http://www.imooc.com/mobile/app" target="_blank" class="elevator-app" >
-        <i class="icon-appdownload"></i>        <span class="">APP下载</span>
-        <div class="elevator-app-box"></div>
-    </a>
-    <a href="javascript:void(0)" class="elevator-weixin no-goto" id="js-elevator-weixin" >
-        <i class="icon-wxgzh"></i>        <span class="">官方微信</span>
-        <div class="elevator-weixin-box"></div>
-    </a>
-    <a href="javascript:void(0)" class="elevator-top no-goto" style="display:none" id="backTop">
-        <i class="icon-up2"></i>        <span class="">返回顶部</span>    </a></div>
+
+        <div class="footer-copyright">
+            <p>{{config('web.copyright')}}</p>
+        </div>
+    </div></div><div id="J_GotoTop" class="elevator">    <a href="/user/feedback" class="elevator-msg" target="_blank">        <i class="icon-feedback"></i>        <span class="">意见反馈</span>    </a>    <a href="/about/faq" class="elevator-faq" target="_blank">        <i class="icon-ques"></i>        <span class="">常见问题</span>    </a>    <a href="http://www.imooc.com/mobile/app" target="_blank" class="elevator-app" >        <i class="icon-appdownload"></i>        <span class="">APP下载</span>        <div class="elevator-app-box"></div>    </a>    <a href="javascript:void(0)" class="elevator-weixin no-goto" id="js-elevator-weixin" >        <i class="icon-wxgzh"></i>        <span class="">官方微信</span>        <div class="elevator-weixin-box"></div>    </a>    <a href="javascript:void(0)" class="elevator-top no-goto" style="display:none" id="backTop">        <i class="icon-up2"></i>        <span class="">返回顶部</span>    </a></div>
 
 
 <!--script-->
@@ -1923,26 +1916,6 @@
 <script src="/homes/js/ssologin.js"></script>
 <script type="text/javascript" src="/homes/js/sea.js"></script>
 <script type="text/javascript" src="/homes/js/sea_config.js"></script>
-
-
-<div>
-    <script type="text/javascript">
-        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff0cfcccd7b1393990c78efdeebff3968' type='text/javascript'%3E%3C/script%3E"));
-        (function (d) {
-            window.bd_cpro_rtid="rHT4P1c";
-            var s = d.createElement("script");s.type = "text/javascript";s.async = true;s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
-            var s0 = d.getElementsByTagName("script")[0];s0.parentNode.insertBefore(s, s0);
-        })(document);
-    </script>
-    <script>
-        (function(){
-            var bp = document.createElement('script');
-            bp.src = '//push.zhanzhang.baidu.com/push.js';
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(bp, s);
-        })();
-    </script>
 
     <div class="cd-user-modal">
         <div class="cd-user-modal-container">

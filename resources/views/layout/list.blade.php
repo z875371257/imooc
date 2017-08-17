@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <title>
         @yield('title')
+<<<<<<< HEAD
+        {{--{{config('web.web_title')}}--}}
+=======
+
+>>>>>>> origin/yuanqiusheng
     </title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit" />
@@ -16,15 +21,29 @@
     <script src="/homes/banner/bootstrap/js/list.js"></script>
     <link rel="stylesheet" href="/homes/css/d6ce7be945424a9b914c162b14d44966.css" type="text/css" />
 
-    <meta name="Keywords" content="慕课网课程，IT培训精品课程" />
+    <meta name="Keywords" content="{{config('web.keywords')}}" />
     <meta name="Description" content="慕课网精品课程，为您提供专业的IT实战开发课程，包含前端开发、后端开发、移动端开发、数据处理、图像处理等各方面IT技能，课程全面、制作精良、讲解通俗易懂。"
     />
     <link rel="stylesheet" href="/homes/css/moco.min_1.css" type="text/css" />
 
-    <link rel="stylesheet" href="/homes/css/index-less.css" type="text/css"/>
+    {{--<link rel="stylesheet" href="/homes/css/index-less.css" type="text/css"/>--}}
+    {{--<link rel="stylesheet" href="/homes/css/index-less_1.css" type="text/css"/>--}}
+    <link rel="stylesheet" href="/homes/css/index-less_2.css" type="text/css"/>
 
     <link rel="stylesheet" href="/homes/css/0aa178d80ba044de83db95986c61bede.css" type="text/css" />
     <link rel="stylesheet" href="/homes/css/0b9cb28d416b48c58157f6d1a364a7b5.css" type="text/css" />
+    <link rel="stylesheet" href="/homes/css/common-less_1.css" type="text/css" />
+    <link rel="stylesheet" href="/homes/css/moco.min.css" type="text/css" />
+    {{--<link rel="stylesheet" href="/homes/css/67dfda356a8546e3ac009aec672217c2.css" type="text/css" />--}}
+    <link rel="stylesheet" href="/homes/css/126-less.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/homes/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/homes/css/style.css" />
+    <script type="text/javascript" src="/homes/js/my.js"></script>
+    <script type="text/javascript" src="/homes/js/1.7.js"></script>
+    <script src="/homes/js/main.js"></script>
+    <script type="text/javascript" src="/homes/js/tongji.js"></script>
+
+
 
     <script type="text/javascript">
         eval(function(p, a, c, k, e, d) {
@@ -116,7 +135,7 @@
         <div id="login-area">
             <ul class="header-unlogin clearfix">
                 <li class="shop-cart" id="shop-cart">
-                    <a href="{{url('home.cart')}}" class="shop-cart-icon" target="_blank">
+                    <a href="/cart" class="shop-cart-icon" target="_blank">
                                 <span class="js-endcart">
                                     <img width='16px' height="16px" src="/homes/images/shopping.png" alt="">
                                 </span>
@@ -288,14 +307,114 @@
     </a>
 </div>
 <!--script-->
-<script type="text/javascript" src="/homes/js/error.js">
+<script type="text/javascript" src="/homes/js/error.js"></script>
+<script src="/homes/js/ssologin.js"></script>
+<script type="text/javascript" src="/homes/js/sea.js"></script>
+<script type="text/javascript" src="/homes/js/sea_config_1.js"></script>
+<script type="text/javascript" src="/homes/js/common.js"></script>
+<script type="text/javascript" src="/homes/js/moco.min.js"></script>
+<script type="text/javascript" src="/homes/js/require.js"></script>
+<script>
+    requirejs.config({
+        urlArgs: requirejsTimestamp,
+        baseUrl: '/static/module/',
+        skipDataMain: true,
+        waitSeconds: 0,
+        paths: {
+            lib: '/static/lib',
+            socketio: '/static/lib/socket.io/1.3.6/socket.io.min.js',
+            store: '/static/lib/store/store.min.js',
+            ueditor: '/static/lib/ueditor/ueditor.final.min.js',
+            scrollbar: '/static/lib/scrollbar/jquery.scrollbar.js',
+            juicer: '/static/lib/juicer/juicer.min.js',
+            ace: '/static/lib/ace1.2.6/ace.js',
+            //ace: '/static/lib/ace/src/ace.js',
+            pagination: '/static/lib/pagination/jquery.pagination.js',
+            swfobject: '/static/lib/swfobject/2.2/swfobject.min.js',
+            uploader: '/static/lib/webuploader/0.1.5/webuploader.js',
+
+            jwplayer: '/static/lib/jwplayer/1.0.0/jwplayer.js',
+            ide: '/static/lib/ide/dest/ide.min.js',
+            autocomplete:'/static/lib/util/autocomplete.js',
+            validate:'/static/lib/util/validate.js',
+            placeholder:'/static/lib/util/placeholder.js',
+            modalbutton:'/static/lib/util/modal.button.js',
+            scrollbar: '/static/lib/scrollbar/jquery.scrollbar.js',
+            SyntaxHighlighter:'/static/lib/ueditor/third-party/SyntaxHighlighter/shCore.js',
+            socketio: '/static/lib/socket.io/1.3.6/socket.io.min.js',
+            clipbord: '/static/lib/clipboard/dist/clipboard.min.js',
+            jqueryValidate: '/static/lib/jquery-validate/jquery.validate.min.js'
+        },
+        shim: {
+            'swfobject': {
+                exports: 'swfobject'
+            }
+        }
+    });
 </script>
-<script src="/homes/js/ssologin.js">
-</script>
-<script type="text/javascript" src="/homes/js/sea.js">
-</script>
-<script type="text/javascript" src="/homes/js/sea_config_1.js">
-</script>
+<div class="cd-user-modal">
+        <div class="cd-user-modal-container">
+            <ul class="cd-switcher">
+                <li><a href="#0">用户登录</a></li>
+                <li><a href="#0">注册新用户</a></li>
+            </ul>
+
+            <div id="cd-login"> <!-- 登录表单 -->
+                <form class="cd-form" action="{{ url('login') }}" method="post">
+                    {{ csrf_field() }}
+                    <p class="fieldset">
+                        <label class="image-replace cd-username" for="signin-username">用户名</label>
+                        <input class="full-width has-padding has-border" id="signin-username" type="text" placeholder="输入用户名" name="username" required>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signin-password">密码</label>
+                        <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="输入密码" name="password" required>
+                    </p>
+
+                    <p class="fieldset">
+                        <input type="checkbox" id="remember-me" checked>
+                        <label for="remember-me">记住登录状态</label>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width2" type="submit" value="登 录">
+                    </p>
+                </form>
+            </div>
+
+            <div id="cd-signup"> <!-- 注册表单 -->
+                <form class="cd-form" action="{{ url('register') }}" method="post">
+                    {{ csrf_field() }}
+                    <p class="fieldset">
+                        <label class="image-replace cd-username" for="signup-username">用户名</label>
+                        <input class="full-width has-padding has-border" id="signup-username" type="text" name="username" placeholder="输入用户名" required>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="signup-email">邮箱</label>
+                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="输入mail" name="email" required>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signup-password">密码</label>
+                        <input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="输入密码" name="password" required>
+                    </p>
+
+                    <p class="fieldset">
+                        <input type="checkbox" id="accept-terms" required>
+                        <label for="accept-terms">我已阅读并同意 <a href="#0">用户协议</a></label>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width2" type="submit" value="注册新用户">
+                    </p>
+                </form>
+            </div>
+            <a href="#0" class="cd-close-form">关闭</a>
+        </div>
+    </div>
+
 
 </body>
 

@@ -1,0 +1,144 @@
+﻿.appendtemplate .w1200 {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.appendtemplate .w1102 {
+  width: 1102px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.appendtemplate .w1056 {
+  width: 1056px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.appendtemplate .career-prospects {
+  width: 100%;
+  padding-bottom: 96px;
+  padding-top: 202px;
+  box-sizing: border-box;
+  background-image: url('../images/career-bg.png');
+  background-size: cover;
+  background-position: center center;
+}
+.appendtemplate .career-prospects .career-content-wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+.appendtemplate .career-prospects .career-content-wrap .career-content-box {
+  width: 564px;
+  text-align: left;
+}
+.appendtemplate .career-prospects .career-content-wrap .career-content-box h3 {
+  font-size: 36px;
+  line-height: 48px;
+  color: #07111b;
+}
+.appendtemplate .career-prospects .career-content-wrap .career-content-box .small-title {
+  margin-top: 48px;
+  font-size: 24px;
+  line-height: 24px;
+  color: #00b43c;
+  margin-bottom: 16px;
+  font-weight: normal;
+}
+.appendtemplate .career-prospects .career-content-wrap .career-content-box p {
+  font-size: 14px;
+  line-height: 28px;
+  color: #07111b;
+  font-weight: 200;
+}
+.appendtemplate .career-prospects .career-content-wrap .career-content-box .item-box .item {
+  margin: 16px 16px 0px 0px;
+  width: 240px;
+  padding: 0px 20px;
+  font-size: 16px;
+  line-height: 48px ;
+  font-weight: 200;
+  color: #07111b;
+  box-sizing: border-box;
+  border: 1px solid #d9dde1;
+  border-radius: 4px;
+  text-align: left;
+}
+.appendtemplate .succ-show-box {
+  padding-top: 72px;
+  width: 100%;
+  background: url('../images/show-bg.png');
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  box-sizing: content-box;
+  position: relative;
+}
+.appendtemplate .succ-show-box .succ-title {
+  margin: 0 auto;
+  font-size: 36px;
+  line-height: 48px;
+  color: #fff;
+  width: 824px;
+  margin-bottom: 12px;
+}
+.appendtemplate .succ-show-box .succ-get-text {
+  font-size: 24px;
+  line-height: 48px;
+  color: #ffffff;
+}
+.appendtemplate .succ-show-box .succ-text {
+  margin: 0 auto;
+  width: 824px;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 28px;
+  color: #fff;
+}
+.appendtemplate .succ-show-box .img-box {
+  width: 100%;
+  overflow: hidden;
+}
+.appendtemplate .succ-show-box img {
+  margin-top: 36px;
+  visibility: visible;
+}
+.appendtemplate .succ-show-box .fadeInUp {
+  animation-duration: 1500ms;
+  -webkit-animation-duration: 1500ms;
+}
+.appendtemplate .succ-show-box .plan-detail {
+  width: 1200px;
+  margin: 30px auto 0px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+.appendtemplate .succ-show-box .plan-detail li {
+  position: relative;
+  width: 160px;
+  padding: 0px 40px;
+}
+.appendtemplate .succ-show-box .plan-detail li .small-title {
+  font-size: 16px;
+  line-height: 16px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+.appendtemplate .succ-show-box .plan-detail li p {
+  font-size: 12px;
+  line-height: 24px;
+  color: #fff;
+  font-weight: 200;
+}
+.appendtemplate .succ-show-box .plan-detail li em {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  height: 60px;
+  width: 1px;
+  background-color: #71777d;
+  zoom: 1;
+}

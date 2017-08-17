@@ -38,6 +38,7 @@ class LoginController extends Controller
         session([ 'users'=>$user ]);
 
 
+
          
 
 //        获取登录用户的详情  $phone = User::find(1)->phone;
@@ -49,9 +50,11 @@ class LoginController extends Controller
 
            }
 
+//            dd(session('details'));
+//            dd( session('user') );
 
-            dd( session('user') );
-    
+            session(['users'=>$user]);
+
             return redirect('/');
 
     }
@@ -65,6 +68,7 @@ class LoginController extends Controller
 
         $userInfo = $request->session()->flush();
 
+
         if ($userInfo) {
 
             return redirect('/')->with('status', '退出成功');
@@ -74,6 +78,14 @@ class LoginController extends Controller
             return back()->with('error', '退出失败');
 
         }
+
+        session(['user'=>$user]);
+        
+        return redirect('/');
+
+        // dd( session()->get('user')->username);
+        
+
     }
 
 
@@ -103,7 +115,7 @@ class LoginController extends Controller
             ];
         }
         return response()->json($data);
-        return $data;
+#        return $data;
 //        return response()->json(['name' => 'Abigail', 'state' => 'CA']);
 
     }
@@ -138,7 +150,7 @@ class LoginController extends Controller
         }
 
         return response()->json($data);
-        return $data;
+#        return $data;
 //      return response()->json(['name' => 'Abigail', 'state' => 'CA']);
 
     }
