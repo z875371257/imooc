@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="/homes/css/moco.min.css" type="text/css" />
 
 
+
+
 </head>
 <body  id="index">
 
@@ -58,6 +60,10 @@
             <li><a href="/article"  target="_self">手记</a></li>
 
         </ul>
+
+{{--  session 判断显示 session 判断显示session 判断显示session 判断显示session 判断显示session 判断显示session 判断显示session 判断显示 --}}
+
+        @if ( !session()->get('users'))
         <div id="login-area">
             <ul class="header-unlogin clearfix">
                 <li class="shop-cart" id="shop-cart">
@@ -66,13 +72,32 @@
                         <span class="shopping_icon js-cart-num" data-ordernum="0"  data-cartnum="0" style='display: none'>0</span>
                         <span>购物车</span>
                     </a>
-
-                    <div class="my-cart" id="js-my-cart"></div>
+                    <div class="my-cart" id="js-my-cart">
+                        <div class="cart-title-box clearfix">
+                            <h2 class="l"></h2>
+                            <h5 class="r">已加入<span class="js-incart-num">0</span>门课程</h5>
+                        </div>
+                        <div class="cart-wrap">
+                            <div class="clear-cart">
+                                <span class="cartIcon icon-shopping-cart"></span>
+                                <h3> 购物车里空空如也</h3>
+                                <div class="text">快去这里选购你中意的课程</div>
+                                <p><a class="go-link" href="http://coding.imooc.com" target="_blank">实战课程</a></p>
+                                <p><a class="go-link" href="http://www.imooc.com/course/program" target="_blank">职业路径</a></p>
+                            </div>
+                        </div>
+                        <div class="more-box clearfix">
+                            <div class="l show-box">
+                                <span class="text"><a href="http://order.imooc.com/myorder" target="_blank">我的订单中心</a></span>
+                            </div>
+                            <a href="http://order.imooc.com/pay/cart" target="_blank" class="r moco-btn moco-btn-red go-cart">去购物车</a>
+                        </div>
+                    </div>
                 </li>
 
                 <nav class="main_nav">
-                    <li class="header-signin">
-                        <a href="#0" class="cd-signin" id="js-signin-btn">{{ isset( session()->get('user')->username )? "登录": "退出" }}</a>
+                    <li class="header-signin" style="margin-left: 20px;">
+                        <a href="#0" class="cd-signin" id="js-signin-btn">登录</a>
                     </li>
                     <li class="header-signup">
                         <a href="#0" class="cd-signup" id="js-signup-btn">注册</a>
@@ -81,6 +106,110 @@
 
             </ul>
         </div>
+        @else
+
+            <div id="login-area">
+                <ul class="clearfix logined">
+                    <li class="shop-cart" id="shop-cart">
+                        <a href="http://order.imooc.com/pay/cart" class="shop-cart-icon" target="_blank">
+                            <span class="icon-shopping-cart js-endcart"></span>
+                            <span class="shopping_icon js-cart-num" data-ordernum="0" data-cartnum="0" style="display: none">0</span>
+                            <span>购物车</span>
+                        </a>
+                        <div class="my-cart" id="js-my-cart">
+                            <div class="cart-title-box clearfix">
+                                <h2 class="l">我的购物车</h2>
+                                <h5 class="r">已加入<span class="js-incart-num">0</span>门课程
+                                </h5>
+                            </div>
+                            <div class="cart-wrap">
+                                <div class="clear-cart">
+                                    <span class="cartIcon icon-shopping-cart"> </span>
+                                    <h3>购物车里空空如也</h3>
+                                    <div class="text">
+                                        快去这里选购你中意的课程
+                                    </div>
+                                    <p><a class="go-link" href="http://coding.imooc.com" target="_blank"> 实战课程</a></p>
+                                    <p><a class="go-link" href="http://www.imooc.com/course/program" target="_blank"> 职业路径</a></p>
+                                </div>
+                            </div>
+                            <div class="more-box clearfix">
+                                <div class="l show-box">
+                                    <span class="text"><a href="http://order.imooc.com/myorder" target="_blank">我的订单中心</a></span>
+                                </div>
+                                <a href="http://order.imooc.com/pay/cart" target="_blank" class="r moco-btn moco-btn-red go-cart">去购物车</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="remind_warp">
+                        <i class="msg_remind" style="display: none;"></i>
+                        <a target="_blank" href="/u/5601964/notices">
+                            <i class="icon-notifi"> </i>
+                            <!-- <span class="msg_icon" style="display: none;"></span> -->
+                        </a>
+                    </li>
+                    <li class="set_btn user-card-box" id="header-user-card">
+                        <a id="header-avator" class="user-card-item js-header-avator" action-type="my_menu" href="/u/5601964" target="_self">
+                            <img width="40" height="40" src="http://img.mukewang.com/597b0ff300016efc06950694-100-100.jpg">
+                            <i class="myspace_remind" style="display: none;"></i>
+                            <span style="display: none;">动态提醒 </span>
+                        </a>
+                        <div class="g-user-card">
+                            <div class="card-inner">
+                                <div class="card-top clearfix">
+                                    <a href="/u/5601964" class="l" class="user-card-item js-header-avator hover" action-type="my_menu" id="header-avator" target="_self">
+
+                                        <img src="@if(!session()->get('users')) http://img.mukewang.com/597b0ff300016efc06950694-100-100.jpg @else {{ url('session()->get("users")') }} @endif " alt="">
+                                            <i class="myspace_remind" style="display: none;"></i>
+                                            <span style="display: none;">动态提醒</span>
+                                    </a>
+                                    <div class="card-top-right-box l">
+                                        <a href="/u/5601964"><span class="name text-ellipsis"> weixin_赵世强_0</span></a>
+                                        <div class="meta">
+                                            <a href="/u/5601964/experience"> 经验<b id="js-user-mp">197</b> </a>
+                                            <a href="/u/5601964/credit"> 积分<b id="js-user-credit"> 1 </b></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user-center-box">
+                                    <ul class="clearfix">
+                                        <li class="l">
+                                            <a href="/u/5601964/courses" target="_blank"><span class="user-center-icon icon-tick"></span>我的课程</a>
+                                        </li>
+                                        <li class="l">
+                                            <a href="http://order.imooc.com/myorder" target="_blank"> <span class="user-center-icon icon-receipt"></span> 订单中心</a>
+                                            <i id="js-usercard-coupon-icon" style="display: none;"></i>
+                                        </li>
+                                        <li class="l">
+                                            <a href="/mall/index" target="_blank"><span class="user-center-icon icon-score_shop"> </span> 积分商城</a>
+                                        </li>
+                                        <li class="l">
+                                            <a href="/user/setbindsns" target="_blank"> <span class="user-center-icon icon-set"> </span>个人设置 </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-history">
+                                <span class="history-item">
+                                    <span class="tit text-ellipsis">  表单验证</span>
+                                    <span class="media-name text-ellipsis"> 5-1用户名输入框验证</span>
+                                    <i class="icon-clock"> </i>
+                                    <a href="http://www.imooc.com/video/527" class="continue" title="用户名输入框验证 5-1用户名输入框验证">继续</a>
+                                </span>
+                                </div>
+                                <div class="card-sets clearfix">
+                                    <a href="{{ url('passport/user/logout') }}" class="r">安全退出</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            @endif
+
+
+
+{{--  session 判断显示 session 判断显示session 判断显示session 判断显示session 判断显示session 判断显示session 判断显示session 判断显示 --}}
         <div class='search-warp clearfix' style='min-width: 32px; height: 60px;'>
             <div class="pa searchTags" >
                 <a href="http://class.imooc.com/sc/20" target="_blank">前端小白</a>
@@ -1820,16 +1949,18 @@
             </ul>
 
             <div id="cd-login"> <!-- 登录表单 -->
-                <form class="cd-form" action="{{ url('login') }}" method="post">
+                <form class="cd-form" action="{{ url('login') }}" method="post" name="form1">
                     {{ csrf_field() }}
                     <p class="fieldset">
                         <label class="image-replace cd-username" for="signin-username">用户名</label>
-                        <input class="full-width has-padding has-border" id="signin-username" type="text" placeholder="输入用户名" name="username" required>
+                        <input class="full-width has-padding has-border" id="signin-username" type="text" placeholder="输入用户名" name="username" required><br>
+                        <span id="text4"></span>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="signin-password">密码</label>
-                        <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="输入密码" name="password" required>
+                        <input class="full-width has-padding has-border" id="signin-password" type="password"  placeholder="输入密码" name="password" required><br>
+                        <span id="text5"></span>
                     </p>
 
                     <p class="fieldset">
@@ -1844,21 +1975,24 @@
             </div>
 
             <div id="cd-signup"> <!-- 注册表单 -->
-                <form class="cd-form" action="{{ url('register') }}" method="post">
+                <form class="cd-form" action="{{ url('register') }}" method="post" name="form2">
                     {{ csrf_field() }}
                     <p class="fieldset">
                         <label class="image-replace cd-username" for="signup-username">用户名</label>
-                        <input class="full-width has-padding has-border" id="signup-username" type="text" name="username" placeholder="输入用户名" required>
+                        <input class="full-width has-padding has-border" id="signup-username" type="text" name="username" placeholder="输入用户名" required><br>
+                        <span id="text1"></span>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-email" for="signup-email">邮箱</label>
-                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="输入mail" name="email" required>
+                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="输入mail" name="email" required><br>
+                        <span id="text2"></span>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="signup-password">密码</label>
-                        <input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="输入密码" name="password" required>
+                        <input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="输入密码" name="password" required><br>
+                        <span id="text3"></span>
                     </p>
 
                     <p class="fieldset">
@@ -1867,15 +2001,264 @@
                     </p>
 
                     <p class="fieldset">
-                        <input class="full-width2" type="submit" value="注册新用户">
+                        <input class="full-width2" type="submit" value="注册新用户" id="submit">
                     </p>
                 </form>
             </div>
             <a href="#0" class="cd-close-form">关闭</a>
         </div>
     </div>
+{{--         注册验证JS    --}}
 
-  
+    <script type="text/javascript">
+//        验证用户名
+    $('#signup-username').focus(function () {
+        $(this).css('border', '2px solid green');
+        $('#text1').css('color', 'green');
+        $('#text1').text('请输入字母数字下划线 6-20个字符');
+    })
+
+
+
+    $('#signup-username').blur(function () {
+//        获取文本值
+       var us = $(this).val();
+//       console.log(us);
+
+//       正则
+        var reg = /^\w{6,20}$/;
+
+//        执行正则
+        if ( !reg.test(us)) {
+            $(this).css('border', '2px solid red');
+            $('#text1').css('color', 'red');
+            $('#text1').text('用户名不符合规则');
+
+        }   else {
+
+//          url   username
+//          {}
+//          回调函数
+
+            $.post("{{ url('home/username') }}",{ 'username':us, '_token':'{{ csrf_token() }}'}, function (data) {
+//                console.log(data.status);
+//
+                if (data.status == '0') {
+                    $('#signup-username').css('border', '2px solid red');
+                    $('#text1').css('color', 'red');
+                    $('#text1').text('用户名已存在');
+                } else {
+                    $('#signup-username').css('border', '');
+                    $('#text1').css('color', 'green');
+                    $('#text1').text('用户名可用');
+                }
+            })
+        }
+
+    })
+//        验证邮箱
+       $('#signup-email').focus(function () {
+           $(this).css('border', '2px solid green');
+           $('#text2').css('color', 'green');
+           $('#text2').text('请输入正确格式的邮箱 如 15100126870@163.com');
+       })
+
+       $('#signup-email').blur(function () {
+//        获取文本值
+           var es = $(this).val();
+//           console.log(es);
+
+//       正则
+           var reg1 = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
+
+//        执行正则
+           if ( !reg1.test(es)) {
+               $(this).css('border', '2px solid red');
+               $('#text2').css('color', 'red');
+               $('#text2').text('邮箱不符合要求');
+
+           }   else {
+
+//          url   username
+//          {}
+//          回调函数
+
+               $.post("{{ url('home/email') }}",{ 'email':es, '_token':'{{ csrf_token() }}'}, function (data) {
+//                   console.log(data[0].msg);
+
+                   if (data.status == '0') {
+                       $('#signup-email').css('border', '2px solid red');
+                       $('#text2').css('color', 'red');
+                       $('#text2').text('邮箱已存在');
+                   }  else {
+                       $('#signup-email').css('border', '');
+                       $('#text2').css('color', 'green');
+                       $('#text2').text('邮箱可用');
+                   }
+               })
+           }
+       })
+
+
+//        验证密码
+
+
+$('#signup-password').focus(function () {
+    $(this).css('border', '2px solid green');
+    $('#text3').css('color', 'green');
+    $('#text3').text('请输入字母数字下划线 6-20个字符');
+})
+
+$('#signup-password').blur(function () {
+//        获取文本值
+    var ps = $(this).val();
+//    console.log(ps);
+
+//       正则
+    var reg2 = /^\w{6,20}$/;
+
+//        执行正则
+    if ( !reg2.test(ps)) {
+        $(this).css('border', '2px solid red');
+        $('#text3').css('color', 'red');
+        $('#text3').text('密码不符合要求');
+
+    }   else {
+        $('#signup-password').css('border', '');
+        $('#text3').css('color', 'green');
+        $('#text3').text('密码可用');
+    }
+})
+
+    </script>
+
+    {{--       注册验证JS    --}}
+
+
+
+
+{{--         登录验证    --}}
+    <script type="text/javascript">
+        //        验证用户名
+        $('#signin-username').focus(function () {
+            $(this).css('border', '2px solid green');
+            $('#text4').css('color', 'green');
+            $('#text4').text('请输入您的用户名');
+        })
+
+
+        var userinfo = null;
+        $('#signin-username').blur(function () {
+//        获取文本值
+             userinfo = $(this).val();
+//       console.log(userinfo);
+
+//       正则
+            var reg5 = /^\w{6,20}$/;
+
+//        执行正则
+            if ( !reg5.test(userinfo)) {
+                $(this).css('border', '2px solid red');
+                $('#text4').css('color', 'red');
+                $('#text4').text('用户名不符合规则');
+
+            }   else {
+
+//          url   username
+//          {}
+//          回调函数
+
+                $.post("{{ url('home/username/login') }}",{ 'username':userinfo, '_token':'{{ csrf_token() }}'}, function (data) {
+//                    console.log(data.status);
+
+                    if (data.status == '0') {
+                        $('#signin-username').css('border', '');
+                        $('#text4').css('color', 'green');
+                        $('#text4').text('用户名正确');
+                    } else {
+                        $('#signin-username').css('border', '2px solid red');
+                        $('#text4').css('color', 'red');
+                        $('#text4').text('用户名不存在');
+                    }
+                })
+            }
+
+        })
+
+
+//        验证密码
+
+
+        $('#signin-password').focus(function () {
+            $(this).css('border', '2px solid green');
+            $('#text5').css('color', 'green');
+            $('#text5').text('请在安全的情况下输入您的密码');
+        })
+
+
+
+        $('#signin-password').blur(function () {
+//        获取文本值
+            var pd = $(this).val();
+//       console.log(pd);
+
+//       正则
+            var reg6 = /^\w{6,20}$/;
+
+//        执行正则
+            if ( !reg6.test(pd)) {
+                $(this).css('border', '2px solid red');
+                $('#text5').css('color', 'red');
+                $('#text5').text('密码不符合规则');
+
+            }   else {
+
+//          url   username
+//          {}
+//          回调函数
+
+                $.post("{{ url('home/username/password') }}",{ 'password':pd, 'username':userinfo, '_token':'{{ csrf_token() }}'}, function (data) {
+                console.log(data.status);
+
+                    if (data.status == '0') {
+                        $('#signin-password').css('border', '');
+                        $('#text5').css('color', 'green');
+                        $('#text5').text('密码正确');
+                    } else {
+                        $('#signin-password').css('border', '2px solid red');
+                        $('#text5').css('color', 'red');
+                        $('#text5').text('密码不正确');
+                    }
+                })
+            }
+
+        })
+
+    </script>
+
+
+
+{{--  登录后显示用户信息  登录后显示用户信息  登录后显示用户信息 --}}
+    <script>
+//       $('#header-avator').mousemove(function () {
+//           if ( $('.card-inner ').style.display == 'none' ) {
+//               $('.card-inner ').style.display = 'block';
+//           }
+//       })
+
+       $('.set_btn').mouseover(function(){
+           $(this).addClass('hover');
+       }).mouseout(function(){
+           $(this).removeClass('hover');
+       })
+    </script>
+
+
+
+
+
+{{--  登录后显示用户信息  登录后显示用户信息  登录后显示用户信息 --}}
+
 
 </div>
 </body>

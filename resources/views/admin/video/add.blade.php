@@ -131,17 +131,17 @@
 
         function secChange(obj)
         {
-            alert($(obj).val());
-            {{--$.post('/admin/video/ajaxs', {'_token':'{{ csrf_token() }}', 'id':$(obj).val()},function(data){--}}
-                {{--console.log(data);--}}
-                {{--var arr = ''--}}
-//                if(data){
-//                    $.each(data, function(i,item){
-//                        arr += "<option value="+item.id+"  >"+item.title+"</option>";
-//                        $('#course').html(arr);
-//                    })
-//                }
-//            })
+//            alert($(obj).val());
+            $.post('/admin/videos/ajaxs', {'_token':'{{ csrf_token() }}', 'id':$(obj).val()},function(data){
+                console.log(data);
+                var arr = ''
+                if(data){
+                    $.each(data, function(i,item){
+                        arr += "<option value="+item.sid+"  >"+item.title+"</option>";
+                        $('#section ').html(arr);
+                    })
+                }
+            })
         }
 
     </script>

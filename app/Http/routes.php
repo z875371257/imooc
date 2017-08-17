@@ -35,8 +35,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
     Route::post('section/ajaxs', 'SectionController@ajaxs');
 
     //   章节视频模块
-    Route::resource('video', 'VideoController');
-    Route::post('video/ajaxs', 'VedeoController@ajaxs');
+    Route::resource('video', 'VedeoController');
+    Route::post('videos/ajaxs', 'VedeoController@ajaxs');
 
     //    后台用户模块
     Route::resource('user', 'UserController');  //后台用户资源路由
@@ -90,11 +90,30 @@ Route::group(['namespace'=>'Home'],function(){
 });
 
 
-
+Route::group(['namespace' => 'Home'], function(){
     //    处理注册页面的数据
-    Route::post('register', 'Home\RegisterController@register');
-
+    Route::post('register', 'RegisterController@register');
 
     //    处理登录数据
-    Route::post('login', 'Home\LoginController@login');
+    Route::post('login', 'LoginController@login');
+
+    //    前台用户退出
+    Route::get('passport/user/logout', 'LoginController@logout');
+
+    //    注册 ajax 判断用户名是否存在username
+    Route::post('home/username', 'RegisterController@checkName');
+
+    //    注册 ajax 判断邮箱是否存在
+    Route::post('home/email/', 'RegisterController@checkEmail');
+
+    //    登录 ajax 判断用户名是否存在username
+    Route::post('home/username/login', 'LoginController@checkName');
+
+    //    登录 ajax 判断密码是否存在
+    Route::post('home/username/password', 'LoginController@checkPassword');
+});
+
+
+
+
 
