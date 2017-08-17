@@ -1,7 +1,7 @@
 @extends('layout.list')
-@section('title','购物车')
+@section('title','确认订单')
 @section('content')
- <style type="text/css">
+  <style type="text/css">
    body-main {
     min-height: 750px;
    }
@@ -13,39 +13,27 @@
 <div class="cart-header">
 	<div class="cart-header-warp clearfix">
 		<div class="cart-title left clearfix">
-			<h1 class="left">我的购物车</h1>
-			@if(!empty(session()->get('user')->username))
-			<div class="left js-number-box-cart">
-		共<span class="js-coures-num">{{$count}}</span>门<span class="js-choice-num"></span>
-	</div>
-            @endif
+			<h1 class="left">确认订单</h1>
+		
+			
+        
 		</div>
 		<div class="right">
 			
-	<div class="clearfix">
-		<span class="left"><a href="/myorder" class="js-myorderbtn">我的订单历史</a></span>
-		<span style="display: none;" class="left num js-order-num">0</span>
-	</div>
 
 		</div>
 	</div>
 </div>
-@if(!empty(session()->get('user')->username))
+
   <div class="cart-body" id="cartBody">
 		<div class="cart-body-title clearfix">
 
 		
 		<div class="item-2 l">
-			<span class="c-4d555d">课程</span>
+			<span class="c-4d555d">商品信息</span>
 		</div>
 		
-		<div class="item-3 l">
-			<span class="c-4d555d">金额</span>
-		</div>
 		
-		<div class="item-4 l">
-			<span class="c-4d555d">操作</span>
-		</div>
 	</div>
 	<textarea class="storageCart" style="display:none">		[
 					{"goods_id":"214","type":"1","type_id":"113","status":"1","price":"348.00","ios_price":"348.00","service_lifetime":0,"open_discount":"1","discount_start_time":"1497456000","discount_end_time":"1497456000","discount_price":"0.00","discount_type":"0","code_white_list":10001,"using_discount":false,"pay_price":"348.00","code":0}
@@ -78,9 +66,7 @@
 				</div>
 			</div>
 			
-			<div class="item-4">
-				<i class="js-close-cart close"><a href="/delCart/{{$cart->rowId}}"><img src="/homes/images/delete.png" alt=""></a></i>
-			</div>
+			
 		</div>
 		@endforeach
 	    @endif 			
@@ -92,7 +78,7 @@
 				<div class="right">
 					<ul class="clearfix">
 						<li class="li-2">
-							<div class="topdiv">总计金额：</div>
+							<div class="topdiv">总共{{$count}}商品,总计金额：</div>
 							<div class="price price-red clearfix">
 								<em>￥</em>
 								<span class="jsAltogether">{{$total}}</span>
@@ -100,7 +86,7 @@
 						</li>
 						
 						<li class="li-3">
-							<span class="btn js-go-confrim"><a href="/order">去结算</a></span>
+							<span class="btn js-go-confrim"><a href="/doOrder">提交订单</a></span>
 						</li>
 					</ul>
 				</div>
@@ -108,12 +94,6 @@
 		</div>
 	</div>
 	</div>
-
-@else
-<div id="cartBody" class="cart-body">
-		<p class="notdata">购物车内空空如也</p>
-	</div>
-@endif
 
 </div>
 @endsection
