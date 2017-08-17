@@ -14,7 +14,7 @@ class LoginController extends Controller
 {
 
 //    处理用户登录信息
-    public function login()
+    public function login(Request $request)
     {
 //        获取登录数据
 
@@ -35,10 +35,22 @@ class LoginController extends Controller
          }
 
     //    登录成功 保存信息  跳转到前台首页
+        session([ 'users'=>$user ]);
 
-            session(['user'=>$user]);
 
-//            dd( session('user')->username );
+         
+
+//        获取登录用户的详情  $phone = User::find(1)->phone;
+
+          $details = Home_User::find($user->id)->details;
+
+           if ($details) {
+               session([ 'details'=>$details ]);
+
+           }
+
+
+            dd( session('user') );
     
             return redirect('/');
 
