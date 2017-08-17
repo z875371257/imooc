@@ -78,9 +78,27 @@ Route::group(['namespace'=>'Home'],function(){
 
 
 
-    //    处理注册页面的数据
+//    处理注册页面的数据
     Route::post('register', 'Home\RegisterController@register');
 
-    //    处理登录数据
+//    处理登录数据
     Route::post('login', 'Home\LoginController@login');
+
+//    前台用户退出
+    Route::get('passport/user/logout', 'Home\LoginController@logout');
+
+//    注册 ajax 判断用户名是否存在username
+    Route::post('home/username', 'Home\RegisterController@checkName');
+
+//    注册 ajax 判断邮箱是否存在
+    Route::post('home/email/', 'Home\RegisterController@checkEmail');
+
+//    登录 ajax 判断用户名是否存在username
+    Route::post('home/username/login', 'Home\LoginController@checkName');
+
+//    登录 ajax 判断密码是否存在
+    Route::post('home/username/password', 'Home\LoginController@checkPassword');
+
+
+
 
