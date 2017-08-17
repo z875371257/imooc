@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>
         @yield('title')
+        {{--{{config('web.web_title')}}--}}
     </title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit" />
@@ -15,7 +16,7 @@
     <script src="/homes/banner/bootstrap/js/jquery-1.9.1.js"></script>
     <script src="/homes/banner/bootstrap/js/list.js"></script>
 
-    <meta name="Keywords" content="慕课网课程，IT培训精品课程" />
+    <meta name="Keywords" content="{{config('web.keywords')}}" />
     <meta name="Description" content="慕课网精品课程，为您提供专业的IT实战开发课程，包含前端开发、后端开发、移动端开发、数据处理、图像处理等各方面IT技能，课程全面、制作精良、讲解通俗易懂。"
     />
     <link rel="stylesheet" href="/homes/css/moco.min_1.css" type="text/css" />

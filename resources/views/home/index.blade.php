@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>慕课网-程序员的梦工厂</title>
+    <title>{{config('web.web_title')}}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
     <meta property="qc:admins" content="77103107776157736375" />
@@ -10,8 +10,8 @@
     <meta http-equiv="Access-Control-Allow-Origin" content="*" />
     <meta http-equiv="Cache-Control" content="no-transform " />
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' *.imooc.com *.mukewang.com *.baidu.com *.sina.com.cn *.bootcss.com">
-    <meta name="Keywords" content="" />
-    <meta name="Description" content="慕课网（IMOOC）是IT技能学习平台。慕课网(IMOOC)提供了丰富的移动端开发、php开发、web前端、android开发以及html5等视频教程资源公开课。并且富有交互性及趣味性，你还可以和朋友一起编程。" />
+    <meta name="Keywords" content="{{config('web.keywords')}}" />
+    <meta name="Description" content="{{config('web.description')}}" />
     <meta name="360-site-verification" content="efec9ca9c0c2bf49b8f54f8ea4626ea8" /><meta name="baidu-site-verification" content="f81e4a13096b3a7cab15fe1d39773a4e"/>
     <link rel="stylesheet" href="/homes/css/big.css">
     <link rel="stylesheet" href="/homes/css/moco.min.css" type="text/css" />
@@ -2086,7 +2086,10 @@
             @endforeach
 
         </div>
-        <div class="footer-copyright">     <p>©&nbsp2017&nbspimooc.com&nbsp&nbsp京ICP备 13046642号-2</p>    </div>  </div></div><div id="J_GotoTop" class="elevator">    <a href="/user/feedback" class="elevator-msg" target="_blank">        <i class="icon-feedback"></i>        <span class="">意见反馈</span>    </a>    <a href="/about/faq" class="elevator-faq" target="_blank">        <i class="icon-ques"></i>        <span class="">常见问题</span>    </a>    <a href="http://www.imooc.com/mobile/app" target="_blank" class="elevator-app" >        <i class="icon-appdownload"></i>        <span class="">APP下载</span>        <div class="elevator-app-box"></div>    </a>    <a href="javascript:void(0)" class="elevator-weixin no-goto" id="js-elevator-weixin" >        <i class="icon-wxgzh"></i>        <span class="">官方微信</span>        <div class="elevator-weixin-box"></div>    </a>    <a href="javascript:void(0)" class="elevator-top no-goto" style="display:none" id="backTop">        <i class="icon-up2"></i>        <span class="">返回顶部</span>    </a></div>
+        <div class="footer-copyright">
+            <p>{{config('web.copyright')}}</p>
+        </div>
+    </div></div><div id="J_GotoTop" class="elevator">    <a href="/user/feedback" class="elevator-msg" target="_blank">        <i class="icon-feedback"></i>        <span class="">意见反馈</span>    </a>    <a href="/about/faq" class="elevator-faq" target="_blank">        <i class="icon-ques"></i>        <span class="">常见问题</span>    </a>    <a href="http://www.imooc.com/mobile/app" target="_blank" class="elevator-app" >        <i class="icon-appdownload"></i>        <span class="">APP下载</span>        <div class="elevator-app-box"></div>    </a>    <a href="javascript:void(0)" class="elevator-weixin no-goto" id="js-elevator-weixin" >        <i class="icon-wxgzh"></i>        <span class="">官方微信</span>        <div class="elevator-weixin-box"></div>    </a>    <a href="javascript:void(0)" class="elevator-top no-goto" style="display:none" id="backTop">        <i class="icon-up2"></i>        <span class="">返回顶部</span>    </a></div>
 
 
 <!--script-->

@@ -172,8 +172,8 @@
                 <li>
                     <a href="#"><i class="icon-user"></i>网站配置</a>
                     <ul class='closed'>
-                        <li><a href="">内容添加</a></li>
-                        <li><a href="">内容列表</a></li>
+                        <li><a href="/admin/conf/create">内容添加</a></li>
+                        <li><a href="/admin/conf">内容列表</a></li>
                     </ul>
                 </li>
 
