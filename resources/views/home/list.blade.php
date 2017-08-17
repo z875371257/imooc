@@ -11,26 +11,23 @@
                                 <span class="hd l">
                                     方向：
                                 </span>
-                            <div class="bd">
-                                <ul class="">
+                            <div class="bd fx1">
+                                <ul >
                                     <li class="course-nav-item on">
                                         <a href="/course/list">
                                             全部
                                         </a>
                                     </li>
-                                <!-- 方向  -->
+                                    <!-- 方向  -->
                                     @foreach($direction as $k=>$v)
-                                    <li class="course-nav-item
-                                        ">
-                                        <a href="/course/list?fx={{$v->cid}}" data-ct="photo">
-                                            {{$v->cname}}
-                                        </a>
-                                    </li>
+                                        <li class="course-nav-item">
+                                            <a target="_blank" href="/course/list?fx={{$v->cid}}" data-ct="photo" >
+                                                {{$v->cname}}
+                                            </a>
+                                        </li>
                                     @endforeach
                                 </ul>
-                                <script>
 
-                                </script>
                             </div>
                         </div>
                         <div class="course-nav-row clearfix">
@@ -45,11 +42,11 @@
                                         </a>
                                     </li>
                                     @foreach($classify as $k=>$v)
-                                    <li class="course-nav-item">
-                                        <a href="/course/list?c={{$v->cid}}" data-id=7 data-ct=html>
-                                            {{$v->cname}}
-                                        </a>
-                                    </li>
+                                        <li class="course-nav-item" >
+                                            <a href="/course/list?fx={{$v->pid}}&c={{$v->cid}}" data-id=7 data-ct=html>
+                                                {{$v->cname}}
+                                            </a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -61,17 +58,17 @@
                             <div class="bd">
                                 <ul class="">
                                     <li class="course-nav-item on">
-                                        <a href="/course/list?">
+                                        <a href="/course/list">
                                             全部
                                         </a>
                                     </li>
-                                  @foreach($type as $k=>$v)
-                                    <li class="course-nav-item ">
-                                        <a href="/course/list?type={{$v->cname}}">
-                                            {{$v->cname}}
-                                        </a>
-                                    </li>
-                                      @endforeach
+                                    @foreach($type as $k=>$v)
+                                        <li class="course-nav-item ">
+                                            <a href="/course/list?type={{$v->cname}}">
+                                                {{$v->cname}}
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -79,7 +76,29 @@
                 </div>
             </div>
         </div>
-        <div class="container" style="height:100%;">
+        <script>
+            $(function(){
+                $('.fx1 .course-nav-item').each(function(){
+
+                    $(this).click(function(){
+
+                        var dj = $(this);
+
+                        var tj =  dj.addClass('on');
+
+                        var adds =  dj.siblings().removeClass('on');
+
+                    })
+
+
+
+                })
+
+
+            })
+
+        </script>
+        <div class="container">
             <div class="course-tool-bar clearfix">
                 <div class="tool-left l">
                     <a href="/course/list?sort=last" class="sort-item">
@@ -224,7 +243,7 @@
                                     </div>
                                     <div class='szcourse-cart-o'>
                                     </div>
-                                    <div class='shizhanpic' style='background-image: url();'>
+                                    <div class='shizhanpic' style='background-image: url(/homes/images/58d8c6da0001ff8505400300-360-202.jpg);'>
                                     </div>
                                 </div>
                                 <div class='szcourse-cart-B'>
@@ -292,45 +311,46 @@
                             </a>
                         </div>
                         @foreach($courses as $k=>$v)
-                        <div class="course-card-container">
-                            <a target="_blank" href="/learn/{{$v->id}}" class="course-card">
-                                <div class="course-card-top">
-                                    <img class="course-banner lazy" data-original="/{{$v->pic}}"
-                                         src="/{{$v->pic}}" style="display: inline;">
-                                    <div class="course-label">
-                                        <label>
-                                            HTML/CSS
-                                        </label>
+                            <div class="course-card-container">
+                                <a target="_blank" href="/list/detail?c={{$v->id}}" class="course-card">
+                                    <div class="course-card-top">
+                                        <img class="course-banner lazy" data-original="/{{$v->pic}}"
+                                             src="/{{$v->pic}}" style="display: inline;">
+                                        <div class="course-label">
+                                            <label>
+                                                HTML/CSS
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="course-card-content">
-                                    <h3 class="course-card-name">
-                                        {{$v->title}}
-                                    </h3>
-                                    <div class="clearfix course-card-bottom">
-                                        <div class="course-card-info">
+                                    <div class="course-card-content">
+                                        <h3 class="course-card-name">
+                                            {{$v->title}}
+                                        </h3>
+                                        <div class="clearfix course-card-bottom">
+                                            <div class="course-card-info">
                                                 <span>
                                                     {{difficulty($v->difficulty)}}
                                                 </span>
-                                            <span>
+                                                <span>
                                                     <i class="">
                                                         <img width="10px" height="10px" src="/homes/images/user.png" alt="">
                                                     </i>
                                                     {{$v->NNT}}
                                                 </span>
+                                            </div>
+                                            <p class="course-card-desc">
+                                                {{$v->referral}}
+                                            </p>
                                         </div>
-                                        <p class="course-card-desc">
-                                            {{$v->referral}}
-                                        </p>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
                         @endforeach
+
                     </ul>
                 </div>
                 <div class="page">
-                    {{--{!! $courses->appends($request->all())->render() !!}--}}
+
                 </div>
                 {{--<style>--}}
                     {{--.page li{--}}

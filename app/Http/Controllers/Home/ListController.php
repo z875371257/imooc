@@ -14,20 +14,45 @@ class ListController extends Controller
     // 课程列表页主页
     public function index(Request $request)
     {
-        // 方向
-        $direction = DB::select("select cid,cname from mk_course_cate where pid=0 and genera=1");
-
-        // 二级分类
-        $classify = DB::select('select cid,cname from mk_course_cate where path REGEXP "^....$" and genera = 1');
-
-        // 三级分类
-        $type = DB::select('select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1');
-   
         // 所有课程
-        $courses = DB::select("select c.id,c.title,pic,price,difficulty,referral,NNT from mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id where generas = 1");
+        if($request->input('fx') || $request->input('c') || $request->input('type')){
+             if($request->input('fx')){
+               $courses = DB::select("select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = 1 and path REGEXP '0,{$request->input('fx')},'");
+               $classify = DB::select("select cid,cname,pid from mk_course_cate where path REGEXP '^....$' and genera = 1 and pid = {$request->input('fx')}");
+               $type = DB::select("select distinct(cname) from mk_course_cate where path REGEXP  '0,{$request->input('fx')},.' and genera = 1");
+            }
+            if($request->input('c')){
+               $courses = DB::select("select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = 1 and cc.pid = {$request->input('c')}");
+               $classify = DB::select("select cid,cname,pid from mk_course_cate where path REGEXP '^....$' and genera = 1 and pid = {$request->input('fx')}");
+               $type = DB::select("select distinct(cname) from mk_course_cate where path REGEXP  '0,.,.' and genera = 1 and pid = {$request->input('c')}");
+            }
+            if($request->input('type')){
+               $courses = DB::select("select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = 1 and cname = '{$request->input('type')}'");
+               $classify = DB::select("select cid,cname,pid from mk_course_cate where path REGEXP '^....$' and genera = 1");
+               $type = DB::select('select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1');
+            }
+        } else {
+               $courses = DB::select("select * from mk_course where generas = 1");
+               $classify = DB::select('select cid,cname,pid from mk_course_cate where path REGEXP "^....$" and genera = 1');
+               $type = DB::select('select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1');
+        }
 
-      
-        return view('home.list', compact('direction','classify','type','courses','request'));
+        $r = $request->input('fx');
+
+          // 方向
+        $direction = DB::select("select cid,cname from mk_course_cate where pid=0 and genera=1");
+        return view('home.list', compact('direction','classify','type','courses','request','r'));
     }
+
+    public function detail(Request $request)
+    {
+        $id = $request->input('c');
+        $res = DB::table('course')->where('id', $id)->first();
+
+        $section = DB::select("select s.title,s.description from mk_course c inner join mk_section s on c.id = s.course_id where c.id = $id");
+
+        return view('home.listDetail',compact('res','section'));
+    }
+
 
 }

@@ -21,16 +21,17 @@
     />
     <link rel="stylesheet" href="/homes/css/moco.min_1.css" type="text/css" />
 
-    <link rel="stylesheet" href="/homes/css/index-less.css" type="text/css"/>
-    <link rel="stylesheet" href="/homes/css/index-less_1.css" type="text/css"/>
+    {{--<link rel="stylesheet" href="/homes/css/index-less.css" type="text/css"/>--}}
+    {{--<link rel="stylesheet" href="/homes/css/index-less_1.css" type="text/css"/>--}}
     <link rel="stylesheet" href="/homes/css/index-less_2.css" type="text/css"/>
 
     <link rel="stylesheet" href="/homes/css/0aa178d80ba044de83db95986c61bede.css" type="text/css" />
     <link rel="stylesheet" href="/homes/css/0b9cb28d416b48c58157f6d1a364a7b5.css" type="text/css" />
     <link rel="stylesheet" href="/homes/css/common-less_1.css" type="text/css" />
     <link rel="stylesheet" href="/homes/css/moco.min.css" type="text/css" />
-    <link rel="stylesheet" href="/homes/css/67dfda356a8546e3ac009aec672217c2.css" type="text/css" />
+    {{--<link rel="stylesheet" href="/homes/css/67dfda356a8546e3ac009aec672217c2.css" type="text/css" />--}}
     <link rel="stylesheet" href="/homes/css/126-less.css" type="text/css" />
+
 
 
     <script type="text/javascript">

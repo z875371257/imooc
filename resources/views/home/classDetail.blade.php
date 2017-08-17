@@ -1,7 +1,9 @@
 ﻿@extends('layout.list')
 @section('title', '职业路径详情')
 @section('content')
-
+	<link rel="stylesheet" href="/homes/css/67dfda356a8546e3ac009aec672217c2.css" type="text/css" />
+	<link rel="stylesheet" href="/homes/css/index-less_1.css" type="text/css"/>
+	<link rel="stylesheet" href="/homes/css/index-less.css" type="text/css"/>
 <div class='body-main'>
 
 <div class="banner" style="background-image: url(/{{$res->bigpic}});">
@@ -21,7 +23,7 @@
 		
 		<!-- 导学视频 -->
 
-				<!-- 导学视频 end -->
+		<!-- 导学视频 end -->
 		
 		<div class='sc-info clearfix'>
 

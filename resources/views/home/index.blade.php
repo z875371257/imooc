@@ -70,9 +70,6 @@
                     <div class="my-cart" id="js-my-cart"></div>
                 </li>
 
-
-
-
                 <nav class="main_nav">
                     <li class="header-signin">
                         <a href="#0" class="cd-signin" id="js-signin-btn">{{ isset( session()->get('user')->username )? "登录": "退出" }}</a>
@@ -81,7 +78,6 @@
                         <a href="#0" class="cd-signup" id="js-signup-btn">注册</a>
                     </li>
                 </nav>
-
 
             </ul>
         </div>

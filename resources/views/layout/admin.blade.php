@@ -161,6 +161,14 @@
                 </li>
 
                 <li>
+                    <a href="#"><i class="icon-user"></i>章节视频管理</a>
+                    <ul class='closed'>
+                        <li><a href="/admin/video/create">章节视频添加</a></li>
+                        <li><a href="/admin/video">章节视频列表</a></li>
+                    </ul>
+                </li>
+
+                <li>
                     <a href="#"><i class="icon-user"></i>订单管理</a>
                     <ul class='closed'>
                         <li><a href="{{url('admin/order')}}">订单列表</a></li>
