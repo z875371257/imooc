@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
-use App\Http\Model\Register;
+use App\Http\Model\Home_User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -12,44 +12,30 @@ use Illuminate\Support\Facades\Input;
 
 class LoginController extends Controller
 {
-    /**
-     * 显示登录页面
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function login()
     {
-        return view('home.login.login');
-    }
-    public function doLogin()
-    {
-//       1.  表单验证
-
-//       2.  表单验证成功
-
-//       3.  根据用户登录提交的内容 判断数据中是否有改用户
-
+//        获取登录数据
+//        根据数据用户名 判断用户是否存在数据库中
         $input = Input::except('_token');
 
-        $user = Register::where('username', $input['username'] )->first();
+        $user = Home_User::where('username', $input['username'])->first();
 
-        if(!$user){
-            return back()->with('error','无此用户');
-        }
 
-        if(Crypt::decrypt($user->password) != trim($input['password']) ){
-            return back()->with('error','密码错误');
-        }
+     if ( ! $user) {
+         return back()->with('error','用户不存在');
+     }
 
-//       4.  保存用户信息到session
+     if ( trim($input['password']) != Crypt::decrypt($user->password) ) {
+        return back()->with('error', '密码不正确');
+     }
+
+//    登录成功 保存信息  跳转到前台首页
+
         session(['user'=>$user]);
-
+        
         return redirect('/');
 
-
-
-//       5.  成功 跳转
-
+        // dd( session()->get('user')->username);
+        
     }
-
 }

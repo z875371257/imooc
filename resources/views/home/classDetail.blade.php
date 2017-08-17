@@ -33,9 +33,16 @@
 			<div class='sc-info-line'></div>
 			
 
-			
-							<a href="javascript:;" class="js-buy-trigger buy-trigger">立即购买</a>
-						
+                @if(!empty(session()->get('user')->username))
+				<a href="/addCart/{{$res->id}}" class="js-buy-trigger buy-trigger">立即购买</a>
+				@else
+				 <nav class="main_nav">
+                    <li class="header-signin">
+                       <a href="#0" class="cd-signin js-buy-trigger buy-trigger" id="js-signin-btn">立即购买</a>
+                    </li>
+                </nav>
+				@endif	
+
 			<!-- discount_type 是否为常显 -->
             	            <!-- 调价 or 学生优惠 -->
 	            		            					<!-- 调价 -->
@@ -134,5 +141,6 @@
 
 
 </div>
+
 @endsection
 

@@ -48,6 +48,15 @@ class SectionController extends Controller
 
     }
 
+    public function ajaxs(Request $request)
+    {
+        $id = $request->input('id');
+#        var_dump($id);
+
+        $course = DB::table('course')->where('pid', $id)->get();
+
+         return response()->json($course);
+    }
 
     public function cates(Request $request)
     {

@@ -47,14 +47,14 @@
                 <div class="mws-form-row">
                     <label class="mws-form-label">父级分类</label>
                     <div class="mws-form-item">
-                        <select class="large small" name="pid" id="pcate" >
+                        <select class="large small" name="pid" id="pcate" onchange="fChange()">
 
                         </select>
                     </div>
                 </div>
 
                 <div class="mws-form-row">
-                    <label class="mws-form-label">分类下所属课程</label>
+                    <label class="mws-form-label">分类课程</label>
                     <div class="mws-form-item">
                         <select class="large small" name="pid" id="course" >
 
@@ -99,18 +99,30 @@
                 var arr = '';
                 arr += "<option value='0'>根类</option>";
                 $.each(data, function(i,item){
+
                     arr += "<option value="+item.cid+"  >"+item.cname+"</option>";
+
                     $('#pcate').html(arr);
-                    $('#pcate').attr('onchange','fChange('+item.cid+')');
+
+
                 })
             })
         }
 
-        function fChange(obj)
+        function fChange()
         {
-            $.get('/admin/section/ajax', {'genera':obj},function(data){
-                console.log(data);
-            })
+            console.log($(this).val());
+//            alert(obj)
+            {{--$.post('/admin/section/ajaxs', {'_token':'{{ csrf_token() }}', 'id':obj},function(data){--}}
+                {{--var arr = ''--}}
+                {{--if(data){--}}
+                    {{--$.each(data, function(i,item){--}}
+                        {{--arr += "<option value="+item.id+"  >"+item.title+"</option>";--}}
+                        {{--$('#course').html(arr);--}}
+                    {{--})--}}
+                {{--}--}}
+
+            {{--})--}}
         }
     </script>
 @endsection

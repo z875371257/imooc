@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
 
     //   课程章节模块
     Route::resource('section', 'SectionController');
-    Route::get('section/ajax', 'SectionController@ajax');
+    Route::post('section/ajaxs', 'SectionController@ajaxs');
 
     //    后台用户模块
     Route::resource('user', 'UserController');  //后台用户资源路由
@@ -67,8 +67,9 @@ Route::group(['namespace'=>'Home'],function(){
     Route::get('coding/chapter', 'CodingController@chapter');
 
     //购物车
-    Route::get('cart','CartController@index');
-
+    Route::get('cart','CartController@index')->name('cart');
+    Route::get('addCart/{id}','CartController@addCart');
+    Route::get('delCart/{id}','CartController@delCart');
     // 底部
     Route::group(['prefix' => 'about'], function () {
         //底部链接
@@ -83,16 +84,14 @@ Route::group(['namespace'=>'Home'],function(){
 
 });
 
-    //    显示注册页面
-    Route::get('register', 'Home\RegisterController@index');
+
 
     //    处理注册页面的数据
-
     Route::post('register', 'Home\RegisterController@register');
 
    //      登录页面
     Route::get('login', 'Home\LoginController@login');
 
     //    处理登录数据
-    Route::post('login', 'Home\LoginController@doLogin');
+    Route::post('login', 'Home\LoginController@login');
 
