@@ -45,6 +45,7 @@ class CartController extends Controller
         if($carts != null){
             if($carts->cid == $id){
 
+<<<<<<< HEAD
                 return back();
             } }else {
                
@@ -66,6 +67,11 @@ class CartController extends Controller
 
             }
 
+=======
+
+        }
+        if(session()->get('user')->username){
+>>>>>>> 0e53deb14ced9dec0b044851b30f19aae3828ebb
 
 
 

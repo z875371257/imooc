@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
-class SectionController extends Controller
+class VedeoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,6 @@ class SectionController extends Controller
      */
     public function create()
     {
-
         $arr = [
             '1' => '课程',
             '2' => '职业路径',
@@ -43,18 +42,16 @@ class SectionController extends Controller
 
         $data = DB::table('course_cate')->distinct()->lists('genera');
 
-        return view('admin.section.add',compact('arr','data'));
+        return view('admin.video.add',compact('arr','data'));
 
     }
 
     public function ajaxs(Request $request)
     {
         $id = $request->input('id');
-#        var_dump($id);
 
-        $course = DB::table('course')->where('pid', $id)->get();
-
-         return response()->json($course);
+        $section = DB::table('section')->where('course_id', $id)->get();
+         return response()->json($section);
     }
 
     public function cates(Request $request)
@@ -157,7 +154,4 @@ class SectionController extends Controller
     {
         //
     }
-
-
-
 }

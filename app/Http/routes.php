@@ -34,6 +34,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
     Route::resource('section', 'SectionController');
     Route::post('section/ajaxs', 'SectionController@ajaxs');
 
+    //   章节视频模块
+    Route::resource('video', 'VedeoController');
+    Route::post('videos/ajaxs', 'VedeoController@ajaxs');
+
     //    后台用户模块
     Route::resource('user', 'UserController');  //后台用户资源路由
     Route::post('checkname', 'UserController@checkName');   //发送ajax 判断用户是否存在路由
@@ -42,6 +46,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
     Route::resource('buttom','ButtomController');
     Route::resource('link','LinkController');
 
+    //   后台网站配置模块
+    Route::resource('conf','ConfController');
+    Route::post('conf/changeContent','ConfController@changeContent');
+
+    Route::get('putfile', 'ConfController@putFile');
 
 
     //   订单模块
@@ -51,6 +60,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
     Route::resource('cart','CartController');
 });
 
+
+
 // 前台管理组
 Route::group(['namespace'=>'Home'],function(){
 
@@ -58,6 +69,8 @@ Route::group(['namespace'=>'Home'],function(){
     Route::get('/', 'IndexController@index');
     // 课程列表页
     Route::get('course/list', 'ListController@index');
+    Route::get('list/detail', 'ListController@detail');
+
     // 职业路径列表页
     Route::get('course/class', 'ClassController@index');
     Route::get('class/detail', 'ClassController@detail');
@@ -89,13 +102,30 @@ Route::group(['namespace'=>'Home'],function(){
 });
 
 
-
+Route::group(['namespace' => 'Home'], function(){
     //    处理注册页面的数据
-    Route::post('register', 'Home\RegisterController@register');
-
-   //      登录页面
-    Route::get('login', 'Home\LoginController@login');
+    Route::post('register', 'RegisterController@register');
 
     //    处理登录数据
-    Route::post('login', 'Home\LoginController@login');
+    Route::post('login', 'LoginController@login');
+
+    //    前台用户退出
+    Route::get('passport/user/logout', 'LoginController@logout');
+
+    //    注册 ajax 判断用户名是否存在username
+    Route::post('home/username', 'RegisterController@checkName');
+
+    //    注册 ajax 判断邮箱是否存在
+    Route::post('home/email/', 'RegisterController@checkEmail');
+
+    //    登录 ajax 判断用户名是否存在username
+    Route::post('home/username/login', 'LoginController@checkName');
+
+    //    登录 ajax 判断密码是否存在
+    Route::post('home/username/password', 'LoginController@checkPassword');
+});
+
+
+
+
 

@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <title>
         @yield('title')
+<<<<<<< HEAD
+        {{--{{config('web.web_title')}}--}}
+=======
 
+>>>>>>> origin/yuanqiusheng
     </title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit" />
@@ -17,20 +21,20 @@
     <script src="/homes/banner/bootstrap/js/list.js"></script>
     <link rel="stylesheet" href="/homes/css/d6ce7be945424a9b914c162b14d44966.css" type="text/css" />
 
-    <meta name="Keywords" content="慕课网课程，IT培训精品课程" />
+    <meta name="Keywords" content="{{config('web.keywords')}}" />
     <meta name="Description" content="慕课网精品课程，为您提供专业的IT实战开发课程，包含前端开发、后端开发、移动端开发、数据处理、图像处理等各方面IT技能，课程全面、制作精良、讲解通俗易懂。"
     />
     <link rel="stylesheet" href="/homes/css/moco.min_1.css" type="text/css" />
 
-    <link rel="stylesheet" href="/homes/css/index-less.css" type="text/css"/>
-    <link rel="stylesheet" href="/homes/css/index-less_1.css" type="text/css"/>
+    {{--<link rel="stylesheet" href="/homes/css/index-less.css" type="text/css"/>--}}
+    {{--<link rel="stylesheet" href="/homes/css/index-less_1.css" type="text/css"/>--}}
     <link rel="stylesheet" href="/homes/css/index-less_2.css" type="text/css"/>
 
     <link rel="stylesheet" href="/homes/css/0aa178d80ba044de83db95986c61bede.css" type="text/css" />
     <link rel="stylesheet" href="/homes/css/0b9cb28d416b48c58157f6d1a364a7b5.css" type="text/css" />
     <link rel="stylesheet" href="/homes/css/common-less_1.css" type="text/css" />
     <link rel="stylesheet" href="/homes/css/moco.min.css" type="text/css" />
-    <link rel="stylesheet" href="/homes/css/67dfda356a8546e3ac009aec672217c2.css" type="text/css" />
+    {{--<link rel="stylesheet" href="/homes/css/67dfda356a8546e3ac009aec672217c2.css" type="text/css" />--}}
     <link rel="stylesheet" href="/homes/css/126-less.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="/homes/css/main.css" />
     <link rel="stylesheet" type="text/css" href="/homes/css/style.css" />
@@ -38,6 +42,7 @@
     <script type="text/javascript" src="/homes/js/1.7.js"></script>
     <script src="/homes/js/main.js"></script>
     <script type="text/javascript" src="/homes/js/tongji.js"></script>
+
 
 
     <script type="text/javascript">

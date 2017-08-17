@@ -2,7 +2,7 @@
 @section('title', 'IT职业路径_编程学习路线_慕课网职业路径')
 
 @section('content')
-
+	<link rel="stylesheet" href="/homes/css/index-less.css" type="text/css"/>
 <div class='body-main'>
 
 <div class='program-banner'>

@@ -56,28 +56,35 @@
                 <div class="mws-form-row">
                     <label class="mws-form-label">分类所属课程</label>
                     <div class="mws-form-item">
-                        <select class="large small" name="course_id" id="course" >
+                        <select class="large small" id="course" onchange="secChange(this)">
 
                         </select>
                     </div>
                 </div>
 
 
-                    <div class="mws-form-row">
-                        <label class="mws-form-label">章节名称:</label>
-                        <div class="mws-form-item">
-                            <input type="text" class="small" name='title'>
-                        </div>
+                <div class="mws-form-row">
+                    <label class="mws-form-label">所属章节</label>
+                    <div class="mws-form-item">
+                        <select class="large small" name="s_id" id="section" >
+
+                        </select>
                     </div>
+                </div>
 
-
-                    <div class="mws-form-row">
-                        <label class="mws-form-label">章节详情</label>
-                        <div class="mws-form-item">
-                            <textarea name="description" rows="" cols="" class="large autosize" style="overflow: hidden; word-wrap: break-word; resize: none; height: 130px;"></textarea>
-                        </div>
+                <div class="mws-form-row">
+                    <label class="mws-form-label">视频标题:</label>
+                    <div class="mws-form-item">
+                        <input type="text" class="small" name='title'>
                     </div>
+                </div>
 
+                <div class="mws-form-row">
+                    <label class="mws-form-label">上传视频</label>
+                    <div class="mws-form-item">
+                        <input type="file" class="small" name='vurl'>
+                    </div>
+                </div>
 
                 </div>
                 <div class="mws-button-row">
@@ -121,5 +128,21 @@
 
             })
         }
+
+        function secChange(obj)
+        {
+//            alert($(obj).val());
+            $.post('/admin/videos/ajaxs', {'_token':'{{ csrf_token() }}', 'id':$(obj).val()},function(data){
+                console.log(data);
+                var arr = ''
+                if(data){
+                    $.each(data, function(i,item){
+                        arr += "<option value="+item.sid+"  >"+item.title+"</option>";
+                        $('#section ').html(arr);
+                    })
+                }
+            })
+        }
+
     </script>
 @endsection
