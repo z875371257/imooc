@@ -53,5 +53,7 @@ class OrderController extends Controller
         //把订单插入数据库中
         DB::table('order')->insert([])
 
+        return back();
+
     }
 }
