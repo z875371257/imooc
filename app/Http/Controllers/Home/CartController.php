@@ -13,7 +13,7 @@ class CartController extends Controller
 {
     public function index()
     {  
-       if(session()->get('user')->username){
+       if(session()->get('users')->username){
 
         //购物车全部记录
         $carts = Cart::content();
@@ -43,7 +43,7 @@ class CartController extends Controller
 
 
         }
-        if(session()->get('user')->username){
+        if(session()->get('users')->username){
 
             /*Cart::add(array('id'=>$good['id'],'name'=>$good['title'],'price'=>$good['price'],'qty'=>1));*/
             Cart::add($good['id'],$good['title'],1,$good['price'],array('pic'=>$good['pic']));

@@ -35,7 +35,7 @@
 			<div class='sc-info-line'></div>
 			
 
-                @if(!empty(session()->get('user')->username))
+                @if(!empty(session()->get('users')->username))
 				<a href="/addCart/{{$res->id}}" class="js-buy-trigger buy-trigger">立即购买</a>
 				@else
 				 <nav class="main_nav">

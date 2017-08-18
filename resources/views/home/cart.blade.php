@@ -30,7 +30,7 @@
 		</div>
 	</div>
 </div>
-@if(!empty(session()->get('user')->username))
+@if(!empty(session()->get('users')->username))
   <div class="cart-body" id="cartBody">
 		<div class="cart-body-title clearfix">
 

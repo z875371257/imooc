@@ -55,7 +55,11 @@ class LoginController extends Controller
 
             session(['users'=>$user]);
 
-            return redirect('/');
+//           获取用户登录时的 url
+//        echo '<pre>';
+//        var_dump($_SERVER["HTTP_REFERER"]);die;
+
+            return redirect($_SERVER["HTTP_REFERER"]);
 
     }
 
