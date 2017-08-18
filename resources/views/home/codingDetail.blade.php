@@ -2,7 +2,7 @@
 @section('title', '实战详情')
 
 		@section('content')
-
+			<link rel="stylesheet" href="/homes/css/67dfda356a8546e3ac009aec672217c2.css" type="text/css" />
 <div class="course-class-infos ">
     <div class="w pr">
 		<div class="path">

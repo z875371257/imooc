@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 
+use DB;
 use Cart;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -48,8 +49,10 @@ class OrderController extends Controller
         }
         //生成订单编号
         $oid = time().rand(1111,9999);
+
         //获取用户的ID
-        $uid = DB::table('home_user')->where('username',session()->get('user')->username)->value('uid');
+        $uid = session()->get('users')->id;
+
         //把订单插入数据库中
         DB::table('order')->insert([]);
 

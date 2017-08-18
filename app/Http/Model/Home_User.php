@@ -21,4 +21,12 @@ class Home_User extends Model
 //  黑名单
     protected $guarded = [];
 
+    /**
+     * 获取与指定用户的详情。
+     */
+    public function details()
+    {
+        return $this->hasOne('App\Http\Model\Details', 'home_user_id', 'id');
+    }
+
 }

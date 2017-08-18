@@ -64,6 +64,7 @@
 {{--  session 判断显示 session 判断显示session 判断显示session 判断显示session 判断显示session 判断显示session 判断显示session 判断显示 --}}
 
         @if ( !session()->get('users'))
+
         <div id="login-area">
             <ul class="header-unlogin clearfix">
                 <li class="shop-cart" id="shop-cart">
@@ -97,6 +98,7 @@
 
                 <nav class="main_nav">
 
+
                    
 
                     <li class="header-signin">
@@ -105,6 +107,10 @@
                             
                             <a href="#0" class="cd-signin" id="js-signin-btn"></a>
                           
+
+
+                    <li class="header-signin" style="margin-left: 20px;">
+                        <a href="#0" class="cd-signin" id="js-signin-btn">登录</a>
 
                     </li>
                     <li class="header-signup">
@@ -143,9 +149,9 @@
                             </div>
                             <div class="more-box clearfix">
                                 <div class="l show-box">
-                                    <span class="text"><a href="http://order.imooc.com/myorder" target="_blank">我的订单中心</a></span>
+                                    <span class="text"><a href="/order" target="_blank">我的订单中心</a></span>
                                 </div>
-                                <a href="http://order.imooc.com/pay/cart" target="_blank" class="r moco-btn moco-btn-red go-cart">去购物车</a>
+                                <a href="/cart" target="_blank" class="r moco-btn moco-btn-red go-cart">去购物车</a>
                             </div>
                         </div>
                     </li>
@@ -158,7 +164,8 @@
                     </li>
                     <li class="set_btn user-card-box" id="header-user-card">
                         <a id="header-avator" class="user-card-item js-header-avator" action-type="my_menu" href="/u/5601964" target="_self">
-                            <img width="40" height="40" src="http://img.mukewang.com/597b0ff300016efc06950694-100-100.jpg">
+                            <img src="@if(!session('details')) http://img.mukewang.com/597b0ff300016efc06950694-100-100.jpg
+                                                    @else {{ session('details')->profile  }} @endif " alt="">
                             <i class="myspace_remind" style="display: none;"></i>
                             <span style="display: none;">动态提醒 </span>
                         </a>
@@ -167,7 +174,12 @@
                                 <div class="card-top clearfix">
                                     <a href="/u/5601964" class="l" class="user-card-item js-header-avator hover" action-type="my_menu" id="header-avator" target="_self">
 
-                                        <img src="@if(!session()->get('users')) http://img.mukewang.com/597b0ff300016efc06950694-100-100.jpg @else {{ url('session()->get("users")') }} @endif " alt="">
+
+                                        <img src="@if(!session('details')) http://img.mukewang.com/597b0ff300016efc06950694-100-100.jpg
+                                                    @else {{ session('details')->profile  }} @endif " alt="">
+
+
+
                                             <i class="myspace_remind" style="display: none;"></i>
                                             <span style="display: none;">动态提醒</span>
                                     </a>
@@ -185,7 +197,7 @@
                                             <a href="/u/5601964/courses" target="_blank"><span class="user-center-icon icon-tick"></span>我的课程</a>
                                         </li>
                                         <li class="l">
-                                            <a href="http://order.imooc.com/myorder" target="_blank"> <span class="user-center-icon icon-receipt"></span> 订单中心</a>
+                                            <a href="/order" target="_blank"> <span class="user-center-icon icon-receipt"></span> 订单中心</a>
                                             <i id="js-usercard-coupon-icon" style="display: none;"></i>
                                         </li>
                                         <li class="l">

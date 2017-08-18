@@ -14,7 +14,7 @@ class LoginController extends Controller
 {
 
 //    处理用户登录信息
-    public function login()
+    public function login(Request $request)
     {
 //        获取登录数据
 
@@ -35,10 +35,26 @@ class LoginController extends Controller
          }
 
     //    登录成功 保存信息  跳转到前台首页
+        session([ 'users'=>$user ]);
+
+
+
+         
+
+//        获取登录用户的详情  $phone = User::find(1)->phone;
+
+          $details = Home_User::find($user->id)->details;
+
+           if ($details) {
+               session([ 'details'=>$details ]);
+
+           }
 
             session(['users'=>$user]);
-    
-            return redirect('/');
+
+//           获取用户登录时的 url
+
+            return redirect($_SERVER["HTTP_REFERER"]);
 
     }
 
@@ -47,9 +63,8 @@ class LoginController extends Controller
     {
 
 //   从session中移走用户的信息   $request->session()->forget('key');
-//        return redirect('dashboard')->with('status', 'Profile updated!');
 
-        $userInfo = $request->session()->flush();
+        $userInfo = $request->session()->forget('users');
 
 
         if ($userInfo) {
@@ -62,7 +77,8 @@ class LoginController extends Controller
 
         }
 
-        session(['user'=>$user]);
+
+        session(['users'=>$user]);
         
         return redirect('/');
 
@@ -98,8 +114,7 @@ class LoginController extends Controller
             ];
         }
         return response()->json($data);
-#        return $data;
-//        return response()->json(['name' => 'Abigail', 'state' => 'CA']);
+
 
     }
 
@@ -131,10 +146,7 @@ class LoginController extends Controller
                 'msg'=>'密码不一致',
             ];
         }
-
         return response()->json($data);
-#        return $data;
-//      return response()->json(['name' => 'Abigail', 'state' => 'CA']);
 
     }
 
