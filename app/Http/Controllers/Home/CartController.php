@@ -13,8 +13,8 @@ class CartController extends Controller
 {
     public function index()
     {  
-       if(session()->get('users')){
 
+       if(session()->get('users')){
         //购物车全部记录
         $carts = Cart::content();
         //购物车总额 不含税
@@ -47,14 +47,12 @@ class CartController extends Controller
                    }
 
                }else {
-
                           if(session()->get('users')->username){
 
                            //查询出用户的id
                            $uid = DB::table('home_user')->where('username',session()->get('users')->username)->value('id');
 
                           //把这个商品存进购物车表中
-
                            DB::table('cart')->insert(['uid'=>$uid,'cid'=>$id,'price'=>$good['price'],'addtime'=>time()]);
 
                            Cart::add($good['id'],$good['title'],1,$good['price'],array('pic'=>$good['pic']));

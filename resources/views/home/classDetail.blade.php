@@ -4,6 +4,7 @@
 	<link rel="stylesheet" href="/homes/css/67dfda356a8546e3ac009aec672217c2.css" type="text/css" />
 	<link rel="stylesheet" href="/homes/css/index-less_1.css" type="text/css"/>
 	<link rel="stylesheet" href="/homes/css/index-less.css" type="text/css"/>
+
 <div class='body-main'>
 
 <div class="banner" style="background-image: url(/{{$res->bigpic}});">
@@ -36,18 +37,17 @@
 			
 
                 @if(!empty(session()->get('users')))
-				<a href="/addCart/{{$res->id}}" class="js-buy-trigger buy-trigger">立即购买</a>
+
+					<a href="/addCart/{{$res->id}}" class="js-buy-trigger buy-trigger">立即购买</a>
 				@else
-				 <nav class="main_nav">
+				 <nav class="main_nav" style="width:1100px">
 					 <a href="#0" class="cd-signin js-buy-trigger buy-trigger" id="js-signin-btn">立即购买</a>
 				 </nav>
 				@endif
 
-			<!-- discount_type 是否为常显 -->
-            	            <!-- 调价 or 学生优惠 -->
-	            		            					<!-- 调价 -->
+		<!-- 调价 -->
 					<div class="price-box">
-						<div class="adjust-price-box clearfix" style="margin-top:15px">
+						<div class="adjust-price-box clearfix" style="margin-top:-45px;margin-right:20px">
 							<span class="discount r">￥{{$res->price}}0</span>
 						</div>
 

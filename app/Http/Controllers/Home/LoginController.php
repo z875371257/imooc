@@ -50,12 +50,11 @@ class LoginController extends Controller
 
            }
 
-//            dd(session('details'));
-//            dd( session('user') );
-
             session(['users'=>$user]);
 
-            return redirect('/');
+//           获取用户登录时的 url
+
+            return redirect($_SERVER["HTTP_REFERER"]);
 
     }
 
@@ -67,10 +66,6 @@ class LoginController extends Controller
 
         $userInfo = $request->session()->forget('users');
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/airline
         if ($userInfo) {
 
             return redirect('/')->with('status', '退出成功');
@@ -80,17 +75,7 @@ class LoginController extends Controller
             return back()->with('error', '退出失败');
 
         }
-<<<<<<< HEAD
-=======
 
-        session(['user'=>$user]);
-        
-        return redirect('/');
-
-        // dd( session()->get('user')->username);
-        
-
->>>>>>> origin/airline
     }
 
 
