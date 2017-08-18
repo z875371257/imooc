@@ -97,3 +97,34 @@
         }
         return $imgs;
     }
+
+
+//    权限
+if ( ! function_exists('getAuth')) {
+
+    function getAuth($auth) {
+
+        if ( $auth == '1' ) {
+            return '普通管理员';
+        } elseif ( $auth == '2') {
+            return '一般管理员';
+        } else {
+            return '超级管理员';
+        }
+
+    }
+
+}
+
+//防止和系统函数重命名  注册composer.json  执行composer dump-autoload 加载  目的列表页显示的时候为汉字
+if ( ! function_exists('getStatus') ) {
+
+    function getStatus($status){
+        if ($status == '1') {
+            return '启用';
+        }  else {
+            return '禁用';
+        }
+
+    }
+}

@@ -40,6 +40,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
 
     //    后台用户模块
     Route::resource('user', 'UserController');  //后台用户资源路由
+
+    Route::post('auth/{uid}', 'UserController@auth');  //后台用户权限资源路由
+    Route::post('doauth/{uid}', 'UserController@doAuth');  //后台用户权限资源路由
+
     Route::post('checkname', 'UserController@checkName');   //发送ajax 判断用户是否存在路由
 
     //   后台底部模块
@@ -59,6 +63,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
     //购物车
     Route::resource('cart','CartController');
 });
+
+
+
 
 
 
@@ -115,6 +122,9 @@ Route::group(['namespace' => 'Home'], function(){
 
     //    前台用户退出
     Route::get('passport/user/logout', 'LoginController@logout');
+
+    //   前台用户列表页
+    Route::resource('home/user', 'UserController');
 
     //    注册 ajax 判断用户名是否存在username
     Route::post('home/username', 'RegisterController@checkName');
