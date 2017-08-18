@@ -60,6 +60,7 @@ Route::group(['namespace'=>'Home'],function(){
     //   前台主页
     Route::get('/', 'IndexController@index');
     Route::get('course/list', 'ListController@index');
+    Route::resource('suggest', 'SuggestController');
 
 
     Route::group(['prefix' => 'about'], function () {

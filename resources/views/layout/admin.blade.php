@@ -35,6 +35,12 @@
     <link rel="stylesheet" type="text/css" href="/admins/css/mws-theme.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/admins/css/themer.css" media="screen">
     <link rel="stylesheet" href="/admins/css/style.css">
+
+    {{--后台首页--}}
+    <link rel="stylesheet" href="/admins/css/ch-ui.admin.css">
+    <link rel="stylesheet" href="/admins/css/fonts/font-awesome.css">
+
+
     <script src="/admins/layer/layer.js"></script>
 
 
@@ -197,7 +203,7 @@
 
         <!-- Footer -->
         <div id="mws-footer">
-            Copyright Your Website 2012. All Rights Reserved.
+            {{config('web.copyright')}}
         </div>
 
     </div>
