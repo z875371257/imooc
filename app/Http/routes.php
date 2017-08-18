@@ -83,10 +83,16 @@ Route::group(['namespace'=>'Home'],function(){
     Route::get('cart','CartController@index')->name('cart');
     Route::get('addCart/{id}','CartController@addCart');
     Route::get('delCart/{id}','CartController@delCart');
-
+   
     //订单
     Route::get('order','OrderController@index');
     Route::get('doOrder','OrderController@doOrder');
+    Route::get('myorder','OrderController@myorder');
+    Route::get('delOrder/{id}','OrderController@delOrder');
+    //支付
+    Route::get('pay/{id}','PayController@index')->name('pay');
+    Route::get('doPay/{id}','PayController@doPay');
+    Route::get('success','PayController@success')->name('success');
     // 底部
     Route::group(['prefix' => 'about'], function () {
         //底部链接

@@ -86,7 +86,7 @@
 						</li>
 						
 						<li class="li-3">
-							<span class="btn js-go-confrim"><a href="/doOrder">提交订单</a></span>
+							<span class="btn js-go-confrim"><a href="/doOrder">确认提交</a></span>
 						</li>
 					</ul>
 				</div>

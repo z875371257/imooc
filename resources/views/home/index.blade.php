@@ -101,11 +101,7 @@
 
                    
 
-                    <li class="header-signin">
-                        
-                        <a href="#0" class="cd-signin" id="js-signin-btn">登录</a>
-                            
-                            <a href="#0" class="cd-signin" id="js-signin-btn"></a>
+                  
                           
 
 

@@ -14,7 +14,7 @@ class CartController extends Controller
     public function index()
     {  
 
-       if(session()->get('users')->username){
+       if(!empty(session()->get('users')->username)){
 
         //购物车全部记录
         $carts = Cart::content();
@@ -49,10 +49,10 @@ class CartController extends Controller
                    }
 
              }else {
-                if(session()->get('users')->username){
+                if(!empty(session()->get('users')->username)){
 
                  //查询出用户的id
-                 $uid = session()->get('user')->id;
+                 $uid = session()->get('users')->id;
 
                 //把这个商品存进购物车表中
                  DB::table('cart')->insert(['uid'=>$uid,'cid'=>$id,'price'=>$good['price'],'addtime'=>time()]);

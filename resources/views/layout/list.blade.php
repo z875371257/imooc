@@ -39,8 +39,12 @@
     <script src="/homes/js/main.js"></script>
     <script type="text/javascript" src="/homes/js/tongji.js"></script>
 
-    <link rel="stylesheet" href="/homes/css/moco.min.css" type="text/css" />
 
+    <link rel="stylesheet" href="/homes/css/moco.min.css" type="text/css" />
+    <link rel="stylesheet" href="/homes/css/myorder.css">
+    <link rel="stylesheet" type="text/css" href="/admins/css/themer.css" media="screen">
+    <link rel="stylesheet" href="/admins/css/style.css">
+    <script src="/admins/layer/layer.js"></script>
 
 
     <script type="text/javascript">
@@ -374,48 +378,7 @@
         </div>
     </div>
 </div>
-<div id="J_GotoTop" class="elevator">
-    <a href="/user/feedback" class="elevator-msg" target="_blank">
-        <i class="icon-feedback">
-        </i>
-        <span class="">
-                    意见反馈
-                </span>
-    </a>
-    <a href="/about/faq" class="elevator-faq" target="_blank">
-        <i class="icon-ques">
-        </i>
-        <span class="">
-                    常见问题
-                </span>
-    </a>
-    <a href="http://www.imooc.com/mobile/app" target="_blank" class="elevator-app">
-        <i class="icon-appdownload">
-        </i>
-        <span class="">
-                    APP下载
-                </span>
-        <div class="elevator-app-box">
-        </div>
-    </a>
-    <a href="javascript:void(0)" class="elevator-weixin no-goto" id="js-elevator-weixin">
-        <i class="icon-wxgzh">
-        </i>
-        <span class="">
-                    官方微信
-                </span>
-        <div class="elevator-weixin-box">
-        </div>
-    </a>
-    <a href="javascript:void(0)" class="elevator-top no-goto" style="display:none"
-       id="backTop">
-        <i class="icon-up2">
-        </i>
-        <span class="">
-                    返回顶部
-                </span>
-    </a>
-</div>
+
 <!--script-->
 <script type="text/javascript" src="/homes/js/error.js"></script>
 <script src="/homes/js/ssologin.js"></script>
