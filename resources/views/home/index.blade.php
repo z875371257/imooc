@@ -97,8 +97,17 @@
                 </li>
 
                 <nav class="main_nav">
+
+
+                   
+
+                  
+                          
+
+
                     <li class="header-signin" style="margin-left: 20px;">
                         <a href="#0" class="cd-signin" id="js-signin-btn">登录</a>
+
                     </li>
                     <li class="header-signup">
                         <a href="#0" class="cd-signup" id="js-signup-btn">注册</a>

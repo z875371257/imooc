@@ -14,7 +14,8 @@ class CartController extends Controller
     public function index()
     {  
 
-       if(session()->get('users')){
+       if(!empty(session()->get('users')->username)){
+
         //购物车全部记录
         $carts = Cart::content();
         //购物车总额 不含税
@@ -34,6 +35,7 @@ class CartController extends Controller
     
     //加入购物车
     public function addCart($id)
+
     {
        $goods = DB::table('course')->where('id',$id)->first();
 
@@ -42,30 +44,26 @@ class CartController extends Controller
                $carts = DB::table('cart')->where('cid',$id)->first();
 
                if($carts != null){
-                   if($carts->cid == $id){
+                   if($carts->uid == session()->get('users')->id && $carts->cid == $id){
                        return back();
                    }
 
                }else {
-                          if(session()->get('users')->username){
+                    if(!empty(session()->get('users')->username)){
+                     //查询出用户的id
+                     $uid = session()->get('users')->id;
 
-                           //查询出用户的id
-                           $uid = DB::table('home_user')->where('username',session()->get('users')->username)->value('id');
+                    //把这个商品存进购物车表中
+                     DB::table('cart')->insert(['uid'=>$uid,'cid'=>$id,'price'=>$good['price'],'addtime'=>time()]);
+                               Cart::add($good['id'],$good['title'],1,$good['price'],array('pic'=>$good['pic']));
+                      }
+                return redirect()->route('cart');
+              }
 
-                          //把这个商品存进购物车表中
-                           DB::table('cart')->insert(['uid'=>$uid,'cid'=>$id,'price'=>$good['price'],'addtime'=>time()]);
-
-                           Cart::add($good['id'],$good['title'],1,$good['price'],array('pic'=>$good['pic']));
-
-                          }
-
-                          return redirect()->route('cart');
-
-                   }
-
-    }
-
+     }
+      
     //清空购物车操作
+
     public function delCart($id)
     {
         $rowId = $id;
@@ -79,4 +77,11 @@ class CartController extends Controller
 
         return back();
     }
+    
+
+
+         
 }
+
+    
+

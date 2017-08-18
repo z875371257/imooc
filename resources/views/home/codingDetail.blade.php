@@ -53,10 +53,17 @@
 															</div>
 
 			<div class="clearfix btnwarp">
+			                               @if(!empty(session()->get('users')))
 														<a href="/addCart/{{$res->id}}" class="js-buy-trigger buy-class-btn class-btn1 buynow-btn" data-cid="126" data-pay="0" id="buy-trigger">
 						<span>立即购买</span>
 					</a>
-					
+					@else
+					  <nav class="main_nav">
+					   <a href="#0" class="js-buy-trigger buy-class-btn class-btn1 buynow-btn" data-cid="126" data-pay="0" id="buy-trigger">
+						<span>立即购买</span>
+					   </a>
+					  </nav>
+					@endif
 					<a href='javascript:;' class='js-addcart addcart' data-cid='126' data-type='1'>
 						<i class='sz-add-shopping-cart'></i>
 					</a>

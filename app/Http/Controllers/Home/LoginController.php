@@ -66,6 +66,7 @@ class LoginController extends Controller
 
         $userInfo = $request->session()->forget('users');
 
+
         if ($userInfo) {
 
             return redirect('/')->with('status', '退出成功');
@@ -75,6 +76,14 @@ class LoginController extends Controller
             return back()->with('error', '退出失败');
 
         }
+
+
+        session(['users'=>$user]);
+        
+        return redirect('/');
+
+        // dd( session()->get('user')->username);
+        
 
     }
 
