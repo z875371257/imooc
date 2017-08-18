@@ -27,8 +27,9 @@ class ClassController extends Controller
                   ->where('genera', 2)
                   ->paginate(20);
         }
+        $c = $request->input('c');
 
-        return view('home.class',compact('class','res'));
+        return view('home.class',compact('class','res','c'));
     }
 
     public function detail(Request $request)

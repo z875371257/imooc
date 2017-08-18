@@ -17,7 +17,7 @@ document.createElement('track');
  *
  *     var myPlayer = vjs('my_video_id');
  *
- * @param  {String|Element} id      Video element or video element ID
+ * @param  {String|Element} id      Video element or vedeo element ID
  * @param  {Object=} options        Optional options object for config/settings
  * @param  {Function=} ready        Optional ready callback
  * @return {vjs.Player}             A player instance
@@ -98,9 +98,9 @@ vjs.options = {
     'controlBar': {}
   },
 
-  // Default message to show when a video cannot be played.
+  // Default message to show when a vedeo cannot be played.
   'notSupportedMessage': 'Sorry, no compatible source and playback ' +
-      'technology were found for this video. Try using another browser ' +
+      'technology were found for this vedeo. Try using another browser ' +
       'like <a href="http://bit.ly/ccMUEC">Chrome</a> or download the ' +
       'latest <a href="http://adobe.ly/mwfN1">Adobe Flash Player</a>.'
 };
@@ -108,7 +108,7 @@ vjs.options = {
 // Set CDN Version of swf
 // The added (+) blocks the replace from changing this 4.3 string
 if (vjs.CDN_VERSION !== 'GENERATED'+'_CDN_VSN') {
-  videojs.options['flash']['swf'] = vjs.ACCESS_PROTOCOL + 'vjs.zencdn.net/'+vjs.CDN_VERSION+'/video-js.swf';
+  videojs.options['flash']['swf'] = vjs.ACCESS_PROTOCOL + 'vjs.zencdn.net/'+vjs.CDN_VERSION+'/vedeo-js.swf';
 }
 
 /**
@@ -909,7 +909,7 @@ vjs.removeClass = function(element, classToRemove){
 };
 
 /**
- * Element for testing browser HTML5 video capabilities
+ * Element for testing browser HTML5 vedeo capabilities
  * @type {Element}
  * @constant
  * @private
@@ -1305,7 +1305,7 @@ vjs.findPosition = function(el) {
  *     var button = player.addChild('button');
  *     button.el(); // -> button element
  *
- *     <div class="video-js">
+ *     <div class="vedeo-js">
  *       <div class="vjs-button">Button</div>
  *     </div>
  *
@@ -2102,7 +2102,7 @@ vjs.Component.prototype.onResize;
 /**
  * Emit 'tap' events when touch events are supported
  *
- * This is used to support toggling the controls through a tap on the video.
+ * This is used to support toggling the controls through a tap on the vedeo.
  *
  * We're requireing them to be enabled because otherwise every component would
  * have this extra overhead unnecessarily, on mobile devices where extra
@@ -2675,7 +2675,7 @@ vjs.MenuButton.prototype.unpressButton = function(){
 };
 
 /**
- * An instance of the `vjs.Player` class is created when any of the Video.js setup methods are used to initialize a video.
+ * An instance of the `vjs.Player` class is created when any of the Video.js setup methods are used to initialize a vedeo.
  *
  * ```js
  * var myPlayer = videojs('example_video_1');
@@ -2684,9 +2684,9 @@ vjs.MenuButton.prototype.unpressButton = function(){
  * In the follwing example, the `data-setup` attribute tells the Video.js library to create a player instance when the library is ready.
  *
  * ```html
- * <video id="example_video_1" data-setup='{}' controls>
- *   <source src="my-source.mp4" type="video/mp4">
- * </video>
+ * <vedeo id="example_video_1" data-setup='{}' controls>
+ *   <source src="my-source.mp4" type="vedeo/mp4">
+ * </vedeo>
  * ```
  *
  * After an instance has been created it can be accessed globally using `Video('example_video_1')`.
@@ -2701,7 +2701,7 @@ vjs.Player = vjs.Component.extend({
    *
    * @constructs
    * @method init
-   * @param {Element} tag        The original video tag used for configuring options
+   * @param {Element} tag        The original vedeo tag used for configuring options
    * @param {Object=} options    Player options
    * @param {Function=} ready    Ready callback function
    */
@@ -2709,13 +2709,13 @@ vjs.Player = vjs.Component.extend({
     this.tag = tag; // Store the original tag used to set options
 
     // Set Options
-    // The options argument overrides options set in the video tag
+    // The options argument overrides options set in the vedeo tag
     // which overrides globally set options.
     // This latter part coincides with the load order
     // (tag must exist before Player)
     options = vjs.obj.merge(this.getTagSettings(tag), options);
 
-    // Cache for video property values.
+    // Cache for vedeo property values.
     this.cache_ = {};
 
     // Set poster
@@ -2794,7 +2794,7 @@ vjs.Player = vjs.Component.extend({
 vjs.Player.prototype.options_ = vjs.options;
 
 /**
- * Destroys the video player and does any necessary cleanup
+ * Destroys the vedeo player and does any necessary cleanup
  *
  *     myPlayer.dispose();
  *
@@ -2857,7 +2857,7 @@ vjs.Player.prototype.createEl = function(){
   // Remove width/height attrs from tag so CSS can make it 100% width/height
   tag.removeAttribute('width');
   tag.removeAttribute('height');
-  // Empty video tag tracks so the built-in player doesn't use them also.
+  // Empty vedeo tag tracks so the built-in player doesn't use them also.
   // This may not be fast enough to stop HTML5 browsers from reading the tags
   // so we'll need to turn off any default tracks if we're manually doing
   // captions and subtitles. videoElement.textTracks
@@ -2884,20 +2884,20 @@ vjs.Player.prototype.createEl = function(){
   // Make sure tag ID exists
   tag.id = tag.id || 'vjs_video_' + vjs.guid++;
 
-  // Give video tag ID and class to player div
-  // ID will now reference player box, not the video tag
+  // Give vedeo tag ID and class to player div
+  // ID will now reference player box, not the vedeo tag
   el.id = tag.id;
   el.className = tag.className;
 
   // Update tag id/class for use as HTML5 playback tech
   // Might think we should do this after embedding in container so .vjs-tech class
-  // doesn't flash 100% width/height, but class only applies with .video-js parent
+  // doesn't flash 100% width/height, but class only applies with .vedeo-js parent
   tag.id += '_html5_api';
   tag.className = 'vjs-tech';
 
   // Make player findable on elements
   tag['player'] = el['player'] = this;
-  // Default state of video is paused
+  // Default state of vedeo is paused
   this.addClass('vjs-paused');
 
   // Make box use width/height of tag, or rely on default implementation
@@ -2905,7 +2905,7 @@ vjs.Player.prototype.createEl = function(){
   this.width(this.options_['width'], true); // (true) Skip resize listener on load
   this.height(this.options_['height'], true);
 
-  // Wrap video tag in div (el/box) container
+  // Wrap vedeo tag in div (el/box) container
   if (tag.parentNode) {
     tag.parentNode.insertBefore(el, tag);
   }
@@ -3109,7 +3109,7 @@ vjs.Player.prototype.onPlay = function(){
 };
 
 /**
- * Fired the first time a video is played
+ * Fired the first time a vedeo is played
  *
  * Not part of the HLS spec, and we're not sure if this is the best
  * implementation yet, so use sparingly. If you don't have a reason to
@@ -3277,7 +3277,7 @@ vjs.Player.prototype.play = function(){
 };
 
 /**
- * Pause the video playback
+ * Pause the vedeo playback
  *
  *     myPlayer.pause();
  *
@@ -3308,7 +3308,7 @@ vjs.Player.prototype.paused = function(){
  *     var whereYouAt = myPlayer.currentTime();
  *
  *     // set
- *     myPlayer.currentTime(120); // 2 minutes into the video
+ *     myPlayer.currentTime(120); // 2 minutes into the vedeo
  *
  * @param  {Number|String=} seconds The time to seek to
  * @return {Number}        The time in seconds, when not setting
@@ -3334,15 +3334,15 @@ vjs.Player.prototype.currentTime = function(seconds){
 };
 
 /**
- * Get the length in time of the video in seconds
+ * Get the length in time of the vedeo in seconds
  *
  *     var lengthOfVideo = myPlayer.duration();
  *
- * **NOTE**: The video must have started loading before the duration can be
- * known, and in the case of Flash, may not be known until the video starts
+ * **NOTE**: The vedeo must have started loading before the duration can be
+ * known, and in the case of Flash, may not be known until the vedeo starts
  * playing.
  *
- * @return {Number} The duration of the video in seconds
+ * @return {Number} The duration of the vedeo in seconds
  */
 vjs.Player.prototype.duration = function(seconds){
   if (seconds !== undefined) {
@@ -3367,13 +3367,13 @@ vjs.Player.prototype.remainingTime = function(){
 
 // http://dev.w3.org/html5/spec/video.html#dom-media-buffered
 // Buffered returns a timerange object.
-// Kind of like an array of portions of the video that have been downloaded.
+// Kind of like an array of portions of the vedeo that have been downloaded.
 // So far no browsers return more than one range (portion)
 
 /**
- * Get a TimeRange object with the times of the video that have been downloaded
+ * Get a TimeRange object with the times of the vedeo that have been downloaded
  *
- * If you just want the percent of the video that's been downloaded,
+ * If you just want the percent of the vedeo that's been downloaded,
  * use bufferedPercent.
  *
  *     // Number of different ranges of time have been buffered. Usually 1.
@@ -3407,7 +3407,7 @@ vjs.Player.prototype.buffered = function(){
 };
 
 /**
- * Get the percent (as a decimal) of the video that's been downloaded
+ * Get the percent (as a decimal) of the vedeo that's been downloaded
  *
  *     var howMuchIsDownloaded = myPlayer.bufferedPercent();
  *
@@ -3477,12 +3477,12 @@ vjs.Player.prototype.muted = function(muted){
 vjs.Player.prototype.supportsFullScreen = function(){ return this.techGet('supportsFullScreen') || false; };
 
 /**
- * Increase the size of the video to full screen
+ * Increase the size of the vedeo to full screen
  *
  *     myPlayer.requestFullScreen();
  *
  * In some browsers, full screen is not supported natively, so it enters
- * "full window mode", where the video fills the browser window.
+ * "full window mode", where the vedeo fills the browser window.
  * In browsers and devices that support native full screen, sometimes the
  * browser's default controls will be shown, and not the Video.js custom skin.
  * This includes most mobile devices (iOS, Android) and older versions of
@@ -3496,7 +3496,7 @@ vjs.Player.prototype.requestFullScreen = function(){
 
   if (requestFullScreen) {
     // the browser supports going fullscreen at the element level so we can
-    // take the controls fullscreen as well as the video
+    // take the controls fullscreen as well as the vedeo
 
     // Trigger fullscreenchange event after change
     // We have to specifically add this each time, and remove
@@ -3517,11 +3517,11 @@ vjs.Player.prototype.requestFullScreen = function(){
     this.el_[requestFullScreen.requestFn]();
 
   } else if (this.tech.supportsFullScreen()) {
-    // we can't take the video.js controls fullscreen but we can go fullscreen
+    // we can't take the vedeo.js controls fullscreen but we can go fullscreen
     // with native controls
     this.techCall('enterFullScreen');
   } else {
-    // fullscreen isn't supported so we'll just stretch the video element to
+    // fullscreen isn't supported so we'll just stretch the vedeo element to
     // fill the viewport
     this.enterFullWindow();
     this.trigger('fullscreenchange');
@@ -3531,7 +3531,7 @@ vjs.Player.prototype.requestFullScreen = function(){
 };
 
 /**
- * Return the video to its normal size after having been in full screen mode
+ * Return the vedeo to its normal size after having been in full screen mode
  *
  *     myPlayer.cancelFullScreen();
  *
@@ -3554,7 +3554,7 @@ vjs.Player.prototype.cancelFullScreen = function(){
   return this;
 };
 
-// When fullscreen isn't supported we can stretch the video container to as wide as the browser will let us.
+// When fullscreen isn't supported we can stretch the vedeo container to as wide as the browser will let us.
 vjs.Player.prototype.enterFullWindow = function(){
   this.isFullWindow = true;
 
@@ -3622,11 +3622,11 @@ vjs.Player.prototype.selectSource = function(sources){
 };
 
 /**
- * The source function updates the video source
+ * The source function updates the vedeo source
  *
  * There are three types of variables you can pass as the argument.
  *
- * **URL String**: A URL to the the video file. Use this method if you are sure
+ * **URL String**: A URL to the the vedeo file. Use this method if you are sure
  * the current playback technology (HTML5/Flash) can support the source you
  * provide. Currently only MP4 files can be used in both HTML5 and Flash.
  *
@@ -3636,7 +3636,7 @@ vjs.Player.prototype.selectSource = function(sources){
  * about the source file. Use this method if you want the player to determine if
  * it can support the file using the type information.
  *
- *     myPlayer.src({ type: "video/mp4", src: "http://www.example.com/path/to/video.mp4" });
+ *     myPlayer.src({ type: "vedeo/mp4", src: "http://www.example.com/path/to/video.mp4" });
  *
  * **Array of Source Objects:** To provide multiple versions of the source so
  * that it can be played using HTML5 across browsers you can use an array of
@@ -3644,9 +3644,9 @@ vjs.Player.prototype.selectSource = function(sources){
  * file.
  *
  *     myPlayer.src([
- *       { type: "video/mp4", src: "http://www.example.com/path/to/video.mp4" },
- *       { type: "video/webm", src: "http://www.example.com/path/to/video.webm" },
- *       { type: "video/ogg", src: "http://www.example.com/path/to/video.ogv" }
+ *       { type: "vedeo/mp4", src: "http://www.example.com/path/to/video.mp4" },
+ *       { type: "vedeo/webm", src: "http://www.example.com/path/to/video.webm" },
+ *       { type: "vedeo/ogg", src: "http://www.example.com/path/to/video.ogv" }
  *     ]);
  *
  * @param  {String|Object|Array=} source The source URL, object, or array of sources
@@ -4232,7 +4232,7 @@ vjs.TimeDivider.prototype.createEl = function(){
 };
 
 /**
- * Displays the time left in the video
+ * Displays the time left in the vedeo
  * @param {vjs.Player|Object} player
  * @param {Object=} options
  * @constructor
@@ -4271,7 +4271,7 @@ vjs.RemainingTimeDisplay.prototype.updateContent = function(){
   // this.content.innerHTML = vjs.formatTime(time, this.player_.duration());
 };
 /**
- * Toggle fullscreen video
+ * Toggle fullscreen vedeo
  * @param {vjs.Player|Object} player
  * @param {Object=} options
  * @class
@@ -4361,7 +4361,7 @@ vjs.SeekBar.prototype.playerEvent = 'timeupdate';
 vjs.SeekBar.prototype.createEl = function(){
   return vjs.Slider.prototype.createEl.call(this, 'div', {
     className: 'vjs-progress-holder',
-    'aria-label': 'video progress bar'
+    'aria-label': 'vedeo progress bar'
   });
 };
 
@@ -4376,8 +4376,8 @@ vjs.SeekBar.prototype.getPercent = function(){
   var currentTime;
   // Flash RTMP provider will not report the correct time
   // immediately after a seek. This isn't noticeable if you're
-  // seeking while the video is playing, but it is if you seek
-  // while the video is paused.
+  // seeking while the vedeo is playing, but it is if you seek
+  // while the vedeo is paused.
   if (this.player_.techName === 'Flash' && this.player_.seeking()) {
     var cache = this.player_.getCache();
     if (cache.lastSetCurrentTime) {
@@ -4406,7 +4406,7 @@ vjs.SeekBar.prototype.onMouseDown = function(event){
 vjs.SeekBar.prototype.onMouseMove = function(event){
   var newTime = this.calculateDistance(event) * this.player_.duration();
 
-  // Don't let video end while scrubbing.
+  // Don't let vedeo end while scrubbing.
   if (newTime == this.player_.duration()) { newTime = newTime - 0.1; }
 
   // Set new time (tell player to seek to new time)
@@ -4856,7 +4856,7 @@ vjs.LoadingSpinner.prototype.createEl = function(){
 /* Big Play Button
 ================================================================================ */
 /**
- * Initial play button. Shows before the video has played. The hiding of the
+ * Initial play button. Shows before the vedeo has played. The hiding of the
  * big play button is done via CSS and player states.
  * @param {vjs.Player|Object} player
  * @param {Object=} options
@@ -4869,7 +4869,7 @@ vjs.BigPlayButton.prototype.createEl = function(){
   return vjs.Button.prototype.createEl.call(this, 'div', {
     className: 'vjs-big-play-button',
     innerHTML: '<span aria-hidden="true"></span>',
-    'aria-label': 'play video'
+    'aria-label': 'play vedeo'
   });
 };
 
@@ -4898,8 +4898,8 @@ vjs.MediaTechController = vjs.Component.extend({
 
 /**
  * Set up click and touch listeners for the playback element
- * On desktops, a click on the video itself will toggle playback,
- * on a mobile device a click on the video toggles controls.
+ * On desktops, a click on the vedeo itself will toggle playback,
+ * on a mobile device a click on the vedeo toggles controls.
  * (toggling controls is done by toggling the user state between active and
  * inactive)
  *
@@ -4912,7 +4912,7 @@ vjs.MediaTechController = vjs.Component.extend({
  * a few seconds of inactivity.
  *
  * Note: the only part of iOS interaction we can't mimic with this setup
- * is a touch and hold on the video element counting as activity in order to
+ * is a touch and hold on the vedeo element counting as activity in order to
  * keep the controls showing, but that shouldn't be an issue. A touch and hold on
  * any controls will still keep the user active
  */
@@ -4946,9 +4946,9 @@ vjs.MediaTechController.prototype.addControlsListeners = function(){
   // Any touch events are set to block the mousedown event from happening
   this.on('mousedown', this.onClick);
 
-  // We need to block touch events on the video element from bubbling up,
+  // We need to block touch events on the vedeo element from bubbling up,
   // otherwise they'll signal activity prematurely. The specific use case is
-  // when the video is playing and the controls have faded out. In this case
+  // when the vedeo is playing and the controls have faded out. In this case
   // only a tap (fast touch) should toggle the user active state and turn the
   // controls back on. A touch and move or touch and hold should not trigger
   // the controls (per iOS as an example at least)
@@ -5038,7 +5038,7 @@ vjs.MediaTechController.prototype.features = {
   'fullscreenResize': false,
 
   // Optional events that we can manually mimic with timers
-  // currently not triggered by video-js-swf
+  // currently not triggered by vedeo-js-swf
   'progressEvents': false,
   'timeupdateEvents': false
 };
@@ -5079,10 +5079,10 @@ vjs.Html5 = vjs.MediaTechController.extend({
     // volume cannot be changed from 1 on iOS
     this.features['volumeControl'] = vjs.Html5.canControlVolume();
 
-    // In iOS, if you move a video element in the DOM, it breaks video playback.
+    // In iOS, if you move a vedeo element in the DOM, it breaks vedeo playback.
     this.features['movingMediaElementInDOM'] = !vjs.IS_IOS;
 
-    // HTML video is able to automatically resize when going to fullscreen
+    // HTML vedeo is able to automatically resize when going to fullscreen
     this.features['fullscreenResize'] = true;
 
     vjs.MediaTechController.call(this, player, options, ready);
@@ -5108,8 +5108,8 @@ vjs.Html5 = vjs.MediaTechController.extend({
     }
 
     // Chrome and Safari both have issues with autoplay.
-    // In Safari (5.1.1), when we move the video element into the container div, autoplay doesn't work.
-    // In Chrome (15), if you have autoplay + a poster + no controls, the video gets hidden (but audio plays)
+    // In Safari (5.1.1), when we move the vedeo element into the container div, autoplay doesn't work.
+    // In Chrome (15), if you have autoplay + a poster + no controls, the vedeo gets hidden (but audio plays)
     // This fixes both issues. Need to wait for API, so it updates displays correctly
     player.ready(function(){
       if (this.tag && this.options_['autoplay'] && this.paused()) {
@@ -5135,7 +5135,7 @@ vjs.Html5.prototype.createEl = function(){
       clone;
 
   // Check if this browser supports moving the element into the box.
-  // On the iPhone video will break if you move the element,
+  // On the iPhone vedeo will break if you move the element,
   // So we have to create a brand new element.
   if (!el || this.features['movingMediaElementInDOM'] === false) {
 
@@ -5170,7 +5170,7 @@ vjs.Html5.prototype.createEl = function(){
   // jenniisawesome = true;
 };
 
-// Make video events trigger player events
+// Make vedeo events trigger player events
 // May seem verbose here, but makes other APIs possible.
 vjs.Html5.prototype.setupTriggers = function(){
   for (var i = vjs.Html5.Events.length - 1; i >= 0; i--) {
@@ -5257,7 +5257,7 @@ vjs.Html5.prototype.supportsFullScreen = function(){
 vjs.Html5.prototype.enterFullScreen = function(){
   var video = this.el_;
   if (video.paused && video.networkState <= video.HAVE_METADATA) {
-    // attempt to prime the video element for programmatic access
+    // attempt to prime the vedeo element for programmatic access
     // this isn't necessary on the desktop but shouldn't hurt
     this.el_.play();
 
@@ -5932,9 +5932,9 @@ vjs.MediaLoader = vjs.Component.extend({
 /**
  * @fileoverview Text Tracks
  * Text tracks are tracks of timed text events.
- * Captions - text displayed over the video for the hearing impared
- * Subtitles - text displayed over the video for those who don't understand langauge in the video
- * Chapters - text displayed in a menu allowing the user to jump to particular points (chapters) in the video
+ * Captions - text displayed over the vedeo for the hearing impared
+ * Subtitles - text displayed over the vedeo for those who don't understand langauge in the vedeo
+ * Chapters - text displayed in a menu allowing the user to jump to particular points (chapters) in the vedeo
  * Descriptions (not supported yet) - audio descriptions that are read back to the user by a screen reading device
  */
 
@@ -6239,7 +6239,7 @@ vjs.TextTrack.prototype.mode = function(){
  */
 vjs.TextTrack.prototype.adjustFontSize = function(){
     if (this.player_.isFullScreen) {
-        // Scale the font by the same factor as increasing the video width to the full screen window width.
+        // Scale the font by the same factor as increasing the vedeo width to the full screen window width.
         // Additionally, multiply that factor by 1.4, which is the default font size for
         // the caption track (from the CSS)
         this.el_.style.fontSize = screen.width / this.player_.width() * 1.4 * 100 + '%';
@@ -6263,7 +6263,7 @@ vjs.TextTrack.prototype.createEl = function(){
  * Show: Mode Showing (2)
  * Indicates that the text track is active. If no attempt has yet been made to obtain the track's cues, the user agent will perform such an attempt momentarily.
  * The user agent is maintaining a list of which cues are active, and events are being fired accordingly.
- * In addition, for text tracks whose kind is subtitles or captions, the cues are being displayed over the video as appropriate;
+ * In addition, for text tracks whose kind is subtitles or captions, the cues are being displayed over the vedeo as appropriate;
  * for text tracks whose kind is descriptions, the user agent is making the cues available to the user in a non-visual fashion;
  * and for text tracks whose kind is chapters, the user agent is making available to the user a mechanism by which the user can navigate to any point in the media resource by selecting a cue.
  * The showing by default state is used in conjunction with the default attribute on track elements to indicate that the text track was enabled due to that attribute.
@@ -6517,7 +6517,7 @@ vjs.TextTrack.prototype.update = function(){
           }
 
           // No earlier cues should have an active start time.
-          // Nevermind. Assume first cue could have a duration the same as the video.
+          // Nevermind. Assume first cue could have a duration the same as the vedeo.
           // In that case we need to loop all the way back to the beginning.
           // if (reverse && cue.startTime) { break; }
 
@@ -7033,7 +7033,7 @@ if (typeof window.JSON !== 'undefined' && window.JSON.parse === 'function') {
 }
 /**
  * @fileoverview Functions for automatically setting up a player
- * based on the data-setup attribute of the video tag
+ * based on the data-setup attribute of the vedeo tag
  */
 
 // Automatically set up any tags that have a data-setup attribute
@@ -7063,7 +7063,7 @@ vjs.autoSetup = function(){
             // If empty string, make it a parsable json object.
             options = vjs.JSON.parse(options || '{}');
 
-            // Create new video.js instance.
+            // Create new vedeo.js instance.
             player = videojs(vid, options);
           }
         }
@@ -7095,10 +7095,10 @@ if (document.readyState === 'complete') {
 }
 
 // Run Auto-load players
-// You have to wait at least once in case this script is loaded after your video in the DOM (weird behavior only with minified version)
+// You have to wait at least once in case this script is loaded after your vedeo in the DOM (weird behavior only with minified version)
 vjs.autoSetupTimeout(1);
 /**
- * the method for registering a video.js plugin
+ * the method for registering a vedeo.js plugin
  *
  * @param  {String} name The name of the plugin
  * @param  {Function} init The function that is run when the player inits

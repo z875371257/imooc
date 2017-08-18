@@ -38,14 +38,14 @@
 			</div>
 	
 	<div class='tab-nav js-tabNav clearfix'>
-		<a href='/course/class' data-type='all' class='navitem navitemall active'>
+		<a href='/course/class' data-type='all' class='navitem navitemall @if(!$c) active @endif'>
 			<i class='navicon all'><img src="/homes/images/5.png"></i>
 			<span class='navtext'>全部职业路径</span>
 			<div class='navbot'></div>
 		</a>
 		@foreach($res as $k=>$v)
 
-		<a href='/course/class?c={{$v->cid}}' data-type='fe' class='navitem '>
+		<a href='/course/class?c={{$v->cid}}' data-type='fe' class='navitem @if($c==$v->cid) active @endif '>
 			<i class='navicon fe'><img src="/homes/images/{{$k}}.png"></i>
 			<span class='navtext'>{{$v->cname}}</span>
 			<div class='navbot'></div>

@@ -114,7 +114,7 @@
                                 <i class="triangle">
 
                                     <div class="chapter-introubox">
-                                        <div class="chapter-content" r>{{$v->description}}</div>
+                                        <div class="chapter-content">{{$v->description}}</div>
                                     </div>
                                 </i>
                             </div>
@@ -122,24 +122,18 @@
                     </h3>
                     <!-- 章节标题 end -->
                     <!-- 章节小节 -->
+                    <?php $video = DB::table('vedeo')->where('sid', $v->sid)->get() ?>
                     <ul class="video">
+                        @foreach($video as $k=>$v)
                         <li data-media-id="15295">
-                            <a href='/video/15295' class="J-media-item">
+                            <a href='/vedeo/{{$v->vid}}' class="J-media-item">
                                 <i class="type"><img width="14px" src="/homes/images/player.png" alt=""></i>
-                                    1-1 课程介绍 
+                                    {{$v->title}}
                                 (03:12)
                                 <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
                             </a>
                         </li>
-                        <li data-media-id="15294">
-                            <a href='/video/15294' class="J-media-item">
-                                    <i class="type"><img width="14px" src="/homes/images/player.png" alt=""></i>
-                                    1-2 案例展示 
-                                (03:23)
-                                                                        
-                                <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
-                            </a>
-                        </li>
+                            @endforeach
                     </ul>
                     <!-- 章节小节 end -->
                 </div>
@@ -159,13 +153,15 @@
 
                 $('.chapter').each(function(){
                     $(this).click(function(){
+
+                        // 打开关闭
                         var arrs = $(this).find('.video').css('display');
                         if(arrs == 'none'){
                             $(this).find('.video').css('display','block');
                         }else {
                             $(this).find('.video').css('display','none');
                         }
-                    })
+                     })
                 })
             </script>
             <!-- 课程章节 end -->

@@ -19,12 +19,12 @@ class VedeoController extends Controller
      */
     public function index(Request $request)
     {
-        //底部管理列表页
-        $section = DB::table('section')
+        //视频管理
+        $vedeo = DB::table('vedeo')
                       ->where('title','like','%'.$request->input('fx').'%')
                       ->paginate(3);
 
-        return view('admin.section.index',compact('section','request'));
+        return view('admin.vedeo.index',compact('vedeo','request'));
     }
 
     /**
@@ -42,7 +42,7 @@ class VedeoController extends Controller
 
         $data = DB::table('course_cate')->distinct()->lists('genera');
 
-        return view('admin.video.add',compact('arr','data'));
+        return view('admin.vedeo.add',compact('arr','data'));
 
     }
 
@@ -97,12 +97,46 @@ class VedeoController extends Controller
 
     public function store(Request $request)
     {
+        $res = $request->except('_token','genera','vurl');
+        $res['ctime'] = time();
 
-        $res = $request->except('_token','genera');
+         if (  $request->hasFile('vurl')) {
+        //  获取上传文件的后缀名  $suffix
+            $suffix = $request->file('vurl')->getClientOriginalExtension();
 
-        $data = DB::table('section')->insert($res);
+        //  $fileName 给上传文件起名字
+            $fileName = time().rand(1111,9999) . '.'.$suffix;
+
+        //  移动上传文件到 uplocads/vedeo目录
+            $moves =  $request->file('vurl')->move('./uploads/vedeo/', $fileName );
+
+        //  视频路径
+            $savePath = '/uploads/vedeo/'.$fileName;
+
+        //  保存路径到数据库中
+            $res['vurl'] = $savePath;
+        }
+
+        if (  $request->hasFile('vpic')) {
+        //  获取上传文件的后缀名  $suffix
+            $suffixs = $request->file('vpic')->getClientOriginalExtension();
+
+        //  $fileName 给上传文件起名字
+            $fileNames = time().rand(1111,9999) . '.'.$suffixs;
+
+        //  移动上传文件到 uplocads/vedeo目录
+            $movess =  $request->file('vpic')->move('./uploads/', $fileNames );
+
+        //  视频路径
+            $savePaths = '/uploads/'.$fileNames;
+
+        //  保存路径到数据库中
+            $res['vpic'] = $savePaths;
+        }
+
+        $data = DB::table('vedeo')->insert($res);
         if ($data) {
-            return redirect('/admin/section/create')->with('success', '添加成功');
+            return redirect('/admin/vedeo/create')->with('success', '添加成功');
         } else {
             return back()->with('errors', '添加失败');
         }

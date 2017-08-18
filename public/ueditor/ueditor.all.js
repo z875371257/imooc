@@ -11144,7 +11144,7 @@ UE.commands['insertimage'] = {
             });
         }
 
-        if (img && /img/i.test(img.tagName) && (img.className != "edui-faked-video" || img.className.indexOf("edui-upload-video")!=-1) && !img.getAttribute("word_img")) {
+        if (img && /img/i.test(img.tagName) && (img.className != "edui-faked-vedeo" || img.className.indexOf("edui-upload-vedeo")!=-1) && !img.getAttribute("word_img")) {
             var first = opt.shift();
             var floatStyle = first['floatStyle'];
             delete first['floatStyle'];
@@ -12012,7 +12012,7 @@ UE.plugins['link'] = function(){
             //判断如果是视频的话连接不可用
             //fix 853
             var img = this.selection.getRange().getClosedNode(),
-                flag = img && (img.className == "edui-faked-video" || img.className.indexOf("edui-upload-video")!=-1);
+                flag = img && (img.className == "edui-faked-vedeo" || img.className.indexOf("edui-upload-vedeo")!=-1);
             return flag ? -1 : 0;
         }
     };
@@ -17622,7 +17622,7 @@ UE.plugins['autofloat'] = function() {
 };
 
 
-// plugins/video.js
+// plugins/vedeo.js
 /**
  * video插件， 为UEditor提供视频插入支持
  * @file
@@ -17664,22 +17664,22 @@ UE.plugins['video'] = function (){
             case 'video':
                 var ext = url.substr(url.lastIndexOf('.') + 1);
                 if(ext == 'ogv') ext = 'ogg';
-                str = '<video' + (id ? ' id="' + id + '"' : '') + ' class="' + classname + ' video-js" ' + (align ? ' style="float:' + align + '"': '') +
+                str = '<vedeo' + (id ? ' id="' + id + '"' : '') + ' class="' + classname + ' vedeo-js" ' + (align ? ' style="float:' + align + '"': '') +
                     ' controls preload="none" width="' + width + '" height="' + height + '" src="' + url + '" data-setup="{}">' +
-                    '<source src="' + url + '" type="video/' + ext + '" /></video>';
+                    '<source src="' + url + '" type="vedeo/' + ext + '" /></vedeo>';
                 break;
         }
         return str;
     }
 
     function switchImgAndVideo(root,img2video){
-        utils.each(root.getNodesByTagName(img2video ? 'img' : 'embed video'),function(node){
+        utils.each(root.getNodesByTagName(img2video ? 'img' : 'embed vedeo'),function(node){
             var className = node.getAttr('class');
-            if(className && className.indexOf('edui-faked-video') != -1){
+            if(className && className.indexOf('edui-faked-vedeo') != -1){
                 var html = creatInsertStr( img2video ? node.getAttr('_url') : node.getAttr('src'),node.getAttr('width'),node.getAttr('height'),null,node.getStyle('float') || '',className,img2video ? 'embed':'image');
                 node.parentNode.replaceChild(UE.uNode.createElement(html),node);
             }
-            if(className && className.indexOf('edui-upload-video') != -1){
+            if(className && className.indexOf('edui-upload-vedeo') != -1){
                 var html = creatInsertStr( img2video ? node.getAttr('_url') : node.getAttr('src'),node.getAttr('width'),node.getAttr('height'),null,node.getStyle('float') || '',className,img2video ? 'video':'image');
                 node.parentNode.replaceChild(UE.uNode.createElement(html),node);
             }
@@ -17765,7 +17765,7 @@ UE.plugins['video'] = function (){
             var html = [],id = 'tmpVedio', cl;
             for(var i=0,vi,len = videoObjs.length;i<len;i++){
                 vi = videoObjs[i];
-                cl = (type == 'upload' ? 'edui-upload-video video-js vjs-default-skin':'edui-faked-video');
+                cl = (type == 'upload' ? 'edui-upload-vedeo vedeo-js vjs-default-skin':'edui-faked-vedeo');
                 html.push(creatInsertStr( vi.url, vi.width || 420,  vi.height || 280, id + i, null, cl, 'image'));
             }
             me.execCommand("inserthtml",html.join(""),true);
@@ -17779,7 +17779,7 @@ UE.plugins['video'] = function (){
         },
         queryCommandState : function(){
             var img = me.selection.getRange().getClosedNode(),
-                flag = img && (img.className == "edui-faked-video" || img.className.indexOf("edui-upload-video")!=-1);
+                flag = img && (img.className == "edui-faked-vedeo" || img.className.indexOf("edui-upload-vedeo")!=-1);
             return flag ? 1 : 0;
         }
     };
@@ -27807,7 +27807,7 @@ UE.ui = baidu.editor.ui = {};
         'searchreplace':'~/dialogs/searchreplace/searchreplace.html',
         'map':'~/dialogs/map/map.html',
         'gmap':'~/dialogs/gmap/gmap.html',
-        'insertvideo':'~/dialogs/video/video.html',
+        'insertvideo':'~/dialogs/vedeo/vedeo.html',
         'help':'~/dialogs/help/help.html',
         'preview':'~/dialogs/preview/preview.html',
         'emotion':'~/dialogs/emotion/emotion.html',
@@ -28877,7 +28877,7 @@ UE.ui = baidu.editor.ui = {};
                         dialogs = editor.ui._dialogs;
                     if (img && img.tagName == 'IMG') {
                         var dialogName = 'insertimageDialog';
-                        if (img.className.indexOf("edui-faked-video") != -1 || img.className.indexOf("edui-upload-video") != -1) {
+                        if (img.className.indexOf("edui-faked-vedeo") != -1 || img.className.indexOf("edui-upload-vedeo") != -1) {
                             dialogName = "insertvideoDialog"
                         }
                         if (img.className.indexOf("edui-faked-webapp") != -1) {

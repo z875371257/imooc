@@ -22,11 +22,11 @@
 			<p class="smalle-title">按方向:</p>
 	        <div class="cato-nav-row">
 	            <ul class="">
-	                <li class="cato-nav-item on">
+	                <li class="cato-nav-item @if(!$f && !$c) on @endif">
 	                    <a href="/course/coding" id="cato">全部</a>
 	                </li>
 					@foreach($res as $k=>$v)
-					<li class="cato-nav-item ">
+					<li class="cato-nav-item @if($f == $v->cid) on @endif">
 	                    <a href="/course/coding?f={{$v->cid}}" data-ct="fe">{{$v->cname}}</a>
 	                </li>
 					@endforeach
@@ -38,7 +38,7 @@
 	        <div class="cato-nav-row">
 	            <ul class="">
 					@foreach($label as $k=>$v)
-					<li class="cato-nav-item ">
+					<li class="cato-nav-item @if($c == $v->titles) on @endif">
 	                    <a href="/course/coding?c={{$v->titles}}" data-ct="html">{{$v->titles}}</a>
 	                </li>
 					@endforeach

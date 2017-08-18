@@ -30,7 +30,7 @@
         @endif
 
         <div class="mws-panel-body no-padding">
-                <form action="/admin/section" method='post' enctype='multipart/form-data' class="mws-form">
+                <form action="/admin/vedeo" method='post' enctype='multipart/form-data' class="mws-form">
 
                 <div class="mws-form-row">
                     <label class="mws-form-label">所属大类:</label>
@@ -66,7 +66,7 @@
                 <div class="mws-form-row">
                     <label class="mws-form-label">所属章节</label>
                     <div class="mws-form-item">
-                        <select class="large small" name="s_id" id="section" >
+                        <select class="large small" name="sid" id="section" >
 
                         </select>
                     </div>
@@ -76,6 +76,13 @@
                     <label class="mws-form-label">视频标题:</label>
                     <div class="mws-form-item">
                         <input type="text" class="small" name='title'>
+                    </div>
+                </div>
+
+                <div class="mws-form-row">
+                    <label class="mws-form-label">视频封面图</label>
+                    <div class="mws-form-item">
+                        <input type="file" class="small" name='vpic'>
                     </div>
                 </div>
 
@@ -132,7 +139,7 @@
         function secChange(obj)
         {
 //            alert($(obj).val());
-            $.post('/admin/videos/ajaxs', {'_token':'{{ csrf_token() }}', 'id':$(obj).val()},function(data){
+            $.post('/admin/vedeos/ajaxs', {'_token':'{{ csrf_token() }}', 'id':$(obj).val()},function(data){
                 console.log(data);
                 var arr = ''
                 if(data){

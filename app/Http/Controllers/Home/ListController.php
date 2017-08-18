@@ -37,11 +37,13 @@ class ListController extends Controller
                $type = DB::select('select distinct(cname) from mk_course_cate where path REGEXP  "0,.,." and genera = 1');
         }
 
-        $r = $request->input('fx');
+        $fx = $request->input('fx');
+        $c = $request->input('c');
+        $types = $request->input('type');
 
           // 方向
         $direction = DB::select("select cid,cname from mk_course_cate where pid=0 and genera=1");
-        return view('home.list', compact('direction','classify','type','courses','request','r'));
+        return view('home.list', compact('direction','classify','type','courses','request','fx','c','types'));
     }
 
     public function detail(Request $request)
@@ -49,7 +51,7 @@ class ListController extends Controller
         $id = $request->input('c');
         $res = DB::table('course')->where('id', $id)->first();
 
-        $section = DB::select("select s.title,s.description from mk_course c inner join mk_section s on c.id = s.course_id where c.id = $id");
+        $section = DB::select("select s.title,s.description,s.sid from mk_course c inner join mk_section s on c.id = s.course_id where c.id = $id");
 
         return view('home.listDetail',compact('res','section'));
     }

@@ -705,7 +705,7 @@ panel-footer all could be select use not necessary
   font-weight: normal;
   font-style: normal;
 }
-/*.vjs-icon-pause, .video-js .vjs-play-control.vjs-playing {
+/*.vjs-icon-pause, .vedeo-js .vjs-play-control.vjs-playing {
    width: 16px;
   cursor: pointer;
   background: url(../images/727158eac1ba4472a468eee5131dce55.gif)50% 50% / 16px 16px no-repeat;
@@ -725,7 +725,7 @@ panel-footer all could be select use not necessary
   background: url(../images/8549bb06482c47c3ab95a8d9fcffff6e.gif) no-repeat;
   background-position: center;
 }
-/*.vjs-icon-volume-mute, .video-js .vjs-mute-control.vjs-vol-0:hover,*/
+/*.vjs-icon-volume-mute, .vedeo-js .vjs-mute-control.vjs-vol-0:hover,*/
 .video-js .vjs-volume-menu-button.vjs-vol-0:hover {
   font-family: VideoJS;
   font-weight: normal;
@@ -1227,10 +1227,10 @@ body.vjs-full-window {
   width: 12em;
 }
 /*
-.video-js .vjs-menu-button-inline:hover,
-.video-js .vjs-menu-button-inline:focus,
-.video-js .vjs-menu-button-inline.vjs-slider-active,
-.video-js.vjs-no-flex .vjs-menu-button-inline {
+.vedeo-js .vjs-menu-button-inline:hover,
+.vedeo-js .vjs-menu-button-inline:focus,
+.vedeo-js .vjs-menu-button-inline.vjs-slider-active,
+.vedeo-js.vjs-no-flex .vjs-menu-button-inline {
   width: 12em; }*/
 .video-js .vjs-menu-button-inline.vjs-slider-active {
   -webkit-transition: none;
@@ -1458,8 +1458,8 @@ body.vjs-full-window {
 /* If we let the font size grow as much as everything else, the current time tooltip ends up
  ginormous. If you'd like to enable the current time tooltip all the time, this should be disabled
  to avoid a weird hitch when you roll off the hover.
-.video-js .vjs-progress-control:hover .vjs-mouse-display:after,
-.video-js .vjs-progress-control:hover .vjs-play-progress:after  隐藏 mouse当前进度时间*/
+.vedeo-js .vjs-progress-control:hover .vjs-mouse-display:after,
+.vedeo-js .vjs-progress-control:hover .vjs-play-progress:after  隐藏 mouse当前进度时间*/
 .video-js .vjs-progress-control:hover .vjs-mouse-display:after {
   display: block;
   font-size: 12px;
@@ -1479,7 +1479,7 @@ body.vjs-full-window {
   height: 2px;
   top:0px;*/
 }
-/*.video-js .vjs-slider{
+/*.vedeo-js .vjs-slider{
   height: 8px;
 
 }*/
@@ -2121,7 +2121,7 @@ video::-webkit-media-text-track-display {
   padding: 20px 24px;
   z-index: 1;
 }
-/*video*/
+/*vedeo*/
 .rl-modal {
   position: fixed;
   background: #fff;

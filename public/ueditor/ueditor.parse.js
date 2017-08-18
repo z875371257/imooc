@@ -991,9 +991,9 @@ UE.parse.register('vedio',function(utils){
     document.createElement('video');document.createElement('audio');
     if(video.length || audio.length){
         var sourcePath = utils.removeLastbs(this.rootPath),
-            jsurl = sourcePath + '/third-party/video-js/video.js',
-            cssurl = sourcePath + '/third-party/video-js/video-js.min.css',
-            swfUrl = sourcePath + '/third-party/video-js/video-js.swf';
+            jsurl = sourcePath + '/third-party/vedeo-js/vedeo.js',
+            cssurl = sourcePath + '/third-party/vedeo-js/vedeo-js.min.css',
+            swfUrl = sourcePath + '/third-party/vedeo-js/vedeo-js.swf';
 
         if(window.videojs) {
             videojs.autoSetup();

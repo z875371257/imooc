@@ -35,8 +35,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
     Route::post('section/ajaxs', 'SectionController@ajaxs');
 
     //   章节视频模块
-    Route::resource('video', 'VedeoController');
-    Route::post('videos/ajaxs', 'VedeoController@ajaxs');
+    Route::resource('vedeo', 'VedeoController');
+    Route::post('vedeos/ajaxs', 'VedeoController@ajaxs');
 
     //    后台用户模块
     Route::resource('user', 'UserController');  //后台用户资源路由
@@ -79,6 +79,9 @@ Route::group(['namespace'=>'Home'],function(){
     Route::get('coding/detail', 'CodingController@detail');
     Route::get('coding/chapter', 'CodingController@chapter');
 
+    // 视频播放
+    Route::get('vedeo/{id}', 'VedeoController@index');
+
     //购物车
     Route::get('cart','CartController@index')->name('cart');
     Route::get('addCart/{id}','CartController@addCart');
@@ -87,6 +90,7 @@ Route::group(['namespace'=>'Home'],function(){
     //订单
     Route::get('order','OrderController@index');
     Route::get('doOrder','OrderController@doOrder');
+
     // 底部
     Route::group(['prefix' => 'about'], function () {
         //底部链接

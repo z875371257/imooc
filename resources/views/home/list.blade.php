@@ -13,15 +13,15 @@
                                 </span>
                             <div class="bd fx1">
                                 <ul >
-                                    <li class="course-nav-item on">
+                                    <li class="course-nav-item @if(!$fx) on @endif">
                                         <a href="/course/list">
                                             全部
                                         </a>
                                     </li>
                                     <!-- 方向  -->
                                     @foreach($direction as $k=>$v)
-                                        <li class="course-nav-item">
-                                            <a target="_blank" href="/course/list?fx={{$v->cid}}" data-ct="photo" >
+                                        <li class="course-nav-item  @if($v->cid==$fx) on   @endif">
+                                            <a  href="/course/list?fx={{$v->cid}}" data-ct="photo" >
                                                 {{$v->cname}}
                                             </a>
                                         </li>
@@ -36,13 +36,13 @@
                                 </span>
                             <div class="bd">
                                 <ul class="">
-                                    <li class="course-nav-item on">
+                                    <li class="course-nav-item @if(!$c) on @endif">
                                         <a href="/course/list?">
                                             全部
                                         </a>
                                     </li>
                                     @foreach($classify as $k=>$v)
-                                        <li class="course-nav-item" >
+                                        <li class="course-nav-item @if($v->cid == $c) on @endif  " >
                                             <a href="/course/list?fx={{$v->pid}}&c={{$v->cid}}" data-id=7 data-ct=html>
                                                 {{$v->cname}}
                                             </a>
@@ -57,13 +57,13 @@
                                 </span>
                             <div class="bd">
                                 <ul class="">
-                                    <li class="course-nav-item on">
+                                    <li class="course-nav-item @if(!$types) on @endif">
                                         <a href="/course/list">
                                             全部
                                         </a>
                                     </li>
                                     @foreach($type as $k=>$v)
-                                        <li class="course-nav-item ">
+                                        <li class="course-nav-item @if($types == $v->cname) on @endif">
                                             <a href="/course/list?type={{$v->cname}}">
                                                 {{$v->cname}}
                                             </a>
@@ -79,7 +79,6 @@
         <script>
             $(function(){
                 $('.fx1 .course-nav-item').each(function(){
-
                     $(this).click(function(){
 
                         var dj = $(this);
@@ -87,14 +86,8 @@
                         var tj =  dj.addClass('on');
 
                         var adds =  dj.siblings().removeClass('on');
-
                     })
-
-
-
                 })
-
-
             })
 
         </script>

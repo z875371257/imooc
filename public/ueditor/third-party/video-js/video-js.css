@@ -7,8 +7,8 @@ Create your own skin at http://designer.videojs.com
 ================================================================================
 The main class name for all skin-specific styles. To make your own skin,
 replace all occurances of 'vjs-default-skin' with a new name. Then add your new
-skin name to your video tag instead of the default skin.
-e.g. <video class="video-js my-skin-name">
+skin name to your vedeo tag instead of the default skin.
+e.g. <vedeo class="vedeo-js my-skin-name">
 */
 .vjs-default-skin {
   color: #cccccc;
@@ -77,7 +77,7 @@ The default control bar that is a container for most of the controls.
   /* Start hidden */
   display: none;
   position: absolute;
-  /* Place control bar at the bottom of the player box/video.
+  /* Place control bar at the bottom of the player box/vedeo.
      If you want more margin below the control bar, add more height. */
   bottom: 0;
   /* Use left/right to stretch to 100% width of player div */
@@ -89,7 +89,7 @@ The default control bar that is a container for most of the controls.
   background-color: #07141e;
   background-color: rgba(7, 20, 30, 0.7);
 }
-/* Show the control bar only once the video has started playing */
+/* Show the control bar only once the vedeo has started playing */
 .vjs-default-skin.vjs-has-started .vjs-control-bar {
   display: block;
   /* Visibility needed to make sure things hide in older browsers too. */
@@ -102,7 +102,7 @@ The default control bar that is a container for most of the controls.
   -o-transition: visibility 0.1s, opacity 0.1s;
   transition: visibility 0.1s, opacity 0.1s;
 }
-/* Hide the control bar when the video is playing and the user is inactive  */
+/* Hide the control bar when the vedeo is playing and the user is inactive  */
 .vjs-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
   display: block;
   visibility: hidden;
@@ -406,7 +406,7 @@ easily in the skin designer. http://designer.videojs.com/
 .vjs-default-skin.vjs-controls-disabled .vjs-big-play-button {
   display: none;
 }
-/* Hide when video starts playing */
+/* Hide when vedeo starts playing */
 .vjs-default-skin.vjs-has-started .vjs-big-play-button {
   display: none;
 }
@@ -617,10 +617,10 @@ easily in the skin designer. http://designer.videojs.com/
 /*
 REQUIRED STYLES (be careful overriding)
 ================================================================================
-When loading the player, the video tag is replaced with a DIV,
-that will hold the video tag or object tag for other playback methods.
-The div contains the video playback element (Flash or HTML5) and controls,
-and sets the width and height of the video.
+When loading the player, the vedeo tag is replaced with a DIV,
+that will hold the vedeo tag or object tag for other playback methods.
+The div contains the vedeo playback element (Flash or HTML5) and controls,
+and sets the width and height of the vedeo.
 
 ** If you want to add some kind of border/padding (e.g. a frame), or special
 positioning, use another containing element. Otherwise you risk messing up
@@ -658,7 +658,7 @@ control positioning and full window mode. **
   user-select: none;
 }
 /* Playback technology elements expand to the width/height of the containing div
-    <video> or <object> */
+    <vedeo> or <object> */
 .video-js .vjs-tech {
   position: absolute;
   top: 0;

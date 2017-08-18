@@ -56,6 +56,7 @@ class CartController extends Controller
                            DB::table('cart')->insert(['uid'=>$uid,'cid'=>$id,'price'=>$good['price'],'addtime'=>time()]);
 
                            Cart::add($good['id'],$good['title'],1,$good['price'],array('pic'=>$good['pic']));
+
                           }
 
                           return redirect()->route('cart');

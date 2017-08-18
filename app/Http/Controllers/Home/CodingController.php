@@ -29,7 +29,10 @@ class CodingController extends Controller
                 $coding = DB::select("select * from mk_course c inner join mk_course_cate cc on c.pid = cc.cid where generas = ?", [3]);
         }
 
-        return view('home.coding',compact('class','res','label','coding'));
+        $c = $request->input('c');
+        $f = $request->input('f');
+
+        return view('home.coding',compact('class','res','label','coding','c','f'));
     }
 
     public function detail(Request $request)
