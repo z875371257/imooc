@@ -10684,3 +10684,4 @@
 [2017-08-18 21:57:24]insert into `mk_suggest` (`content`, `contact`, `url`) values (?, ?, ?)
 [2017-08-18 22:00:34]insert into `mk_suggest` (`content`, `contact`, `url`) values (?, ?, ?)
 [2017-08-18 22:00:48]insert into `mk_suggest` (`content`, `contact`, `url`) values (?, ?, ?)
+[2017-08-18 22:54:46]select * from `mk_admin_user` where `username` = ? limit 1
