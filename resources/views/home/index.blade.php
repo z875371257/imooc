@@ -96,17 +96,16 @@
                 </li>
 
                 <nav class="main_nav">
-<<<<<<< HEAD
-                    <li class="header-signin" style="margin-left: 20px;">
-                        <a href="#0" class="cd-signin" id="js-signin-btn">登录</a>
-=======
+
+                   
+
                     <li class="header-signin">
-                        @if(!session()->get('user'))
+                        
                         <a href="#0" class="cd-signin" id="js-signin-btn">登录</a>
-                            @else
-                            <a href="#0" class="cd-signin" id="js-signin-btn">{{session()->get('user')->username}}</a>
-                            @endif
->>>>>>> origin/yuanqiusheng
+                            
+                            <a href="#0" class="cd-signin" id="js-signin-btn"></a>
+                          
+
                     </li>
                     <li class="header-signup">
                         <a href="#0" class="cd-signup" id="js-signup-btn">注册</a>
@@ -120,7 +119,7 @@
             <div id="login-area">
                 <ul class="clearfix logined">
                     <li class="shop-cart" id="shop-cart">
-                        <a href="http://order.imooc.com/pay/cart" class="shop-cart-icon" target="_blank">
+                        <a href="/cart" class="shop-cart-icon" target="_blank">
                             <span class="icon-shopping-cart js-endcart"></span>
                             <span class="shopping_icon js-cart-num" data-ordernum="0" data-cartnum="0" style="display: none">0</span>
                             <span>购物车</span>

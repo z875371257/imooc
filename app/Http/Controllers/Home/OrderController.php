@@ -51,7 +51,7 @@ class OrderController extends Controller
         //获取用户的ID
         $uid = DB::table('home_user')->where('username',session()->get('user')->username)->value('uid');
         //把订单插入数据库中
-        DB::table('order')->insert([])
+        DB::table('order')->insert([]);
 
         return back();
 

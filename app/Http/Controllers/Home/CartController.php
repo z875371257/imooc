@@ -13,7 +13,8 @@ class CartController extends Controller
 {
     public function index()
     {  
-       if(session()->get('user')->username){
+
+       if(session()->get('users')->username){
 
         //购物车全部记录
         $carts = Cart::content();
@@ -35,7 +36,8 @@ class CartController extends Controller
     
     //加入购物车
     public function addCart($id)
-    { 
+    {   
+        
         $goods = DB::table('course')->where('id',$id)->first();
       
         $good = (array)$goods;
@@ -45,9 +47,10 @@ class CartController extends Controller
         if($carts != null){
             if($carts->cid == $id){
 
-<<<<<<< HEAD
+
                 return back();
-            } }else {
+             } 
+           }else {
                
 
                if(session()->get('user')->username){
@@ -65,20 +68,13 @@ class CartController extends Controller
 
              return redirect()->route('cart');
 
-            }
-
-=======
-
-        }
-        if(session()->get('user')->username){
->>>>>>> 0e53deb14ced9dec0b044851b30f19aae3828ebb
+         }
 
 
 
-         
-    }
-
-    //清空购物车操作
+     }
+      
+  //清空购物车操作
     public function delCart($id)
     {
         $rowId = $id;
@@ -92,4 +88,11 @@ class CartController extends Controller
 
         return back();
     }
+    
+
+
+         
 }
+
+    
+

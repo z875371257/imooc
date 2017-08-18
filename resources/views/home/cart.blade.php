@@ -14,7 +14,7 @@
 	<div class="cart-header-warp clearfix">
 		<div class="cart-title left clearfix">
 			<h1 class="left">我的购物车</h1>
-			@if(!empty(session()->get('user')->username))
+			@if(!empty(session()->get('users')->username))
 			<div class="left js-number-box-cart">
 		共<span class="js-coures-num">{{$count}}</span>门<span class="js-choice-num"></span>
 	</div>
@@ -30,7 +30,7 @@
 		</div>
 	</div>
 </div>
-@if(!empty(session()->get('user')->username))
+@if(!empty(session()->get('users')->username))
   <div class="cart-body" id="cartBody">
 		<div class="cart-body-title clearfix">
 
