@@ -4,10 +4,10 @@ namespace App\Http\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Home_User extends Model
+class Details extends Model
 {
-//  User 用户模型 关联的那张表
-    protected $table = 'home_user';
+    //  User 用户模型 关联的那张表
+    protected $table = 'details';
 
 //  表主键
     protected $primaryKey = 'id';
@@ -21,12 +21,9 @@ class Home_User extends Model
 //  黑名单
     protected $guarded = [];
 
-    /**
-     * 获取与指定用户的详情。
-     */
-    public function details()
+    public function user()
     {
-        return $this->hasOne('App\Http\Model\Details', 'home_user_id', 'id');
+        return $this->belongsTo('App\Http\Model\Home_User','home_user_id','id');
     }
-
+    
 }

@@ -14,7 +14,7 @@ class LoginController extends Controller
 {
 
 //    处理用户登录信息
-    public function login()
+    public function login(Request $request)
     {
 //        获取登录数据
 
@@ -35,9 +35,26 @@ class LoginController extends Controller
          }
 
     //    登录成功 保存信息  跳转到前台首页
+        session([ 'users'=>$user ]);
+
+
+
+         
+
+//        获取登录用户的详情  $phone = User::find(1)->phone;
+
+          $details = Home_User::find($user->id)->details;
+
+           if ($details) {
+               session([ 'details'=>$details ]);
+
+           }
+
+//            dd(session('details'));
+//            dd( session('user') );
 
             session(['users'=>$user]);
-    
+
             return redirect('/');
 
     }
@@ -50,6 +67,10 @@ class LoginController extends Controller
 
         $userInfo = $request->session()->forget('users');
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/airline
         if ($userInfo) {
 
             return redirect('/')->with('status', '退出成功');
@@ -59,6 +80,17 @@ class LoginController extends Controller
             return back()->with('error', '退出失败');
 
         }
+<<<<<<< HEAD
+=======
+
+        session(['user'=>$user]);
+        
+        return redirect('/');
+
+        // dd( session()->get('user')->username);
+        
+
+>>>>>>> origin/airline
     }
 
 
