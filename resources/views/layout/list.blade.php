@@ -5,10 +5,6 @@
     <title>
         @yield('title')
 
-        {{--{{config('web.web_title')}}--}}
-
-
-
     </title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit" />
@@ -34,7 +30,7 @@
     <link rel="stylesheet" href="/homes/css/0b9cb28d416b48c58157f6d1a364a7b5.css" type="text/css" />
     <link rel="stylesheet" href="/homes/css/common-less_1.css" type="text/css" />
     <link rel="stylesheet" href="/homes/css/moco.min.css" type="text/css" />
-    {{--<link rel="stylesheet" href="/homes/css/67dfda356a8546e3ac009aec672217c2.css" type="text/css" />--}}
+
 
     <link rel="stylesheet" href="/homes/css/126-less.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="/homes/css/main.css" />
@@ -194,6 +190,7 @@
         </div>
     </div>
 
+
 @else
 
         <div id="login-area">
@@ -248,11 +245,8 @@
                             <div class="card-top clearfix">
                                 <a href="/u/5601964" class="l" class="user-card-item js-header-avator hover" action-type="my_menu" id="header-avator" target="_self">
 
-
                                     <img src="@if(!session('details')) http://img.mukewang.com/597b0ff300016efc06950694-100-100.jpg
                                                     @else {{ session('details')->profile  }} @endif " alt="">
-
-
 
                                     <i class="myspace_remind" style="display: none;"></i>
                                     <span style="display: none;">动态提醒</span>
@@ -301,8 +295,7 @@
 
     @endif
 
-
-
+</div>
 </div>
 @section('content')
 
@@ -432,44 +425,7 @@
 <script type="text/javascript" src="/homes/js/common.js"></script>
 <script type="text/javascript" src="/homes/js/moco.min.js"></script>
 <script type="text/javascript" src="/homes/js/require.js"></script>
-<script>
-    requirejs.config({
-        urlArgs: requirejsTimestamp,
-        baseUrl: '/static/module/',
-        skipDataMain: true,
-        waitSeconds: 0,
-        paths: {
-            lib: '/static/lib',
-            socketio: '/static/lib/socket.io/1.3.6/socket.io.min.js',
-            store: '/static/lib/store/store.min.js',
-            ueditor: '/static/lib/ueditor/ueditor.final.min.js',
-            scrollbar: '/static/lib/scrollbar/jquery.scrollbar.js',
-            juicer: '/static/lib/juicer/juicer.min.js',
-            ace: '/static/lib/ace1.2.6/ace.js',
-            //ace: '/static/lib/ace/src/ace.js',
-            pagination: '/static/lib/pagination/jquery.pagination.js',
-            swfobject: '/static/lib/swfobject/2.2/swfobject.min.js',
-            uploader: '/static/lib/webuploader/0.1.5/webuploader.js',
 
-            jwplayer: '/static/lib/jwplayer/1.0.0/jwplayer.js',
-            ide: '/static/lib/ide/dest/ide.min.js',
-            autocomplete:'/static/lib/util/autocomplete.js',
-            validate:'/static/lib/util/validate.js',
-            placeholder:'/static/lib/util/placeholder.js',
-            modalbutton:'/static/lib/util/modal.button.js',
-            scrollbar: '/static/lib/scrollbar/jquery.scrollbar.js',
-            SyntaxHighlighter:'/static/lib/ueditor/third-party/SyntaxHighlighter/shCore.js',
-            socketio: '/static/lib/socket.io/1.3.6/socket.io.min.js',
-            clipbord: '/static/lib/clipboard/dist/clipboard.min.js',
-            jqueryValidate: '/static/lib/jquery-validate/jquery.validate.min.js'
-        },
-        shim: {
-            'swfobject': {
-                exports: 'swfobject'
-            }
-        }
-    });
-</script>
 
 
 <div class="cd-user-modal">

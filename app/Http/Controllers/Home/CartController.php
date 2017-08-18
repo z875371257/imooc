@@ -13,17 +13,16 @@ class CartController extends Controller
 {
     public function index()
     {  
-       if(session()->get('users')->username){
 
+       if(session()->get('users')){
         //购物车全部记录
         $carts = Cart::content();
-        // dd($carts);
         //购物车总额 不含税
         $total = Cart::subtotal();
         //购物车商品数量
         $count = Cart::count();
      
-        return view('home.cart',['carts'=>$carts,'total'=>$total]);
+        return view('home.cart',['carts'=>$carts,'total'=>$total,'count'=>$count]);
 
        } else {
 
@@ -35,32 +34,48 @@ class CartController extends Controller
     
     //加入购物车
     public function addCart($id)
-    { 
-        //判断购物车表中有没有存
-        $cart = DB::table('cart')->where('cid',$id)->first();
+    {
+       $goods = DB::table('course')->where('id',$id)->first();
 
-        if($cart['cid'] == $id){
+               $good = (array)$goods;
+               //跟商品ID查询数据库购物车表中是否存在这个商品
+               $carts = DB::table('cart')->where('cid',$id)->first();
 
+               if($carts != null){
+                   if($carts->cid == $id){
+                       return back();
+                   }
 
-        }
-        if(session()->get('users')->username){
+               }else {
+                          if(session()->get('users')->username){
 
-            /*Cart::add(array('id'=>$good['id'],'name'=>$good['title'],'price'=>$good['price'],'qty'=>1));*/
-            Cart::add($good['id'],$good['title'],1,$good['price'],array('pic'=>$good['pic']));
-        }
+                           //查询出用户的id
+                           $uid = DB::table('home_user')->where('username',session()->get('users')->username)->value('id');
 
-         return redirect()->route('cart');
+                          //把这个商品存进购物车表中
+                           DB::table('cart')->insert(['uid'=>$uid,'cid'=>$id,'price'=>$good['price'],'addtime'=>time()]);
 
-         
+                           Cart::add($good['id'],$good['title'],1,$good['price'],array('pic'=>$good['pic']));
+                          }
+
+                          return redirect()->route('cart');
+
+                   }
+
     }
 
     //清空购物车操作
     public function delCart($id)
     {
-        //移除单条购物车记录
         $rowId = $id;
-        $res = Cart::remove($rowId);
+        //从数据库移除单条信息
+        $res = Cart::get($rowId);
         
+        DB::table('cart')->where('cid',$res->id)->delete();
+        //移除单条购物车记录
+        
+        Cart::remove($rowId);
+
         return back();
     }
 }

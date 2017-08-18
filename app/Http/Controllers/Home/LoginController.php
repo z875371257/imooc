@@ -50,14 +50,9 @@ class LoginController extends Controller
 
            }
 
-//            dd(session('details'));
-//            dd( session('user') );
-
             session(['users'=>$user]);
 
 //           获取用户登录时的 url
-//        echo '<pre>';
-//        var_dump($_SERVER["HTTP_REFERER"]);die;
 
             return redirect($_SERVER["HTTP_REFERER"]);
 
@@ -68,10 +63,8 @@ class LoginController extends Controller
     {
 
 //   从session中移走用户的信息   $request->session()->forget('key');
-//        return redirect('dashboard')->with('status', 'Profile updated!');
 
-        $userInfo = $request->session()->flush();
-
+        $userInfo = $request->session()->forget('users');
 
         if ($userInfo) {
 
@@ -82,13 +75,6 @@ class LoginController extends Controller
             return back()->with('error', '退出失败');
 
         }
-
-        session(['user'=>$user]);
-        
-        return redirect('/');
-
-        // dd( session()->get('user')->username);
-        
 
     }
 
@@ -119,8 +105,7 @@ class LoginController extends Controller
             ];
         }
         return response()->json($data);
-#        return $data;
-//        return response()->json(['name' => 'Abigail', 'state' => 'CA']);
+
 
     }
 
@@ -152,10 +137,7 @@ class LoginController extends Controller
                 'msg'=>'密码不一致',
             ];
         }
-
         return response()->json($data);
-#        return $data;
-//      return response()->json(['name' => 'Abigail', 'state' => 'CA']);
 
     }
 

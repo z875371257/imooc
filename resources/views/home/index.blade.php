@@ -97,9 +97,8 @@
                 </li>
 
                 <nav class="main_nav">
-
-                    <li class="header-signin">
-                            <a href="#0" class="cd-signin" id="js-signin-btn">登录</a>
+                    <li class="header-signin" style="margin-left: 20px;">
+                        <a href="#0" class="cd-signin" id="js-signin-btn">登录</a>
                     </li>
                     <li class="header-signup">
                         <a href="#0" class="cd-signup" id="js-signup-btn">注册</a>
@@ -113,7 +112,7 @@
             <div id="login-area">
                 <ul class="clearfix logined">
                     <li class="shop-cart" id="shop-cart">
-                        <a href="http://order.imooc.com/pay/cart" class="shop-cart-icon" target="_blank">
+                        <a href="/cart" class="shop-cart-icon" target="_blank">
                             <span class="icon-shopping-cart js-endcart"></span>
                             <span class="shopping_icon js-cart-num" data-ordernum="0" data-cartnum="0" style="display: none">0</span>
                             <span>购物车</span>
@@ -137,9 +136,9 @@
                             </div>
                             <div class="more-box clearfix">
                                 <div class="l show-box">
-                                    <span class="text"><a href="http://order.imooc.com/myorder" target="_blank">我的订单中心</a></span>
+                                    <span class="text"><a href="/order" target="_blank">我的订单中心</a></span>
                                 </div>
-                                <a href="http://order.imooc.com/pay/cart" target="_blank" class="r moco-btn moco-btn-red go-cart">去购物车</a>
+                                <a href="/cart" target="_blank" class="r moco-btn moco-btn-red go-cart">去购物车</a>
                             </div>
                         </div>
                     </li>
@@ -185,7 +184,7 @@
                                             <a href="/u/5601964/courses" target="_blank"><span class="user-center-icon icon-tick"></span>我的课程</a>
                                         </li>
                                         <li class="l">
-                                            <a href="http://order.imooc.com/myorder" target="_blank"> <span class="user-center-icon icon-receipt"></span> 订单中心</a>
+                                            <a href="/order" target="_blank"> <span class="user-center-icon icon-receipt"></span> 订单中心</a>
                                             <i id="js-usercard-coupon-icon" style="display: none;"></i>
                                         </li>
                                         <li class="l">

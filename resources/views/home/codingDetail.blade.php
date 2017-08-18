@@ -2,7 +2,7 @@
 @section('title', '实战详情')
 
 		@section('content')
-
+			<link rel="stylesheet" href="/homes/css/67dfda356a8546e3ac009aec672217c2.css" type="text/css" />
 <div class="course-class-infos ">
     <div class="w pr">
 		<div class="path">
@@ -53,7 +53,7 @@
 															</div>
 
 			<div class="clearfix btnwarp">
-														<a href="javascript:;" class="js-buy-trigger buy-class-btn class-btn1 buynow-btn" data-cid="126" data-pay="0" id="buy-trigger">
+														<a href="/addCart/{{$res->id}}" class="js-buy-trigger buy-class-btn class-btn1 buynow-btn" data-cid="126" data-pay="0" id="buy-trigger">
 						<span>立即购买</span>
 					</a>
 					

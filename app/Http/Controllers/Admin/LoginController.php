@@ -32,6 +32,7 @@ class LoginController extends Controller
         $code = new Code();
         return $code->make();
     }
+
     // 验证码设置
     public function captcha($tmp)
     {
@@ -86,7 +87,7 @@ class LoginController extends Controller
 
     public function logout()
     {
-        session()->flush();
+        session()->forget('user');
         return redirect('admin/login');
     }
 
