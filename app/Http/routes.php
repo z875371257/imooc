@@ -83,6 +83,10 @@ Route::group(['namespace'=>'Home'],function(){
     Route::get('cart','CartController@index')->name('cart');
     Route::get('addCart/{id}','CartController@addCart');
     Route::get('delCart/{id}','CartController@delCart');
+
+    //订单
+    Route::get('order','OrderController@index');
+    Route::get('doOrder','OrderController@doOrder');
     // 底部
     Route::group(['prefix' => 'about'], function () {
         //底部链接

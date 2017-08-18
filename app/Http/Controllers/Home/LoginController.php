@@ -47,11 +47,9 @@ class LoginController extends Controller
     {
 
 //   从session中移走用户的信息   $request->session()->forget('key');
-//        return redirect('dashboard')->with('status', 'Profile updated!');
 
-        $userInfo = $request->session()->flush();
+        $userInfo = $request->session()->forget('users');
 
-<<<<<<< HEAD
         if ($userInfo) {
 
             return redirect('/')->with('status', '退出成功');
@@ -61,14 +59,6 @@ class LoginController extends Controller
             return back()->with('error', '退出失败');
 
         }
-=======
-        session(['user'=>$user]);
-        
-        return redirect('/');
-
-        // dd( session()->get('user')->username);
-        
->>>>>>> origin/yuanqiusheng
     }
 
 
@@ -98,8 +88,7 @@ class LoginController extends Controller
             ];
         }
         return response()->json($data);
-#        return $data;
-//        return response()->json(['name' => 'Abigail', 'state' => 'CA']);
+
 
     }
 
@@ -131,10 +120,7 @@ class LoginController extends Controller
                 'msg'=>'密码不一致',
             ];
         }
-
         return response()->json($data);
-#        return $data;
-//      return response()->json(['name' => 'Abigail', 'state' => 'CA']);
 
     }
 

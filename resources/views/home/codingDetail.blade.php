@@ -53,7 +53,7 @@
 															</div>
 
 			<div class="clearfix btnwarp">
-														<a href="javascript:;" class="js-buy-trigger buy-class-btn class-btn1 buynow-btn" data-cid="126" data-pay="0" id="buy-trigger">
+														<a href="/addCart/{{$res->id}}" class="js-buy-trigger buy-class-btn class-btn1 buynow-btn" data-cid="126" data-pay="0" id="buy-trigger">
 						<span>立即购买</span>
 					</a>
 					

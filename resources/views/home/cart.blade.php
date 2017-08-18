@@ -16,7 +16,7 @@
 			<h1 class="left">我的购物车</h1>
 			@if(!empty(session()->get('user')->username))
 			<div class="left js-number-box-cart">
-		共<span class="js-coures-num">1</span>门，已选择<span class="js-choice-num">1</span>门
+		共<span class="js-coures-num">{{$count}}</span>门<span class="js-choice-num"></span>
 	</div>
             @endif
 		</div>
@@ -30,7 +30,7 @@
 		</div>
 	</div>
 </div>
-@if(!empty(session()->get('user')->username))
+@if(!empty(session()->get('users')->username))
   <div class="cart-body" id="cartBody">
 		<div class="cart-body-title clearfix">
 
@@ -100,7 +100,7 @@
 						</li>
 						
 						<li class="li-3">
-							<span class="btn js-go-confrim">去结算</span>
+							<span class="btn js-go-confrim"><a href="/order">去结算</a></span>
 						</li>
 					</ul>
 				</div>
