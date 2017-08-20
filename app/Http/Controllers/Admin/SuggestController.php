@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\admin;
 
-use App\Http\Model\suggest;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class SuggestController extends Controller
 {
@@ -15,11 +15,15 @@ class SuggestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //意见反馈页面
-        return view('home.about.suggest');
-
+        //意见反馈页
+//       $re = DB::select('select * from mk_suggest');
+//       dd($re);
+        $res = DB::table('suggest')->where('content','like','%'.$request['search'].'%')->paginate($request->input('num',5));
+        $num = $request->input('num');
+        $search = $request->input('search');
+        return view('admin.suggest.index',compact('res','num','search'));
     }
 
     /**
@@ -30,7 +34,6 @@ class SuggestController extends Controller
     public function create()
     {
         //
-
     }
 
     /**
@@ -41,27 +44,7 @@ class SuggestController extends Controller
      */
     public function store(Request $request)
     {
-        //保存反馈记录
-//        dd($request->all());
-        $suggest = $request->except('_token');
-//        dd($suggest);
-        //保存
-        $res = Suggest::create($suggest);
-//        dd($suggest);
-        //判断
-        if(!$res){
-            //提交失败返回
-            echo "<script type='text/javascript'>alert('提交失败,请重试')</script>" ;
-            header('refresh:1;url=/suggest.php');
-//            return back();
-        }else{
-
-            echo "<script type='text/javascript'>alert('感谢你的建议，我会努力让自己变得高大上')</script>" ;
-            header('refresh:1;url=/index.php');
-            die;
-        }
-
-//       return redirect()->route('index');
+        //
     }
 
     /**
@@ -83,7 +66,12 @@ class SuggestController extends Controller
      */
     public function edit($id)
     {
-        //
+        //处理意见
+
+        $edit = DB::table("suggest")->where('id',$id)->first();
+
+
+        return view('admin/suggest/edit',compact('edit'));
     }
 
     /**
@@ -95,7 +83,16 @@ class SuggestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $update = $request->except('_token','_method');
+//        dd($update);
+        $res = DB::table('suggest')->where('id',$id)->update($update);
+        if($res){
+            return redirect('admin/suggest');
+        }else{
+            return back()->with('msg','处理失败');
+        }
+
     }
 
     /**
@@ -107,5 +104,22 @@ class SuggestController extends Controller
     public function destroy($id)
     {
         //
+        //删除一条记录
+        $res = DB::table('suggest')->where('id',$id)->delete();
+        //判断删除状态
+        if($res){
+            $data = [
+                'status' => 0,
+                'msg' => '删除成功',
+            ];
+        } else {
+            $data = [
+                'status' => 1,
+                'msg' => '删除失败',
+            ];
+        }
+
+        return $data;
     }
+
 }

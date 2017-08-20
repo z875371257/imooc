@@ -97,3 +97,17 @@
         }
         return $imgs;
     }
+
+    function suggest()
+    {
+        $count = DB::select('select count(*) from mk_suggest where status = 0')[0];
+        foreach ($count as $k=>$v)
+        {
+            return $v;
+        }
+
+
+    }
+
+
+

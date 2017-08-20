@@ -707,10 +707,10 @@
                 <form  action="/suggest" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="typeselct" name="feedtype">
-                        <span class="js-feedcheck mr20"> <span ><input  class="mr10"  value="1" type="radio"></span>内容意见 </span>
-                        <span class="js-feedcheck mr20"> <span ><input name="feedtype" class="mr10" value="2" type="radio"></span>产品建议 </span>
-                        <span class="js-feedcheck mr20"> <span ><input name="feedtype" class="mr10" value="3" type="radio"></span>技术问题 </span>
-                        <span class="js-feedcheck mr20"> <span ><input name="feedtype" class="mr10" value="0" type="radio"></span>其它 </span>
+                        <span class="js-feedcheck mr20"> <span ><input  class="mr10"  name="feedtype" value="内容意见" type="radio"></span>内容意见 </span>
+                        <span class="js-feedcheck mr20"> <span ><input  class="mr10" name="feedtype" value="产品建议" type="radio"></span>产品建议 </span>
+                        <span class="js-feedcheck mr20"> <span ><input  class="mr10" name="feedtype" value="技术问题" type="radio"></span>技术问题 </span>
+                        <span class="js-feedcheck mr20"> <span ><input  class="mr10" name="feedtype" value="其它" type="radio"></span>其它 </span>
                     </div>
                     <div class="feedback-wrap">
                         <div class="field-wrap">
@@ -732,23 +732,9 @@
 
                             </div>
                             <div class="btn-wrap">
-                                <button hidefocus="true" id="submit" class="fl" onclick="info()">提交</button>
+                                <button hidefocus="true" id="submit" class="fl" >提交</button>
                             </div>
                         </div>
-                        <script>
-                            function info()
-                            {
-                                $.post("{{url('home/suggest')}}",{ '_method':'create','_token':'{{csrf_token()}}'},function(data){
-                                    if($data == 1){
-                                        layer.msg('感谢你的建议，我会努力让自己变得高大上',{icon:5});
-                                    } else {
-                                        layer.msg('提交失败,请重试',{icon:6});
-                                    }
-                                })
-                            }
-
-                        </script>
-
 
                     </div>
 
@@ -766,7 +752,7 @@
             <h4>想及时沟通，请加慕粉QQ群！</h4>
             <h1>**加了也不让你进**</h1>
             <ul>
-                <li>慕课网软件测试讨论群: 改提建议是不是想死?</li>
+                <li>慕课网软件测试讨论群: 提建议是不是想死?</li>
                 <li>慕课网Python讨论群: 用户体验差?</li>
                 <li>慕课网IOS开发讨论群: 都是组长的锅!</li>
                 <li>慕课网安卓讨论群: 辣毁</li>
