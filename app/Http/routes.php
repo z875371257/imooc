@@ -56,6 +56,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
 
     Route::get('putfile', 'ConfController@putFile');
 
+    //意见反馈
+    Route::resource('suggest','SuggestController');
+
 
     //   订单模块
     Route::resource('order','OrderController');
@@ -73,8 +76,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
 Route::group(['namespace'=>'Home'],function(){
 
     //   前台主页
+<<<<<<< HEAD
     Route::get('/', 'IndexController@index');
     // 课程列表页
+=======
+    Route::get('/', 'IndexController@index')->name('index');
+>>>>>>> origin/cc
     Route::get('course/list', 'ListController@index');
 
     Route::get('list/detail', 'ListController@detail');

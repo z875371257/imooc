@@ -30,6 +30,7 @@ class SuggestController extends Controller
     public function create()
     {
         //
+
     }
 
     /**
@@ -46,20 +47,21 @@ class SuggestController extends Controller
 //        dd($suggest);
         //保存
         $res = Suggest::create($suggest);
-        dd($data);
+//        dd($suggest);
         //判断
-//        if($res){
-//            $data=[
-//                'status' => 1,
-//                'msg' => '感谢你的建议，我会努力让自己变得高大上',
-//            ];
-//
-//        } else {
-//            $data=[
-//                'status' => 0,
-//                 'msg' => '提交失败,请重试',
-//            ];
-//        }
+        if(!$res){
+            //提交失败返回
+            echo "<script type='text/javascript'>alert('提交失败,请重试')</script>" ;
+            header('refresh:1;url=/suggest.php');
+//            return back();
+        }else{
+
+            echo "<script type='text/javascript'>alert('感谢你的建议，我会努力让自己变得高大上')</script>" ;
+            header('refresh:1;url=/index.php');
+            die;
+        }
+
+//       return redirect()->route('index');
     }
 
     /**

@@ -65,19 +65,13 @@
     <!-- User Tools (notifications, logout, profile, change password) -->
     <div id="mws-user-tools" class="clearfix">
 
-        <!-- Notifications -->
-        <div id="mws-user-notif" class="mws-dropdown-menu">
-            <a href="#" data-toggle="dropdown" class="mws-dropdown-trigger"><i class="icon-exclamation-sign"></i></a>
 
-            <!-- Unread notification count -->
-            <span class="mws-dropdown-notif">35</span>
-        </div>
 
         <!-- Messages -->
         <div id="mws-user-message" class="mws-dropdown-menu">
-            <a href="#" data-toggle="dropdown" class="mws-dropdown-trigger"><i class="icon-envelope"></i></a>
+            <a href="{{url('/admin/suggest')}}" class="mws-dropdown-trigger"><i class="icon-envelope"></i></a>
             <!-- Unred messages count -->
-            <span class="mws-dropdown-notif">35</span>
+            <span class="mws-dropdown-notif">{{ suggest() }}</span>
         </div>
 
         <!-- User Information and functions section -->
@@ -198,6 +192,14 @@
                         <li><a href="/admin/conf">内容列表</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#"><i class="icon-user"></i>意见反馈</a>
+                    <ul class='closed'>
+
+                        <li><a href="/admin/suggest">意见反馈列表</a></li>
+                    </ul>
+                </li>
+
 
 
 
