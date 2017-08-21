@@ -26,8 +26,9 @@ class OrderController extends Controller
         $total = Cart::subtotal();
         //购物车商品数量
         $count = Cart::count();
-     
+        
         return view('home.order',['carts'=>$carts,'total'=>$total,'count'=>$count]);
+
     }
 
     //提交订单信息
@@ -77,12 +78,12 @@ class OrderController extends Controller
     public function myorder()
     {   
         if(session()->get('users')){
-           
+            
             //用户ID
             $uid = session()->get('users')->id;
             //根据用户ID查询出用户的购买订单
             $orders = DB::table('orders')->where('uid',$uid)->get();
-           
+            if($orders){
             foreach($orders as $k => $v)
             {  
                $gid = explode(',',$v->gid);
@@ -95,16 +96,35 @@ class OrderController extends Controller
             }
             
             return view('home.myorder',['orders'=>$orders,'goods'=>$goods]);
+
+           } else {
+              return view('home.myorder',['orders'=>$orders]);
+           }
         } else {
 
             return back();
         }
+
+      
 
     }
 
     //删除购买记录
     public function delOrder($id)
     {
-        return data;
+        $res = DB::table('orders')->where('oid',$id)->delete();
+       
+        if($res){
+            $data = [
+                'status'=>0,
+                'msg'=>'删除成功'
+            ];
+        }else{
+            $data = [
+                'status'=>1,
+                'msg'=>'删除失败'
+            ];
+        }
+        return $data;
     }
 }

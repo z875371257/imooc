@@ -115,194 +115,54 @@
                 <div class="moco-course-list">
                     <ul class="clearfix">
                         <div class='moco-course-wrap szcoursewrap'>
+                            @foreach($class as $k=>$v)
                             <!-- 前4个课程追加渠道统计链接 -->
-                            <a href='http://coding.imooc.com/class/95.html' target="_blank" class='szcourse-cart active'>
+                            <a href='/coding/detail?c={{$v->id}}&active={{$v->id}}' class='szcourse-cart' id="">
                                 <div class='szcourse-cart-A'>
                                     <div class='szcourse-cart-b'>
                                         <div class="szcourse-p1 clearfix">
-                                            <i class="imv2-war">
-                                            </i>
+
                                             <span>
                                                     实战课程
                                                 </span>
                                         </div>
                                         <div class="szcourse-p2">
-                                            Node.js项目的线上服务器部署与发布
+                                            {{$v->title}}
                                         </div>
                                         <div class='szcourse-p3'>
-                                            阿里云部署Node.js+MongoDB+Nginx的应用项目，打通全栈
+                                            {{$v->referral}}
                                         </div>
                                         <div class='szcourse-bottom clearfix'>
                                                 <span class='l'>
-                                                    646人在学
+                                                    {{$v->NNT}}人在学
                                                 </span>
                                             <span class='r'>
-                                                    ￥158.00
+                                                    ￥{{$v->price}}0
                                                 </span>
                                         </div>
                                     </div>
                                     <div class='szcourse-cart-o'>
                                     </div>
-                                    <div class='shizhanpic' style='background-image: url(/homes/images/58e75f2e00015c0705400300-360-202.jpg);'>
+                                    <div class='shizhanpic' style='background-image: url(/{{$v->pic}});'>
                                     </div>
                                 </div>
                                 <div class='szcourse-cart-B'>
                                     <div>
                                         <div class="szcourse-name clearfix">
-                                            Node.js项目的线上服务器部署与发布
+                                            {{$v->title}}
                                         </div>
                                         <div class='szcourse-bottom clearfix'>
                                                 <span class='l'>
-                                                    646人在学
+                                                    {{$v->NNT}}人在学
                                                 </span>
                                             <span class='r'>
-                                                    ￥158.00
+                                                    ￥{{$v->price}}0
                                                 </span>
                                         </div>
                                     </div>
                                 </div>
                             </a>
-                            <!-- 前4个课程追加渠道统计链接 -->
-                            <a href='http://coding.imooc.com/class/90.html' target="_blank" class='szcourse-cart '>
-                                <div class='szcourse-cart-A'>
-                                    <div class='szcourse-cart-b'>
-                                        <div class="szcourse-p1 clearfix">
-                                            <i class="imv2-war">
-                                            </i>
-                                            <span>
-                                                    实战课程
-                                                </span>
-                                        </div>
-                                        <div class="szcourse-p2">
-                                            Yii 2.0高级组件优化京东电商平台
-                                        </div>
-                                        <div class='szcourse-p3'>
-                                            进阶更高阶的Yii 2.0开发，获得2-3年yii 2.0实战经验
-                                        </div>
-                                        <div class='szcourse-bottom clearfix'>
-                                                <span class='l'>
-                                                    234人在学
-                                                </span>
-                                            <span class='r'>
-                                                    ￥349.00
-                                                </span>
-                                        </div>
-                                    </div>
-                                    <div class='szcourse-cart-o'>
-                                    </div>
-                                    <div class='shizhanpic' style='background-image: url(/homes/images/58b38551000156dd05400300-360-202.jpg);'>
-                                    </div>
-                                </div>
-                                <div class='szcourse-cart-B'>
-                                    <div>
-                                        <div class="szcourse-name clearfix">
-                                            Yii 2.0高级组件优化京东电商平台
-                                        </div>
-                                        <div class='szcourse-bottom clearfix'>
-                                                <span class='l'>
-                                                    234人在学
-                                                </span>
-                                            <span class='r'>
-                                                    ￥349.00
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <!-- 前4个课程追加渠道统计链接 -->
-                            <a href='http://coding.imooc.com/class/94.html' target="_blank" class='szcourse-cart '>
-                                <div class='szcourse-cart-A'>
-                                    <div class='szcourse-cart-b'>
-                                        <div class="szcourse-p1 clearfix">
-                                            <i class="imv2-war">
-                                            </i>
-                                            <span>
-                                                    实战课程
-                                                </span>
-                                        </div>
-                                        <div class="szcourse-p2">
-                                            Angular 4.0从入门到实战 打造股票管理网站
-                                        </div>
-                                        <div class='szcourse-p3'>
-                                            Angular新特性，教你熟练使用Angular和Typescript开发组件式单页应用
-                                        </div>
-                                        <div class='szcourse-bottom clearfix'>
-                                                <span class='l'>
-                                                    1028人在学
-                                                </span>
-                                            <span class='r'>
-                                                    ￥199.00
-                                                </span>
-                                        </div>
-                                    </div>
-                                    <div class='szcourse-cart-o'>
-                                    </div>
-                                    <div class='shizhanpic' style='background-image: url(/homes/images/58d8c6da0001ff8505400300-360-202.jpg);'>
-                                    </div>
-                                </div>
-                                <div class='szcourse-cart-B'>
-                                    <div>
-                                        <div class="szcourse-name clearfix">
-                                            Angular 4.0从入门到实战 打造股票管理网站
-                                        </div>
-                                        <div class='szcourse-bottom clearfix'>
-                                                <span class='l'>
-                                                    1028人在学
-                                                </span>
-                                            <span class='r'>
-                                                    ￥199.00
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <!-- 前4个课程追加渠道统计链接 -->
-                            <a href='http://coding.imooc.com/class/106.html' target="_blank" class='szcourse-cart '>
-                                <div class='szcourse-cart-A'>
-                                    <div class='szcourse-cart-b'>
-                                        <div class="szcourse-p1 clearfix">
-                                            <i class="imv2-war">
-                                            </i>
-                                            <span>
-                                                    实战课程
-                                                </span>
-                                        </div>
-                                        <div class="szcourse-p2">
-                                            Android应用发展趋势必备武器 热修复与插件化
-                                        </div>
-                                        <div class='szcourse-p3'>
-                                            掌握当下Android最流行的技术，助你达到阿里P5级别
-                                        </div>
-                                        <div class='szcourse-bottom clearfix'>
-                                                <span class='l'>
-                                                    192人在学
-                                                </span>
-                                            <span class='r'>
-                                                    ￥248.00
-                                                </span>
-                                        </div>
-                                    </div>
-                                    <div class='szcourse-cart-o'>
-                                    </div>
-                                    <div class='shizhanpic' style='background-image: url(/homes/images/5938b0f100016a9e05400300-360-202.jpg);'>
-                                    </div>
-                                </div>
-                                <div class='szcourse-cart-B'>
-                                    <div>
-                                        <div class="szcourse-name clearfix">
-                                            Android应用发展趋势必备武器 热修复与插件化
-                                        </div>
-                                        <div class='szcourse-bottom clearfix'>
-                                                <span class='l'>
-                                                    192人在学
-                                                </span>
-                                            <span class='r'>
-                                                    ￥248.00
-                                                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
+                            @endforeach
                         </div>
                         @foreach($courses as $k=>$v)
                             <div class="course-card-container">

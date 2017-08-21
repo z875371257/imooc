@@ -76,12 +76,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login','namespace'=>'Admin']
 Route::group(['namespace'=>'Home'],function(){
 
     //   前台主页
-<<<<<<< HEAD
+
     Route::get('/', 'IndexController@index');
     // 课程列表页
-=======
+
     Route::get('/', 'IndexController@index')->name('index');
->>>>>>> origin/cc
+
     Route::get('course/list', 'ListController@index');
 
     Route::get('list/detail', 'ListController@detail');

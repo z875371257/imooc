@@ -112,8 +112,6 @@
         return $imgs;
     }
 
-<<<<<<< HEAD
-
 //    权限
 if ( ! function_exists('getAuth')) {
 
@@ -143,7 +141,7 @@ if ( ! function_exists('getStatus') ) {
 
     }
 }
-=======
+
     function suggest()
     {
         $count = DB::select('select count(*) from mk_suggest where status = 0')[0];
@@ -155,6 +153,3 @@ if ( ! function_exists('getStatus') ) {
 
     }
 
-
-
->>>>>>> origin/cc

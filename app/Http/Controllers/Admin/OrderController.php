@@ -15,13 +15,15 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {
-        $res = DB::table('orders')
-            ->leftjoin('address', 'orders.uid', '=', 'address.uid')
-            ->where('name','like','%'.$request->input('search').'%')
-            ->paginate($request->input('num',1));
+    {   
 
-        $status = ['1'=>'已付款','已发货','已收货','订单完成'];
+        $res = DB::table('orders')
+               ->leftJoin('home_user','orders.uid','=','home_user.id')
+               ->where('username','like','%'.$request->input('search').'%')
+               ->paginate($request->input('num',5));
+        
+
+        $status = ['0'=>'未付款','已付款'];
         return view('admin.order.index',['res'=>$res,'request'=>$request,'status'=>$status]);
     }
 

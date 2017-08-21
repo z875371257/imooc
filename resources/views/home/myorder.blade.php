@@ -1,5 +1,5 @@
 ﻿@extends('layout.list')
-@section('title','确认订单')
+@section('title','购买记录')
 @section('content')
   
 <div class='body-main'>
@@ -51,6 +51,7 @@
 		<h1>购买记录<span>共<i>{{count($orders)}}</i>个订单</span></h1>
 		<div class='myOrder'>
 						<ul class="myOrder-list">
+						
 						@foreach($orders as $k => $v)
 							<li data-flag="1708182106226124">
 					<p class="myOrder-number">
@@ -58,8 +59,10 @@
 						<span class="date">{{date('Y-m-d H:i:s',$v->addtime)}}</span>
 						<a href="/user/feedback" target="_blank" class="r">我有疑问，需要反馈？</a>
 					</p>
+
 					<div class="myOrder-course clearfix">
-						<dl class="course-del l">     @foreach($goods as $kk => $vv)
+
+						<dl class="course-del l">    @foreach($goods as $kk => $vv) 
 														<dd class="clearfix">
 								<a href="http://coding.imooc.com/class/113.html" class="l">
 									<img class="l" src="/{{$vv[0]->pic}}" width="160" height="90">
@@ -100,6 +103,7 @@
 																		</div>
 				</li>
 				@endforeach
+				
 			</ul>
 			<!-- 是否有分页 -->
 						<!-- 是否有分页 end -->
@@ -119,7 +123,7 @@
 	        btn: ['确定','取消'] //按钮
 	    }, function(){
 
-	  $.get("{{url('delOrder')}}/"+id,{'_method':'get','_token':'{{csrf_token()}}','oid':'id'},function(data){
+	  $.get("{{url('delOrder')}}/"+id,{'_method':'get','_token':'{{csrf_token()}}'},function(data){
                 
 	            if(data.status == 0){
 	                location.href = location.href;
