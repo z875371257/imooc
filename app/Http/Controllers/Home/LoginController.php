@@ -13,14 +13,13 @@ use Illuminate\Support\Facades\Input;
 class LoginController extends Controller
 {
 
-//    处理用户登录信息
+    //    处理用户登录信息
     public function login(Request $request)
     {
-//        获取登录数据
+    //        获取登录数据
+    //        表单验证
+    //        根据数据用户名 判断用户是否存在数据库中
 
-//        表单验证
-
-//        根据数据用户名 判断用户是否存在数据库中
         $input = Input::except('_token');
 
         $user = Home_User::where('username', $input['username'])->first();
@@ -36,10 +35,6 @@ class LoginController extends Controller
 
     //    登录成功 保存信息  跳转到前台首页
         session([ 'users'=>$user ]);
-
-
-
-         
 
 //        获取登录用户的详情  $phone = User::find(1)->phone;
 

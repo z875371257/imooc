@@ -2,6 +2,7 @@
 @section('title', '全部课程_IT培训精英课程-慕课网')
 
 @section('content')
+
     <div id="main">
         <div class="wrap ">
             <div class="top">

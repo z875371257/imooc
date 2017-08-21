@@ -76,6 +76,7 @@ Route::group(['namespace'=>'Home'],function(){
     Route::get('/', 'IndexController@index');
     // 课程列表页
     Route::get('course/list', 'ListController@index');
+
     Route::get('list/detail', 'ListController@detail');
 
     // 职业路径列表页
@@ -85,6 +86,8 @@ Route::group(['namespace'=>'Home'],function(){
     Route::get('course/coding', 'CodingController@index');
     Route::get('coding/detail', 'CodingController@detail');
     Route::get('coding/chapter', 'CodingController@chapter');
+
+    Route::resource('suggest', 'SuggestController');
 
     // 视频播放
     Route::get('vedeo/{id}', 'VedeoController@index');

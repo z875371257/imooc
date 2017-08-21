@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>{{config('web.web_title')}}</title>
+    <link rel="shortcut icon" href="/homes/images/style.ico"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
     <meta property="qc:admins" content="77103107776157736375" />

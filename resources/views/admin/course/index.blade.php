@@ -11,7 +11,7 @@
 
         <div class="mws-panel-body no-padding" >
             <div role="grid" class="dataTables_wrapper" id="DataTables_Table_1_wrapper">
-                <form action="{{url('admin/buttom')}}" method='get'>
+                <form action="{{url('admin/course')}}" method='get'>
                     <div id="DataTables_Table_1_length" class="dataTables_length">
                         <label>
                             显示
@@ -30,7 +30,7 @@
                     <div class="dataTables_filter" id="DataTables_Table_1_filter">
                         <label>
                             关键字:
-                            <input type="text" name='search' value="{{isset($search)?$search:''}}" aria-controls="DataTables_Table_1">
+                            <input type="text" name='fx' value="{{isset($search)?$search:''}}" aria-controls="DataTables_Table_1">
                         </label>
                         <button class='btn btn-md btn-info'>搜索</button>
                     </div>
@@ -46,13 +46,13 @@
                         <th  role="columnheader" rowspan="1" colspan="1" style="width: 150px;" aria-label="Browser: activate to sort column ascending">
                             所属大类
                         </th>
-                        <th  role="columnheader" rowspan="1" colspan="1" style="width: 200px;" aria-label="Platform(s): activate to sort column ascending">
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width: 170px;" aria-label="Platform(s): activate to sort column ascending">
                             所属分类
                         </th>
-                        <th  role="columnheader" rowspan="1" colspan="1" style="width:200px" aria-label="Engine version: activate to sort column ascending">
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width:300px" aria-label="Engine version: activate to sort column ascending">
                             课程标题
                         </th>
-                        <th  role="columnheader" rowspan="1" colspan="1" style="width:120px" aria-label="Engine version: activate to sort column ascending">
+                        <th  role="columnheader" rowspan="1" colspan="1" style="width:90px" aria-label="Engine version: activate to sort column ascending">
                             学习人数
                         </th>
                         <th  role="columnheader" rowspan="1" colspan="1" style="width:50px" aria-label="Engine version: activate to sort column ascending">
@@ -64,7 +64,7 @@
                         <th  role="columnheader" rowspan="1" colspan="1" style="width:50px" aria-label="Engine version: activate to sort column ascending">
                             banner图推荐
                         </th>
-                        <th  role="columnheader"  rowspan="1" colspan="1" style="width: 240px;" aria-label="CSS grade: activate to sort column ascending">
+                        <th  role="columnheader"  rowspan="1" colspan="1" style="width: 220px;" aria-label="CSS grade: activate to sort column ascending">
                             操作
                         </th>
                     </tr>
@@ -97,7 +97,7 @@
                                 {{$v->banner}}
                             </td>
                             <td class=" ">
-                                <a href="/admin/buttom//edit/" class='btn btn-success'>修改</a>
+                                <a href="/admin/course/{{$v->cid}}/edit" class='btn btn-success'>修改</a>
                                 <a href="javascript:void(0)" onclick="delUser({{$v->id}})" class='btn btn-warning'>删除</a>
                             </td>
                         </tr>
@@ -180,7 +180,7 @@
                 <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_1_paginate">
 
                     <div id='page'>
-
+                        {!! $courses->appends($request->all())->render() !!}
 
                     </div>
 

@@ -20,7 +20,7 @@ class CateController extends Controller
         $res = DB::table('course_cate')->
         select(DB::raw("*,concat(path,',',cid) as paths"))->
         orderBy('paths')->
-        where('name','like','%'.$request->input('search').'%')->
+        where('cname','like','%'.$request->input('search').'%')->
         paginate($request->input('num',5));
 
         foreach($res as $k => $v){

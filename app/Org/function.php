@@ -62,7 +62,22 @@
 
         }
         return $newArr;
+    }
 
+    // 所属章节
+    function section($sid)
+    {
+        $section = DB::table('section')->where('sid', $sid)->first();
+            return $section->title;
+    }
+
+    // 所属课程
+    function course($sid)
+    {
+        $res = DB::table('section')->where('sid', $sid)->first();
+
+        $course = DB::table('course')->where('id', $res->course_id)->first();
+        return $course->title;
 
     }
 
@@ -76,7 +91,6 @@
             echo '关闭';
         }
     }
-
 
 
     // 登录时的用户名

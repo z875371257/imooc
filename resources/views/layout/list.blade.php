@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="/homes/images/style.ico"/>
     <title>
         @yield('title')
     </title>
@@ -47,6 +48,9 @@
     <script src="/admins/layer/layer.js"></script>
 
 
+
+    {{--意见反馈--}}
+    <link rel="stylesheet" href="">
     <script type="text/javascript">
         eval(function(p, a, c, k, e, d) {
             e = function(c) {
@@ -109,19 +113,19 @@
                 </a>
             </li>
             <li>
-                <a href="/course/list" class="active" target="_self">
+                <a href="/course/list" class="@if($_SERVER["REQUEST_URI"] == '/course/list') active @endif" target="_self">
                     课程
                 </a>
             </li>
             <li>
-                <a href="/course/class" class="program-nav " target="_self">
+                <a href="/course/class" class="program-nav @if($_SERVER["REQUEST_URI"] == '/course/class') active @endif" target="_self">
                     职业路径
                     <i class="icn-new">
                     </i>
                 </a>
             </li>
             <li>
-                <a href="/course/coding" target="_self">
+                <a href="/course/coding" class="@if($_SERVER["REQUEST_URI"] == '/course/coding') active @endif" target="_self">
                     实战
                 </a>
             </li>
