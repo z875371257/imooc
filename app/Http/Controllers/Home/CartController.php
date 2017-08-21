@@ -13,22 +13,23 @@ class CartController extends Controller
 {
     public function index()
     {  
-
-       if(!empty(session()->get('users')->username)){
-
         //购物车全部记录
         $carts = Cart::content();
+
+      /*  dd(empty(count($carts)));*/
         //购物车总额 不含税
         $total = Cart::subtotal();
         //购物车商品数量
         $count = Cart::count();
-     
+
+       if(!empty(session()->get('users')->username) && !empty(count($carts))){
+
         return view('home.cart',['carts'=>$carts,'total'=>$total,'count'=>$count]);
 
        } else {
 
         //没有登录时显示购物车
-        return view('home.cart');
+        return view('home.cart',['carts'=>$carts]);
        }
       
     }
@@ -67,15 +68,15 @@ class CartController extends Controller
     public function delCart($id)
     {
         $rowId = $id;
-        //从数据库移除单条信息
+        //获取购物车的单条记录
         $res = Cart::get($rowId);
-        
-        DB::table('cart')->where('cid',$res->id)->delete();
         //移除单条购物车记录
+        DB::table('cart')->where('cid',$res->id)->delete();
         
         Cart::remove($rowId);
 
         return back();
+        
     }
     
 

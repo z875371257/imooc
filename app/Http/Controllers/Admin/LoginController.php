@@ -22,7 +22,7 @@ class LoginController extends Controller
     public function index()
     {
 #        $str = 'admins';
-#        echo Crypt::encrypt($str);die;
+#        echo Crypt::encrypt(123456);die;
         return view('admin.login.index');
     }
 

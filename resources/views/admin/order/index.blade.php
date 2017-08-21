@@ -33,7 +33,7 @@
                     <div class="dataTables_filter" id="DataTables_Table_1_filter">
                         <label>
                             关键字:
-                            <input type="text" name='search' value="{{$request->search}}"aria-controls="DataTables_Table_1">
+                            <input type="text" name='search' value="{{isset($search)?$search:''}}"aria-controls="DataTables_Table_1">
                         </label>
                         <button class='btn btn-md btn-info'>搜索</button>
                     </div>
@@ -58,17 +58,11 @@
                         </th>
                         <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
                             rowspan="1" colspan="1" style="width: 160px;" aria-label="Engine version: activate to sort column ascending">
-                            收货人
+                            下单人
                         </th>
 
-                        <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 117px;" aria-label="CSS grade: activate to sort column ascending">
-                            收货地址
-                        </th>
-                        <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
-                            联系电话
-                        </th>
+                        
+                        
                         <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
                             rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
                             状态
@@ -77,10 +71,7 @@
                             rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
                             下单时间
                         </th>
-                        <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 230px;" aria-label="CSS grade: activate to sort column ascending">
-                            操作
-                        </th>
+                        
                     </tr>
                     </thead>
                     <tbody role="alert" aria-live="polite" aria-relevant="all">
@@ -91,14 +82,10 @@
                             <td class="  sorting_1">{{$v->oid}}</td>
                             <td>{{$v->ocnt}}</td>
                             <td>{{$v->ormb}}</td>
-                            <td>{{$v->name}}</td>
-                            <td>{{$v->details}}</td>
-                            <td>{{$v->telephone}}</td>
+                            <td>{{$v->username}}</td>
                             <td>{{$status[$v->status]}}</td>
-                            <td>{{$v->addtime}}</td>
-                            <td>
-                                <a href="{{url('admin/order/'.$v->uid.'/edit')}}" class='btn btn-success'>修改</a>
-                            </td>
+                            <td>{{date('Y-m-s H:i:s',$v->addtime)}}</td>
+                            
                         </tr>
                        @endforeach
                        @endif
