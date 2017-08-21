@@ -172,7 +172,6 @@
                     <a href="#"><i class="icon-user"></i>订单管理</a>
                     <ul class='closed'>
                         <li><a href="{{url('admin/order')}}">订单列表</a></li>
-                        <li><a href="{{url('admin/cart')}}">购物车</a></li>
                     </ul>
                 </li>
 
