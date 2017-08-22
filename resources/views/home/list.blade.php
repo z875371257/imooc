@@ -117,7 +117,7 @@
                         <div class='moco-course-wrap szcoursewrap'>
                             @foreach($class as $k=>$v)
                             <!-- 前4个课程追加渠道统计链接 -->
-                            <a href='/coding/detail?c={{$v->id}}&active={{$v->id}}' class='szcourse-cart' id="">
+                            <a href='/coding/detail?c={{$v->id}}&active={{$v->id}}' class='szcourse-cart codings'>
                                 <div class='szcourse-cart-A'>
                                     <div class='szcourse-cart-b'>
                                         <div class="szcourse-p1 clearfix">
@@ -203,6 +203,22 @@
 
                     </ul>
                 </div>
+                <script>
+                    $(function(){
+                        $('.codings:eq(0)').addClass('active');
+
+                        $.each($('.codings'), function(){
+                            $(this).mouseover(function(){
+                                 $(this).addClass('active');
+                                 $(this).siblings().removeClass('active');
+
+                            })
+                        })
+
+                    })
+
+
+                </script>
                 <div class="page">
 
                 </div>

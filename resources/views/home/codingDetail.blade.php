@@ -107,7 +107,7 @@
 			<a href="#">课程介绍</a>
 		</li>
 				<li class="fixed-nav-item ">
-			<a href="/class/chapter/126.html#Anchor">课程章节</a>
+			   <a href="/class/chapter/126.html#Anchor">课程章节</a>
 		</li>
 
 		<li class="fixed-nav-item ">

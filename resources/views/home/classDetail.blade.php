@@ -39,19 +39,23 @@
                 @if(!empty(session()->get('users')))
 
 					<a href="/addCart/{{$res->id}}" class="js-buy-trigger buy-trigger">立即购买</a>
+					<div class="price-box">
+						<div class="adjust-price-box clearfix" style="margin-top:10px;margin-right:20px">
+							<span class="discount r">￥{{$res->price}}0</span>
+						</div>
+					</div>
 				@else
 				 <nav class="main_nav" style="width:1100px">
 					 <a href="#0" class="cd-signin js-buy-trigger buy-trigger" id="js-signin-btn">立即购买</a>
 				 </nav>
+				<div class="price-box">
+					<div class="adjust-price-box clearfix" style="margin-top:-45px;margin-right:20px">
+						<span class="discount r">￥{{$res->price}}0</span>
+					</div>
+
+				</div>
 				@endif
 
-		<!-- 调价 -->
-					<div class="price-box">
-						<div class="adjust-price-box clearfix" style="margin-top:-45px;margin-right:20px">
-							<span class="discount r">￥{{$res->price}}0</span>
-						</div>
-
-					</div>
 		            	            	        
 		</div>
 	</div>
@@ -73,10 +77,15 @@
 
 <div class="appendtemplate">
 	<div class="career-prospects" id="careerProspects">
+		<div class="introduce-content">
+			
+				<div class="wrap-box">
 
 		{!! html_entity_decode($res->content) !!}
-	</div>
+				</div>
 
+		</div>
+	</div>
 </div>
 
 

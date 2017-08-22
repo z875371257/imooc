@@ -129,16 +129,7 @@
                     实战
                 </a>
             </li>
-            <li>
-                <a href="/wenda" target="_self">
-                    猿问
-                </a>
-            </li>
-            <li>
-                <a href="/article" target="_self">
-                    手记
-                </a>
-            </li>
+
         </ul>
 
         {{--   session    session  是否有  --}}
@@ -204,7 +195,7 @@
             <ul class="clearfix logined">
                 <li class="shop-cart" id="shop-cart">
                     <a href="/cart" class="shop-cart-icon" target="_blank">
-                        <span class="icon-shopping-cart js-endcart"></span>
+
                         <span class="shopping_icon js-cart-num" data-ordernum="0" data-cartnum="0" style="display: none">0</span>
                         <span>购物车</span>
                     </a>
@@ -235,10 +226,7 @@
                 </li>
                 <li class="remind_warp">
                     <i class="msg_remind" style="display: none;"></i>
-                    <a target="_blank" href="/u/5601964/notices">
-                        <i class="icon-notifi"> </i>
-                        <!-- <span class="msg_icon" style="display: none;"></span> -->
-                    </a>
+
                 </li>
                 <li class="set_btn user-card-box" id="header-user-card">
                     <a id="header-avator" class="user-card-item js-header-avator" action-type="my_menu" href="/u/5601964" target="_self">
