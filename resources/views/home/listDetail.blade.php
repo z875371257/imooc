@@ -129,7 +129,7 @@
                             <a href='/vedeo/{{$v->vid}}' class="J-media-item">
                                 <i class="type"><img width="14px" src="/homes/images/player.png" alt=""></i>
                                     {{$v->title}}
-                                (03:12)
+
                                 <button class="r moco-btn moco-btn-red preview-btn">开始学习</button>
                             </a>
                         </li>

@@ -193,7 +193,20 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+       $row = DB::table('course')->where('id', $id)->delete();
+
+       if($row){
+           $data = [
+               'status'=>0,
+               'msg'=>'删除成功'
+           ];
+       }else{
+           $data = [
+               'status'=>1,
+               'msg'=>'删除失败'
+           ];
+       }
+       return $data;
     }
 
     //文件上传  小图

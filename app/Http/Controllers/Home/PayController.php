@@ -32,6 +32,15 @@ class PayController extends Controller
         //修改订单表的购买状态
         $res = DB::table('orders')->where('oid',$id)->update(['status'=>1]);
 
+        $arrs = DB::table('orders')->where('oid', $id)->first();
+#        dd($arrs->gid);
+        $adds = explode(',', $arrs->gid);
+#        dd($adds);
+        foreach($adds as $k=>$v)
+        {
+                DB::table('course')->where('id',$v)->increment('NNT');
+        }
+
         return redirect()->route('success');
        
     }
@@ -40,6 +49,7 @@ class PayController extends Controller
     public function success()
     {   
         DB::table('cart')->where('uid',session()->get('users')->id)->delete();
+
         //清空购物车
         Cart::destroy();
         return view('home.success');

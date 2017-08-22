@@ -83,18 +83,20 @@ class OrderController extends Controller
             $uid = session()->get('users')->id;
             //根据用户ID查询出用户的购买订单
             $orders = DB::table('orders')->where('uid',$uid)->get();
+
             if($orders){
             foreach($orders as $k => $v)
             {  
+
                $gid = explode(',',$v->gid);
             }
-             
+            
             //根据商品ID查出商品信息
             foreach($gid as $k => $v)
             {
                 $goods[] = DB::table('course')->where('id',$v)->get();
             }
-            
+             
             return view('home.myorder',['orders'=>$orders,'goods'=>$goods]);
 
            } else {

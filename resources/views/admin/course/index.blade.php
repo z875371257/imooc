@@ -111,7 +111,16 @@
                         layer.confirm('确认删除？', {
                             btn: ['确认','取消'] //按钮
                         }, function(){
-                            layer.msg('的确很重要', {icon: 1});
+                            $.post("/admin/course/"+$id,{'_method':'delete','_token':'{{csrf_token()}}'},function(data){
+                                if(data.status == 0){
+                                    location.href = location.href;
+                                    layer.msg(data.msg, {icon: 6});
+                                }else{
+                                    location.href = location.href;
+                                    layer.msg(data.msg, {icon: 5});
+                                }
+//                                console.log(data);
+                            });
                         }, function(){
                             layer.msg('也可以这样', {
                                 time: 20000, //20s后自动关闭

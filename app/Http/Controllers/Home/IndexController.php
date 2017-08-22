@@ -83,7 +83,7 @@ class IndexController extends Controller
         $yjtj = DB::select("select * from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and generas = 1 and hot = 1 and path REGEXP '0,7,.' limit 0,3");
 
         // 前台Banner图   实战课程 banner = 1
-        $banner = DB::select("select id,bigpic from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and genera = 3 limit 0,7");
+        $banner = DB::select("select id,bigpic from `mk_course_cate` inner join `mk_course` on `mk_course_cate`.`cid` = `mk_course`.`pid` and banner = 1 and genera = 3 order by id desc limit 0,6");
 
         // 实战推荐    最热hot
         $sztj = DB::select("select c.id,c.title,c.referral,l.titles,c.NNT,c.price,c.pic from  mk_label_course lc inner join mk_course c on lc.cid = c.id inner join mk_label l on lc.lid = l.id inner join mk_course_cate cc on c.pid = cc.cid where generas = 3 and hot = 1");

@@ -78,7 +78,7 @@
 <div class="appendtemplate">
 	<div class="career-prospects" id="careerProspects">
 		<div class="introduce-content">
-			
+
 				<div class="wrap-box">
 
 		{!! html_entity_decode($res->content) !!}

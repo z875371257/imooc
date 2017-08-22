@@ -53,6 +53,8 @@ class ListController extends Controller
         $id = $request->input('c');
         $res = DB::table('course')->where('id', $id)->first();
 
+        DB::table('course')->where('id',$id)->increment('NNT');
+
         $section = DB::select("select s.title,s.description,s.sid from mk_course c inner join mk_section s on c.id = s.course_id where c.id = $id");
 
         return view('home.listDetail',compact('res','section'));
