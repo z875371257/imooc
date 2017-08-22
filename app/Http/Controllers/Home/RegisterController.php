@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Model\Home_User;
+use App\Http\Model\Details;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -31,7 +32,7 @@ class RegisterController extends Controller
 
 //  4.Home_user模型   添加用户到数据库中
         $user = Home_User::create($input);
-
+        Details::create(['home_user_id'=>$user->id,'nickname'=>$user->username]);
         if( $user){
 
             echo "<script>alert('注册成功,请登录!');window.location='/'</script>";

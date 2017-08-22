@@ -155,6 +155,19 @@ Route::group(['namespace' => 'Home'], function(){
 
     //    登录 ajax 判断密码是否存在
     Route::post('home/username/password', 'LoginController@checkPassword');
+
+    //   用户个人设置
+    Route::resource('home/users/set', 'SetbindsnsController');
+    Route::post('home/users/setprofile', 'SetbindsnsController@setprofile');
+    Route::get('home/users/passedit', 'SetbindsnsController@passedit');
+    Route::post('home/users/passupdate', 'SetbindsnsController@passupdate');
+    Route::post('home/users/dopassupdate', 'SetbindsnsController@dopassupdate');
+
+
+    // 前台用户修改密码
+    Route::resource('home/users/password', 'PasswordController');
+
+
 });
 
 

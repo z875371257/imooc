@@ -114,7 +114,9 @@ class CourseController extends Controller
     {
         $data =  $request->except('lid','genera','_token','picc', 'editorValue','bigpicc');
         $data['generas'] = $request->input('genera');
+        if($request->input('genera') != 1){
         $data['content'] = $request->input('editorValue');
+        }
 
         $id = DB::table('course')->insertGetId($data);
 

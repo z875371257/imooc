@@ -89,12 +89,7 @@
             <div class="mod-tab-menu ">
 	<ul class="course-menu clearfix">
 		<li><a class="ui-tabs-active active" id="learnOn"  href="/learn/859"><span>章节</span></a></li>
-		<li><a id="commentOn" class="" href="/comment/859"><span>评论</span></a></li>
-		<li><a id="qaOn" class="" href="/qa/859/t/1?page=1"><span>问答</span></a></li>
-		<li><a id="noteOn" class="" href="/note/859?sort=last&page=1"><span>笔记</span></a></li>
-	    <!--
-        <li><a id="wikiOn" class="" href="/wiki/859">WIKI</a></li>
-        -->
+
 	</ul>
 	
 </div>
@@ -172,26 +167,7 @@
     
         
         <div class="box mb40 js-usercard-box">
-        <h4>讲师提示</h4>
-                        <div class="teacher-info">
-            <a href="/u/1170998/courses?sort=publish" target="_blank" >
-                <img data-userid="1170998" class="js-usercard-dialog" src="picture/55a529c90001205902200220-80-80.jpg" width="80" height="80">
-            </a>
-            <span class="tit">
-                <a href="/u/1170998/courses?sort=publish" target="_blank">channingbree...</a><i class="icon-imooc"></i>
-            </span>
-            <span class="job">Web前端工程师</span>
-        </div>
-                                <div class="course-info-tip">
-                        <dl class="first">
-                <dt>课程须知</dt>
-                <dd class="autowrap">学习本课程之前，您需要掌握HTML、CSS、JavaScript，jQuery以及ajax和jSon等知识，并且能够熟练运用。</dd>
-            </dl>
-                                    <dl>
-                <dt>老师告诉你能学到什么？</dt>
-                <dd class="autowrap">通过使用模板Handlebars.js来实现页面的渲染，比起以前使用ajax和json来渲染页面要快很多，性能也提高了许多。</dd>
-            </dl>
-                    </div>
+
             </div>
     
     <div class="js-recom-box">

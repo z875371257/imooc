@@ -159,7 +159,7 @@
                         </a>
                     </li>
                     <li class="set_btn user-card-box" id="header-user-card">
-                        <a id="header-avator" class="user-card-item js-header-avator" action-type="my_menu" href="/u/5601964" target="_self">
+                        <a id="header-avator" class="user-card-item js-header-avator" action-type="my_menu" href="/home/users/set" target="_self">
                             <img src="@if(!session('details')) http://img.mukewang.com/597b0ff300016efc06950694-100-100.jpg
                                                     @else {{ session('details')->profile  }} @endif " alt="">
                             <i class="myspace_remind" style="display: none;"></i>
@@ -168,7 +168,7 @@
                         <div class="g-user-card">
                             <div class="card-inner">
                                 <div class="card-top clearfix">
-                                    <a href="/u/5601964" class="l" class="user-card-item js-header-avator hover" action-type="my_menu" id="header-avator" target="_self">
+                                    <a href="/home/users/set" class="l" class="user-card-item js-header-avator hover" action-type="my_menu" id="header-avator" target="_self">
 
 
                                         <img src="@if(!session('details')) http://img.mukewang.com/597b0ff300016efc06950694-100-100.jpg
@@ -180,38 +180,22 @@
                                             <span style="display: none;">动态提醒</span>
                                     </a>
                                     <div class="card-top-right-box l">
-                                        <a href="/u/5601964"><span class="name text-ellipsis"> weixin_赵世强_0</span></a>
-                                        <div class="meta">
-                                            <a href="/u/5601964/experience"> 经验<b id="js-user-mp">197</b> </a>
-                                            <a href="/u/5601964/credit"> 积分<b id="js-user-credit"> 1 </b></a>
-                                        </div>
+                                        <a href="/u/5601964"><span class="name text-ellipsis"> {{ session()->get('users')->username }}</span></a>
+
                                     </div>
                                 </div>
                                 <div class="user-center-box">
                                     <ul class="clearfix">
                                         <li class="l">
-                                            <a href="/u/5601964/courses" target="_blank"><span class="user-center-icon icon-tick"></span>我的课程</a>
+                                            <a href="{{ url('home/users/set') }}">个人设置 </a>
+
                                         </li>
                                         <li class="l">
-                                            <a href="/order" target="_blank"> <span class="user-center-icon icon-receipt"></span> 订单中心</a>
-                                            <i id="js-usercard-coupon-icon" style="display: none;"></i>
-                                        </li>
-                                        <li class="l">
-                                            <a href="/mall/index" target="_blank"><span class="user-center-icon icon-score_shop"> </span> 积分商城</a>
-                                        </li>
-                                        <li class="l">
-                                            <a href="/user/setbindsns" target="_blank"> <span class="user-center-icon icon-set"> </span>个人设置 </a>
+                                            <a href="{{ url('home/users/passedit') }}">修改密码 </a>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="card-history">
-                                <span class="history-item">
-                                    <span class="tit text-ellipsis">  表单验证</span>
-                                    <span class="media-name text-ellipsis"> 5-1用户名输入框验证</span>
-                                    <i class="icon-clock"> </i>
-                                    <a href="http://www.imooc.com/video/527" class="continue" title="用户名输入框验证 5-1用户名输入框验证">继续</a>
-                                </span>
-                                </div>
+
                                 <div class="card-sets clearfix">
                                     <a href="{{ url('passport/user/logout') }}" class="r">安全退出</a>
                                 </div>
@@ -1126,7 +1110,7 @@
                     </p>
 
                     <p class="fieldset">
-                        <input type="checkbox" id="accept-terms" required>
+                        <input type="checkbox" id="accept-terms" required checked>
                         <label for="accept-terms">我已阅读并同意 <a href="#0">用户协议</a></label>
                     </p>
 

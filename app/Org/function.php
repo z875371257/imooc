@@ -140,6 +140,43 @@ if ( ! function_exists('getStatus') ) {
         }
 
     }
+
+
+}
+
+if ( ! function_exists('getSex') ) {
+
+    function getSex($sex){
+        if ($sex == '0') {
+            return '保密';
+        }  else if ($sex == '1') {
+            return '男';
+        }   else {
+            return '女';
+        }
+
+    }
+}
+
+
+if ( ! function_exists('getPos') ) {
+
+    function getPos($positions){
+        if ($positions == '1') {
+            return 'Web前端工程师';
+        }  else if ($positions == '2') {
+            return 'PHP工程师';
+        }   else if ($positions == '3'){
+            return 'Java工程师';
+        }   else if ($positions == '4'){
+            return 'Android工程师';
+        }  else if($positions == '5'){
+            return 'iOS工程师';
+        }else{
+            return '请编辑选择您的职位';
+        }
+
+    }
 }
 
     function suggest()

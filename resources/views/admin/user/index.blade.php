@@ -98,7 +98,6 @@
                                 <td><a href="javascript:void(0)" onclick="auth({{ $v->id }})">{{ getAuth($v->auth) }}</a></td>
 
                                 <td>{{ getStatus($v->status) }}</td>
-                                {{--<td>{{ $v->addtime }}</td>--}}
                                 <td>{{ date('Y-m-d',$v->addtime) }}</td>
 
                                 <td>{{ $v->ip }}</td>
@@ -208,7 +207,7 @@
                 <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_1_paginate">
 
                     <div id='page'>
-                        {!! $users->render() !!}
+                        {!! $users->appends($request->all())->render() !!}
                     </div>
 
                 </div>

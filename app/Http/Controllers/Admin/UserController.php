@@ -22,7 +22,7 @@ class UserController extends Controller
      * @param       方法需要的参数 无
      * @return      用户信息
      */
-    public function index()
+    public function index(Request $request)
     {
 //       获取所有的用户信息
         $users = User::all();
@@ -56,7 +56,7 @@ class UserController extends Controller
 //        echo $auth = getAuth($str2);
 
 //      dd($users);   分配数据 数组对象  users   keywords record status auth
-        return view('admin.user.index', compact('users', 'record', 'keywords'));
+        return view('admin.user.index', compact('users', 'record', 'keywords','request'));
     }
 
     /**
