@@ -255,7 +255,7 @@
                                     <span style="display: none;">动态提醒</span>
                                 </a>
                                 <div class="card-top-right-box l">
-                                    <a href="/u/5601964"><span class="name text-ellipsis"> weixin_赵世强_0</span></a>
+                                    <a href="/u/5601964"><span class="name text-ellipsis"> {{ session()->get('users')->username }}</span></a>
                                     <div class="meta">
                                         <a href="/u/5601964/experience"> 经验<b id="js-user-mp">197</b> </a>
                                         <a href="/u/5601964/credit"> 积分<b id="js-user-credit"> 1 </b></a>
@@ -264,29 +264,13 @@
                             </div>
                             <div class="user-center-box">
                                 <ul class="clearfix">
+
                                     <li class="l">
-                                        <a href="/u/5601964/courses" target="_blank"><span class="user-center-icon icon-tick"></span>我的课程</a>
-                                    </li>
-                                    <li class="l">
-                                        <a href="http://order.imooc.com/myorder" target="_blank"> <span class="user-center-icon icon-receipt"></span> 订单中心</a>
-                                        <i id="js-usercard-coupon-icon" style="display: none;"></i>
-                                    </li>
-                                    <li class="l">
-                                        <a href="/mall/index" target="_blank"><span class="user-center-icon icon-score_shop"> </span> 积分商城</a>
-                                    </li>
-                                    <li class="l">
-                                        <a href="/user/setbindsns" target="_blank"> <span class="user-center-icon icon-set"> </span>个人设置 </a>
+                                        <a href="{{ url('home/users/set') }}"> <span class="user-center-icon icon-set"> </span>个人设置 </a>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="card-history">
-                                <span class="history-item">
-                                    <span class="tit text-ellipsis">  表单验证</span>
-                                    <span class="media-name text-ellipsis"> 5-1用户名输入框验证</span>
-                                    <i class="icon-clock"> </i>
-                                    <a href="http://www.imooc.com/video/527" class="continue" title="用户名输入框验证 5-1用户名输入框验证">继续</a>
-                                </span>
-                            </div>
+
                             <div class="card-sets clearfix">
                                 <a href="{{ url('passport/user/logout') }}" class="r">安全退出</a>
                             </div>
@@ -445,7 +429,7 @@
                 </p>
 
                 <p class="fieldset">
-                    <input type="checkbox" id="accept-terms" required>
+                    <input type="checkbox" id="accept-terms" required checked>
                     <label for="accept-terms">我已阅读并同意 <a href="#0">用户协议</a></label>
                 </p>
 
