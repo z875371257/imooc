@@ -19,11 +19,12 @@ class CourseController extends Controller
      */
     public function index(Request $request)
     {
-        //底部管理列表页
+        //课程管理列表页
+
         $courses = DB::table('course_cate')
                       ->join('course', 'course_cate.cid', '=', 'course.pid')
                       ->where('title','like','%'.$request->input('fx').'%')
-                      ->paginate(20);
+                      ->paginate(10);
 
         return view('admin.course.index',compact('courses','request'));
     }
@@ -136,7 +137,6 @@ class CourseController extends Controller
 
     }
 
-
     /**
      * Display the specified resource.
      *
@@ -157,9 +157,9 @@ class CourseController extends Controller
     public function edit($id)
     {
         //修改页面
-        $edit = Buttom::find($id);
-//        dd($edit);
-        return view('admin.buttom.edit',compact('edit'));
+
+        $edit = DB::table('course')->where('id', $id)->first();
+        return view('admin.course.edit',compact('edit'));
     }
 
     /**

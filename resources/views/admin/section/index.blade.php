@@ -73,7 +73,7 @@
                         @foreach($section as $k => $v)
                             <tr class="@if ($k % 2 == 1) even @else odd @endif">
                                 <td>{{$v->sid}}</td>
-                                <td>{{$v->course_id}}</td>
+                                <td>{{course($v->sid)}}</td>
                                 <td>{{$v->title}}</td>
                                 <td>{{$v->description}}</td>
                                 <td>

@@ -17,32 +17,7 @@
                 <span class="imv2-arrow2_r r"></span>
             </li> 
         </a>
-        <a href="/coupon">
-            <li class="clearfix ">
-                <p class="nav-name l">我的优惠券
-                                </p>
-                <span class="imv2-arrow2_r r"></span>
-            </li> 
-        </a>
-        <a href="/consult">
-            <li class="clearfix ">
-                <p class="nav-name l">课程咨询</p>
-                <span class="imv2-arrow2_r r"></span>
-            </li> 
-        </a>
-        <a href="/receipt">
-            <li class="clearfix ">
-                <p class="nav-name l">开具发票</p>
-                <span class="imv2-arrow2_r r"></span>
-            
-            </li>
-        </a> 
-        <a href="/bill">
-            <li class="clearfix ">
-                <p class="nav-name l">消费记录</p>
-                <span class="imv2-arrow2_r r"></span>
-            </li> 
-        </a>
+        
     </ul>
 </div><!-- .slider end -->
 
@@ -59,10 +34,10 @@
 						<span class="date">{{date('Y-m-d H:i:s',$v->addtime)}}</span>
 						<a href="/user/feedback" target="_blank" class="r">我有疑问，需要反馈？</a>
 					</p>
-
+                    
 					<div class="myOrder-course clearfix">
-
-						<dl class="course-del l">    @foreach($goods as $kk => $vv) 
+                        
+						<dl class="course-del l">     @foreach($goods as $kk => $vv)
 														<dd class="clearfix">
 								<a href="http://coding.imooc.com/class/113.html" class="l">
 									<img class="l" src="/{{$vv[0]->pic}}" width="160" height="90">
@@ -81,11 +56,12 @@
 																				<span class="l course-little-price">￥{{$vv[0]->price}}</span>
 																			</p>
 								</div>
+								
 							</dd>
 							@endforeach
-														
+															
 													</dl>
-																				<!-- 没有使用优惠券 -->
+																			<!-- 没有使用优惠券 -->
 							<div class="course-money l pt64">
 								<div class="total-box">
 									<p class="type-price">

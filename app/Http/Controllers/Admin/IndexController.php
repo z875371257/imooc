@@ -20,6 +20,7 @@ class IndexController extends Controller
     // 密码修改页面
     public function edit()
     {
+
         return view('admin.index.edit');
     }
     // 修改密码处理
@@ -79,4 +80,5 @@ class IndexController extends Controller
         }
         return $res;
     }
+
 }

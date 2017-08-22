@@ -35,6 +35,12 @@
     <link rel="stylesheet" type="text/css" href="/admins/css/mws-theme.css" media="screen">
     <link rel="stylesheet" type="text/css" href="/admins/css/themer.css" media="screen">
     <link rel="stylesheet" href="/admins/css/style.css">
+
+    {{--后台首页--}}
+    <link rel="stylesheet" href="/admins/css/ch-ui.admin.css">
+    <link rel="stylesheet" href="/admins/css/fonts/font-awesome.css">
+
+
     <script src="/admins/layer/layer.js"></script>
 
 
@@ -59,19 +65,13 @@
     <!-- User Tools (notifications, logout, profile, change password) -->
     <div id="mws-user-tools" class="clearfix">
 
-        <!-- Notifications -->
-        <div id="mws-user-notif" class="mws-dropdown-menu">
-            <a href="#" data-toggle="dropdown" class="mws-dropdown-trigger"><i class="icon-exclamation-sign"></i></a>
 
-            <!-- Unread notification count -->
-            <span class="mws-dropdown-notif">35</span>
-        </div>
 
         <!-- Messages -->
         <div id="mws-user-message" class="mws-dropdown-menu">
-            <a href="#" data-toggle="dropdown" class="mws-dropdown-trigger"><i class="icon-envelope"></i></a>
+            <a href="{{url('/admin/suggest')}}" class="mws-dropdown-trigger"><i class="icon-envelope"></i></a>
             <!-- Unred messages count -->
-            <span class="mws-dropdown-notif">35</span>
+            <span class="mws-dropdown-notif">{{ suggest() }}</span>
         </div>
 
         <!-- User Information and functions section -->
@@ -191,6 +191,14 @@
                         <li><a href="/admin/conf">内容列表</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#"><i class="icon-user"></i>意见反馈</a>
+                    <ul class='closed'>
+
+                        <li><a href="/admin/suggest">意见反馈列表</a></li>
+                    </ul>
+                </li>
+
 
 
 
@@ -212,7 +220,7 @@
 
         <!-- Footer -->
         <div id="mws-footer">
-            Copyright Your Website 2012. All Rights Reserved.
+            {{config('web.copyright')}}
         </div>
 
     </div>

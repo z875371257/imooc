@@ -21,8 +21,6 @@ class LoginController extends Controller
     // 后台登录界面
     public function index()
     {
-#        $str = 'admins';
-#        echo Crypt::encrypt(123456);die;
         return view('admin.login.index');
     }
 

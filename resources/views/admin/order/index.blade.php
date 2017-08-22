@@ -49,7 +49,7 @@
                             订单编号
                         </th>
                         <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 243px;" aria-label="Browser: activate to sort column ascending">
+                            rowspan="1" colspan="1" style="width: 150px;" aria-label="Browser: activate to sort column ascending">
                             商品数量
                         </th>
                         <th class="" role="columnheader" aria-controls="DataTables_Table_1"
@@ -68,7 +68,7 @@
                             状态
                         </th>
                         <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
-                            rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
+                            rowspan="1" colspan="1" style="width: 200px;" aria-label="CSS grade: activate to sort column ascending">
                             下单时间
                         </th>
                         

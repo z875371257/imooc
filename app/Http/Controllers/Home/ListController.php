@@ -40,10 +40,12 @@ class ListController extends Controller
         $fx = $request->input('fx');
         $c = $request->input('c');
         $types = $request->input('type');
+        $active = $request->input('active');
 
+        $class = DB::select("select id,title,referral,NNT,price,pic from mk_course where generas = 2 and new = 1 ORDER BY id desc limit 0,4");
           // 方向
         $direction = DB::select("select cid,cname from mk_course_cate where pid=0 and genera=1");
-        return view('home.list', compact('direction','classify','type','courses','request','fx','c','types'));
+        return view('home.list', compact('class','active','direction','classify','type','courses','request','fx','c','types'));
     }
 
     public function detail(Request $request)

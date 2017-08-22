@@ -9,7 +9,7 @@
         <div class="mws-panel-body no-padding">
             <div role="grid" class="dataTables_wrapper" id="DataTables_Table_1_wrapper">
 
-                <form action="/admin/section" method='get'>
+                <form action="/admin/vedeo" method='get'>
                     <div id="DataTables_Table_1_length" class="dataTables_length">
                         <label>
                             显示
@@ -53,12 +53,17 @@
                         </th>
 
                         <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
+                                 rowspan="1" colspan="1" style="width: 243px;" aria-label="Browser: activate to sort column ascending">
+                            所属章节
+                        </th>
+
+                        <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
                             rowspan="1" colspan="1" style="width: 160px;" aria-label="Engine version: activate to sort column ascending">
                             标题
                         </th>
                         <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
                             rowspan="1" colspan="1" style="width: 160px;" aria-label="Engine version: activate to sort column ascending">
-                            详情
+                            视频封面
                         </th>
 
                         <th class="" role="columnheader"  aria-controls="DataTables_Table_1"
@@ -69,18 +74,18 @@
                     </thead>
                     <tbody role="alert" aria-live="polite" aria-relevant="all">
 
-                    @if($section)
-                        @foreach($section as $k => $v)
+                    @if($vedeo)
+                        @foreach($vedeo as $k => $v)
                             <tr class="@if ($k % 2 == 1) even @else odd @endif">
-                                <td>{{$v->sid}}</td>
-                                <td>{{$v->course_id}}</td>
+                                <td>{{$v->vid}}</td>
+                                <td>{{course($v->sid)}}</td>
+                                <td>{{section($v->sid)}}</td>
                                 <td>{{$v->title}}</td>
-                                <td>{{$v->description}}</td>
+                                <td><img width="100px" height="50px" src="{{$v->vpic}}" alt=""></td>
                                 <td>
-                                    <a href="/admin/cate/{{$v->sid}}/edit" class='btn btn-success'>修改</a>
+                                    <a href="/admin/vedeo/{{$v->sid}}/edit" class='btn btn-success'>修改</a>
                                     <a href="javascript:void(0)" onclick="delCate({{$v->sid}})" class='btn btn-warning'>删除</a>
                                 </td>
-
                             </tr>
                         @endforeach
                     @endif
@@ -158,7 +163,7 @@
                 <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_1_paginate">
 
                     <div id='page'>
-                        {!! $section->appends($request->all())->render() !!}
+                        {!! $vedeo->appends($request->all())->render() !!}
                     </div>
 
                 </div>
